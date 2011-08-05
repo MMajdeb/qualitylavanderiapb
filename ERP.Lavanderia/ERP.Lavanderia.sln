@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP.Lavanderia.Module", "ERP.Lavanderia.Module\ERP.Lavanderia.Module.csproj", "{751BEB30-1345-46C2-8A7F-265FC8499ED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP.Lavanderia.Module.Web", "ERP.Lavanderia.Module.Web\ERP.Lavanderia.Module.Web.csproj", "{D5BD02A1-1FBB-4003-8A1A-30C0A9692365}"
+EndProject
+Project("{00000000-0000-0000-0000-000000000000}") = "ERP.Lavanderia.Web", "ERP.Lavanderia.Web\ERP.Lavanderia.Web.csproj", "{9C55E319-04E7-4059-B4ED-BE5B2AA5531B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP.Lavanderia.Module.Win", "ERP.Lavanderia.Module.Win\ERP.Lavanderia.Module.Win.csproj", "{44B6D47A-105F-4B91-A448-70739152C425}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP.Lavanderia.Win", "ERP.Lavanderia.Win\ERP.Lavanderia.Win.csproj", "{A8DFD2EB-BF91-4C9C-A504-C659F46F53D7}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		EasyTest|Any CPU = EasyTest|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{751BEB30-1345-46C2-8A7F-265FC8499ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{751BEB30-1345-46C2-8A7F-265FC8499ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{751BEB30-1345-46C2-8A7F-265FC8499ED2}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{751BEB30-1345-46C2-8A7F-265FC8499ED2}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{751BEB30-1345-46C2-8A7F-265FC8499ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{751BEB30-1345-46C2-8A7F-265FC8499ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5BD02A1-1FBB-4003-8A1A-30C0A9692365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5BD02A1-1FBB-4003-8A1A-30C0A9692365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5BD02A1-1FBB-4003-8A1A-30C0A9692365}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{D5BD02A1-1FBB-4003-8A1A-30C0A9692365}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{D5BD02A1-1FBB-4003-8A1A-30C0A9692365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5BD02A1-1FBB-4003-8A1A-30C0A9692365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C55E319-04E7-4059-B4ED-BE5B2AA5531B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C55E319-04E7-4059-B4ED-BE5B2AA5531B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C55E319-04E7-4059-B4ED-BE5B2AA5531B}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{9C55E319-04E7-4059-B4ED-BE5B2AA5531B}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{9C55E319-04E7-4059-B4ED-BE5B2AA5531B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C55E319-04E7-4059-B4ED-BE5B2AA5531B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44B6D47A-105F-4B91-A448-70739152C425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B6D47A-105F-4B91-A448-70739152C425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B6D47A-105F-4B91-A448-70739152C425}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{44B6D47A-105F-4B91-A448-70739152C425}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{44B6D47A-105F-4B91-A448-70739152C425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B6D47A-105F-4B91-A448-70739152C425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8DFD2EB-BF91-4C9C-A504-C659F46F53D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8DFD2EB-BF91-4C9C-A504-C659F46F53D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8DFD2EB-BF91-4C9C-A504-C659F46F53D7}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{A8DFD2EB-BF91-4C9C-A504-C659F46F53D7}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{A8DFD2EB-BF91-4C9C-A504-C659F46F53D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8DFD2EB-BF91-4C9C-A504-C659F46F53D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
