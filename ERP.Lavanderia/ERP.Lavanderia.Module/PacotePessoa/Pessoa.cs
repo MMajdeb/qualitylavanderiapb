@@ -19,6 +19,7 @@ using System.Collections;
 using DevExpress.Xpo.Metadata;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using ERP.Lavanderia.Module.PacoteCliente;
 
 namespace ERP.Lavanderia.Module.PacotePessoa
 {
@@ -451,6 +452,13 @@ namespace ERP.Lavanderia.Module.PacotePessoa
         public XPCollection Colaboradores
         {
             get { return GetCollection("Colaboradores"); }
+        }
+
+        [Browsable(false)]
+        [Association("Pessoa-Cliente", typeof(Cliente))]
+        public XPCollection Clientes
+        {
+            get { return GetCollection("Clientes"); }
         }
 
         protected override void OnDeleting()

@@ -122,6 +122,12 @@
     <Compile Include="PacoteGeral\Feriado.cs" />
     <Compile Include="PacotePessoa\Matricula.cs" />
     <Compile Include="PacotePessoa\Pessoa.cs" />
+    <Compile Include="PacoteRoupa\Cor.cs" />
+    <Compile Include="PacoteRoupa\Marca.cs" />
+    <Compile Include="PacoteRoupa\Roupa.cs" />
+    <Compile Include="PacoteRoupa\Tamanho.cs" />
+    <Compile Include="PacoteRoupa\Tecido.cs" />
+    <Compile Include="PacoteRoupa\Tipo.cs" />
     <Compile Include="PacoteSeguranca\Autenticacao.cs">
       <SubType>Component</SubType>
     </Compile>

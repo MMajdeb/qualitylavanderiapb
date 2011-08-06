@@ -17,13 +17,14 @@ namespace ERP.Lavanderia.Module.PacoteCliente
     [DefaultClassOptions]
     public class Cliente : BaseObject
     {
-           private Pessoa pessoa;
-           private DateTime dataCadastro;
-           private DateTime dataUltimaAtualizacao;
-           private string observacoes;
-           private string senhaAcesso;
-           private bool alterarSenha;
-        ﻿   private Classificacao classificacao;
+        private Pessoa pessoa;
+        private DateTime dataCadastro;
+        private DateTime dataUltimaAtualizacao;
+        private string observacoes;
+        private string senhaAcesso;
+        private bool alterarSenha;
+    ﻿    private Classificacao classificacao;
+        private string codigo;
 
         public Cliente(Session session)
             : base(session)
@@ -39,6 +40,15 @@ namespace ERP.Lavanderia.Module.PacoteCliente
         {
             base.AfterConstruction();
             // Place here your initialization code.
+        }
+
+        [RuleUniqueValue("Cliente.CodigoUnico", DefaultContexts.Save, @"""Código"" já existe.")]
+        public string Codigo
+        {
+            get { return codigo; }
+            set {
+                SetPropertyValue("Codigo", ref codigo, value); 
+            }
         }
 
         public Classificacao Classificacao
@@ -62,7 +72,6 @@ namespace ERP.Lavanderia.Module.PacoteCliente
         }
 
         [RuleRequiredField("RuleRequiredField Cliente.Pessoa", DefaultContexts.Save)]
-        [DataSourceCriteria("TipoPessoa=0")]
         [ImmediatePostData]
         [Association("Pessoa-Cliente", typeof(Pessoa))]
         [ExpandObjectMembers(ExpandObjectMembers.InListView)]
@@ -128,8 +137,8 @@ CustomMessageTemplate = "Esta pessoa já está registrada como cliente.")]
             base.OnSaving();
         }
 
-        [RuleFromBoolProperty("Colaborador.RuleFromBoolProperty.ValidaDeletar", DefaultContexts.Delete,
-            CustomMessageTemplate = "Esse colaborador possui associações e não pode ser deletado")]
+        [RuleFromBoolProperty("Cliente.RuleFromBoolProperty.ValidaDeletar", DefaultContexts.Delete,
+            CustomMessageTemplate = "Esse cliente possui associações e não pode ser deletado")]
         [Browsable(false)]
         public bool ValidaDeletar
         {
