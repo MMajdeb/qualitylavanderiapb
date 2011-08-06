@@ -11,10 +11,13 @@ using DevExpress.Persistent.Validation;
 using ERP.Lavanderia.Module.PacotePessoa;
 using System.Collections;
 using DevExpress.Xpo.Metadata;
+using DevExpress.ExpressApp.ConditionalEditorState;
 
 namespace ERP.Lavanderia.Module.PacoteCliente
 {
+    [DefaultProperty("Pessoa.Nome")]
     [DefaultClassOptions]
+    [EditorStateRuleAttribute("Cliente.DesativaUltimaAlteracaoEDataCadastro", "DataUltimaAtualizacao,DataCadastro", EditorState.Disabled, "true", ViewType.DetailView)]
     public class Cliente : BaseObject
     {
         private Pessoa pessoa;
@@ -40,6 +43,8 @@ namespace ERP.Lavanderia.Module.PacoteCliente
         {
             base.AfterConstruction();
             // Place here your initialization code.
+
+            DataCadastro = System.DateTime.Now;
         }
 
         [RuleUniqueValue("Cliente.CodigoUnico", DefaultContexts.Save, @"""Código"" já existe.")]

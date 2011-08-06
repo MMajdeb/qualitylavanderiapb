@@ -108,6 +108,7 @@
     </Compile>
     <Compile Include="PacoteEmpresa\Departamento.cs" />
     <Compile Include="PacoteEmpresa\Empresa.cs" />
+    <Compile Include="PacoteEmpresa\PontoDeColeta.cs" />
     <Compile Include="PacoteEndereco\Cidade.cs" />
     <Compile Include="PacoteEndereco\Endereco.cs" />
     <Compile Include="PacoteEndereco\Estado.cs" />
@@ -120,6 +121,8 @@
     </Compile>
     <Compile Include="PacoteGeral\BaseObjectExtension.cs" />
     <Compile Include="PacoteGeral\Feriado.cs" />
+    <Compile Include="PacoteLavagem\Lavagem.cs" />
+    <Compile Include="PacoteLavagem\RoupaLavagem.cs" />
     <Compile Include="PacotePessoa\Matricula.cs" />
     <Compile Include="PacotePessoa\Pessoa.cs" />
     <Compile Include="PacoteRoupa\Cor.cs" />

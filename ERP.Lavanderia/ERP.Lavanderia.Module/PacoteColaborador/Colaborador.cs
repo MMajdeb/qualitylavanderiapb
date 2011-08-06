@@ -27,6 +27,7 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
     [DefaultClassOptions]
     [DefaultProperty("Pessoa.Nome")]
     [EditorStateRuleAttribute("DesativaDadosAdmitido", "DataDemissao", EditorState.Disabled, "Matricula.Situacao != 4", ViewType.DetailView)]
+    [EditorStateRuleAttribute("Colaborador.DesativaUltimaAlteracao", "DataUltimaAtualizacao", EditorState.Disabled, "true", ViewType.DetailView)]
     public class Colaborador : BaseObject
     {
         private Pessoa pessoa;
@@ -50,8 +51,14 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
         {
             get
             {
-                Colaborador col = RetornaColaboradorPorPessoaEEmpresa(Pessoa, Departamento.Empresa, Session);
-                return col == null || col.Equals(this);
+                try
+                {
+                    Colaborador col = RetornaColaboradorPorPessoaEEmpresa(Pessoa, Departamento.Empresa, Session);
+                    return col == null || col.Equals(this);
+                }
+                catch {
+                    return false;
+                }
             }
         }
 

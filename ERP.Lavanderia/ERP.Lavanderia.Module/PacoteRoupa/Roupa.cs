@@ -13,7 +13,7 @@ using System.Drawing;
 
 namespace ERP.Lavanderia.Module.PacoteRoupa
 {
-    [DefaultProperty("Codigo")]
+    [DefaultProperty("ToStringProperty")]
     [DefaultClassOptions]
     public class Roupa : BaseObject
     {
@@ -102,6 +102,22 @@ namespace ERP.Lavanderia.Module.PacoteRoupa
             set {
                 SetPropertyValue("Observacao", ref observacao, value); 
             }
+        }
+
+        [Browsable(false)]
+        [NonPersistent]
+        public string ToStringProperty
+        {
+            get
+            {
+                return ToString();
+            }
+        }
+
+        public override string ToString()
+        {
+            return "(" + Codigo + ") " + Tipo + "; " + Tecido + "; " + Marca + "; " + 
+                Tamanho + "; " + Cores;
         }
     }
 
