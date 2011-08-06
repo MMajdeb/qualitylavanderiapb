@@ -41,9 +41,9 @@
       </Item>
       <Item Id="@dbef8e7e-d6c2-409f-8208-a05c0a51fdb8" IsNewNode="True" Caption="Sistema" Index="2">
         <Items IsNewNode="True">
-          <Item Id="ConfiguracaoEmpresa_ListView" IsNewNode="True" ViewId="ConfiguracaoEmpresa_ListView" ObjectKey="" />
-          <Item Id="ConfiguracaoGeral_ListView" IsNewNode="True" ViewId="ConfiguracaoGeral_ListView" ObjectKey="" />
-          <Item Id="ConfiguracaoUsuario_ListView" IsNewNode="True" ViewId="ConfiguracaoUsuario_ListView" ObjectKey="" />
+          <Item Id="ConfiguracaoEmpresa_ListView" IsNewNode="True" ObjectKey="" ViewId="ConfiguracaoEmpresa_DetailView" />
+          <Item Id="ConfiguracaoGeral_ListView" IsNewNode="True" ObjectKey="" ViewId="ConfiguracaoGeral_DetailView" />
+          <Item Id="ConfiguracaoUsuario_ListView" IsNewNode="True" ObjectKey="" ViewId="ConfiguracaoUsuario_DetailView" />
           <Item Id="Papel_ListView" IsNewNode="True" ViewId="Papel_ListView" ObjectKey="" />
           <Item Id="Usuario_ListView" IsNewNode="True" ViewId="Usuario_ListView" ObjectKey="" />
         </Items>

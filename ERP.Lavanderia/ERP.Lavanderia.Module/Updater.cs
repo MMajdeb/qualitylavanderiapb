@@ -11,6 +11,7 @@ using ERP.Lavanderia.Module.PacoteSeguranca;
 using DevExpress.ExpressApp.Security;
 using ERP.Lavanderia.Module.PacoteEmpresa;
 using System.Collections.Generic;
+using ERP.Lavanderia.Module.PacoteConfiguracoes;
 
 namespace ERP.Lavanderia.Module
 {
@@ -517,6 +518,25 @@ namespace ERP.Lavanderia.Module
 
             // Save the users to the database
             user1.Save();
+
+            #endregion
+
+            #region Configurações
+
+            XPCollection<ConfiguracaoGeral> listGeral = new XPCollection<ConfiguracaoGeral>(ObjectSpace.Session);
+            if (listGeral.Count == 0)
+            {
+                ConfiguracaoGeral cfgGeral = new ConfiguracaoGeral(ObjectSpace.Session);
+                cfgGeral.SenhaSmtp = "";
+                cfgGeral.ServidorSmtp = "";
+                cfgGeral.UsuarioSmtp = "";
+                cfgGeral.UtilizarAutenticacaoSmtp = false;
+
+                cfgGeral.DiaMensagemAniversario = 0;
+                cfgGeral.MensagemAniversario = "";
+
+                cfgGeral.Save();
+            }
 
             #endregion
 
