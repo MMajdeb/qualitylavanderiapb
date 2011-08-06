@@ -110,6 +110,7 @@ namespace ERP.Lavanderia.Module.PacoteEndereco
 
         private Pais pais;
         [RuleRequiredField("RuleRequiredField Endereco.Pais", DefaultContexts.Save)]
+        [ImmediatePostData]
         public Pais Pais
         {
             get
@@ -129,6 +130,7 @@ namespace ERP.Lavanderia.Module.PacoteEndereco
         private Estado estado;
         [DataSourceProperty("Pais.Estados")]
         [RuleRequiredField("RuleRequiredField Endereco.Estado", DefaultContexts.Save)]
+        [ImmediatePostData]
         public Estado Estado
         {
             get
@@ -148,6 +150,7 @@ namespace ERP.Lavanderia.Module.PacoteEndereco
         private Cidade cidade;
         [DataSourceProperty("Estado.Cidades")]
         [RuleRequiredField("RuleRequiredField Endereco.Cidade", DefaultContexts.Save)]
+        [ImmediatePostData]
         public Cidade Cidade
         {
             get
