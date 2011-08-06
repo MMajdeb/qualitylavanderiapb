@@ -4,11 +4,18 @@
     <Items>
       <Item Id="@0965f345-89fb-495a-9613-d3b2e8b021af" IsNewNode="True" Caption="Principal" Index="0">
         <Items IsNewNode="True">
-          <Item Id="Colaborador_ListView" IsNewNode="True" ViewId="Colaborador_ListView" ObjectKey="" />
+          <Item Id="@6886f621-b409-4eec-b890-0a735ef1f63c" IsNewNode="True" ViewId="Cliente_ListView" Index="0" />
+          <Item Id="@76e5c9cd-62d2-4a0e-8372-b0db94be68a6" IsNewNode="True" ViewId="Roupa_ListView" Index="1" />
+          <Item Id="Colaborador_ListView" IsNewNode="True" ViewId="Colaborador_ListView" ObjectKey="" Index="3" />
         </Items>
       </Item>
       <Item Id="@5ddb1863-5d64-428d-8976-5d64fa247473" IsNewNode="True" Caption="Geral" Index="1">
         <Items IsNewNode="True">
+          <Item Id="@0a3ad9e6-b116-4ce1-8a29-d695c6e4d1ce" IsNewNode="True" ViewId="Tecido_ListView" />
+          <Item Id="@2dfde21b-f52f-41ac-a15d-45f7ffc61134" IsNewNode="True" ViewId="Tipo_ListView" />
+          <Item Id="@db51dae9-ad37-4118-b1a7-de3ca5998329" IsNewNode="True" ViewId="Cor_ListView" />
+          <Item Id="@e7c49a52-ac15-4e29-abe4-ffd2f955f891" IsNewNode="True" ViewId="Tamanho_ListView" />
+          <Item Id="@ed9efd1f-5c72-498a-9cbb-5932993685e8" IsNewNode="True" ViewId="Marca_ListView" />
           <Item Id="ColaboradorCargo_ListView" IsNewNode="True" ViewId="ColaboradorCargo_ListView" ObjectKey="" />
           <Item Id="Feriado_ListView" IsNewNode="True" ViewId="Feriado_ListView" ObjectKey="" />
           <Item Id="HistoricoFuncional_ListView" IsNewNode="True" ViewId="HistoricoFuncional_ListView" ObjectKey="" />
@@ -29,7 +36,7 @@
       <Item Id="@8ef42b3a-8d5b-41a5-b40f-bb6d1ee0086a" IsNewNode="True" Caption="Administração" Index="3">
         <Items IsNewNode="True">
           <Item Id="Departamento_ListView" IsNewNode="True" ViewId="Departamento_ListView" ObjectKey="" />
-          <Item Id="Empresa_ListView" IsNewNode="True" ViewId="Empresa_ListView" ObjectKey="" />
+          <Item Id="Empresa_ListView" IsNewNode="True" ObjectKey="" ViewId="Empresa_DetailView" />
         </Items>
       </Item>
       <Item Id="Default" Removed="True">
