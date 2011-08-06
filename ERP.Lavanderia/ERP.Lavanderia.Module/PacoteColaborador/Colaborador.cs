@@ -101,7 +101,7 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
             }
         }
 
-        [Aggregated, ExpandObjectMembers(ExpandObjectMembers.Always)]
+        [RuleUniqueValue("Colaborador.MatriculaUnica", DefaultContexts.Save, @"""Matrícula"" já cadastrada a outro colaborador.")]
         [RuleRequiredField("Colaborador.RuleRequiredField.Matricula", DefaultContexts.Save)]
         public Matricula Matricula
         {

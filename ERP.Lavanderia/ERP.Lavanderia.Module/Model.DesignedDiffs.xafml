@@ -9,6 +9,7 @@
     </Class>
     <Class Name="ERP.Lavanderia.Module.PacoteColaborador.Colaborador">
       <OwnMembers>
+        <Member Name="DataCadastro" AllowEdit="False" />
         <Member Name="DataUltimaAtualizacao" AllowEdit="False" />
       </OwnMembers>
     </Class>

@@ -51,7 +51,19 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresEmpresa
 
         public string EmpresaPadraoOid
         {
-            get { return empresaPadraoOid; }
+            get {
+                if (empresaPadraoOid == null)
+                {
+                    var empresa = this.Application.ObjectSpaceProvider.CreateObjectSpace().GetObjects<Empresa>()[0];
+
+                    if (empresa != null)
+                    {
+                        empresaPadraoOid = empresa.Oid.ToString();
+                    }
+                }
+
+                return empresaPadraoOid; 
+            }
             set { empresaPadraoOid = value; }
         }
 

@@ -29,12 +29,8 @@ namespace ERP.Lavanderia.Module.PacotePessoa
         private string numeroMatricula;
         private SituacaoMatricula situacao;
         private Empresa empresa;
-        private bool controlaPonto;
         private Colaborador colaborador;
         private TipoPessoaAcesso tipoPessoaAcesso;
-        private bool panico;
-        private bool naoValidarDuploRegistro;
-        private DateTime? dataExpiracaoIdentificadorFisico;
 
         [Size(50)]
         [Indexed(Unique = false)]
