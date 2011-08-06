@@ -63,6 +63,8 @@
     <Reference Include="DevExpress.Data.v10.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.ConditionalEditorState.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Security.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.v10.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -89,19 +91,52 @@
       <Name>System.Data</Name>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PacoteColaborador\Colaborador.cs" />
+    <Compile Include="PacoteConfiguracoes\ConfiguracaoEmpresa.cs" />
+    <Compile Include="PacoteConfiguracoes\ConfiguracaoGeral.cs" />
+    <Compile Include="PacoteConfiguracoes\ConfiguracaoUsuario.cs" />
+    <Compile Include="PacoteControladoress\ControladoresEmpresa\SelecaoEmpresaController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PacoteControladoress\ControladoresEmpresa\SelecaoEmpresaController.Designer.cs">
+      <DependentUpon>SelecaoEmpresaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PacoteEmpresa\Departamento.cs" />
+    <Compile Include="PacoteEmpresa\Empresa.cs" />
+    <Compile Include="PacoteEndereco\Cidade.cs" />
+    <Compile Include="PacoteEndereco\Endereco.cs" />
+    <Compile Include="PacoteEndereco\Estado.cs" />
+    <Compile Include="PacoteEndereco\Pais.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Module.Designer.cs">
       <DependentUpon>Module.cs</DependentUpon>
     </Compile>
+    <Compile Include="PacoteGeral\BaseObjectExtension.cs" />
+    <Compile Include="PacoteGeral\Feriado.cs" />
+    <Compile Include="PacotePessoa\Matricula.cs" />
+    <Compile Include="PacotePessoa\Pessoa.cs" />
+    <Compile Include="PacoteSeguranca\Autenticacao.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PacoteSeguranca\Papel.cs" />
+    <Compile Include="PacoteSeguranca\ParametrosLogon.cs" />
+    <Compile Include="PacoteSeguranca\Usuario.cs" />
+    <Compile Include="PacoteServicos\Email.cs" />
+    <Compile Include="PacoteUtil\StringUtils.cs" />
+    <Compile Include="PacoteUtil\Validacoes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PacoteRecursosHumanos\ColaboradorCargo.cs" />
+    <Compile Include="PacoteRecursosHumanos\HistoricoFuncional.cs" />
+    <Compile Include="PacoteRecursosHumanos\Profissao.cs" />
     <Compile Include="Updater.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +144,9 @@
     <EmbeddedResource Include="Module.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PacoteControladoress\ControladoresEmpresa\SelecaoEmpresaController.resx">
+      <DependentUpon>SelecaoEmpresaController.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +171,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PacoteImagens\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
