@@ -95,6 +95,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PacoteCliente\Cliente.cs" />
     <Compile Include="PacoteColaborador\Colaborador.cs" />
     <Compile Include="PacoteConfiguracoes\ConfiguracaoEmpresa.cs" />
     <Compile Include="PacoteConfiguracoes\ConfiguracaoGeral.cs" />
