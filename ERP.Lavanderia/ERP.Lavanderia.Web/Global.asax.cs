@@ -8,6 +8,7 @@ using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Web;
+using ERP.Lavanderia.Module.PacoteSeguranca;
 
 namespace ERP.Lavanderia.Web
 {
@@ -39,6 +40,11 @@ namespace ERP.Lavanderia.Web
             {
                 WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             }
+
+            WebApplication.Instance.Security = new SecurityComplex<Usuario, Papel>(new Autenticacao());
+            //WebApplication.Instance.CreateCustomLogonWindowObjectSpace += new EventHandler<CreateCustomLogonWindowObjectSpaceEventArgs>(Instance_CreateCustomLogonWindowObjectSpace);
+            //WebApplication.Instance.CreateCustomLogonWindowControllers += new EventHandler<CreateCustomLogonWindowControllersEventArgs>(Instance_CreateCustomLogonWindowControllers);
+
             WebApplication.Instance.Setup();
             WebApplication.Instance.Start();
         }
