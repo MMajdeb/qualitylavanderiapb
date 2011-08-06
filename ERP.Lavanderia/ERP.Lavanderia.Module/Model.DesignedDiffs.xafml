@@ -1,3 +1,58 @@
-﻿<?xml version="1.0" ?>
-<Application Title="ERP.Lavanderia" Logo="ExpressAppLogo" />
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="ERP.Lavanderia" Logo="ExpressAppLogo">
+  <NavigationItems>
+    <Items>
+      <Item Id="@0965f345-89fb-495a-9613-d3b2e8b021af" IsNewNode="True" Caption="Principal" Index="0">
+        <Items IsNewNode="True">
+          <Item Id="Colaborador_ListView" IsNewNode="True" ViewId="Colaborador_ListView" ObjectKey="" />
+        </Items>
+      </Item>
+      <Item Id="@5ddb1863-5d64-428d-8976-5d64fa247473" IsNewNode="True" Caption="Geral" Index="1">
+        <Items IsNewNode="True">
+          <Item Id="ColaboradorCargo_ListView" IsNewNode="True" ViewId="ColaboradorCargo_ListView" ObjectKey="" />
+          <Item Id="Feriado_ListView" IsNewNode="True" ViewId="Feriado_ListView" ObjectKey="" />
+          <Item Id="HistoricoFuncional_ListView" IsNewNode="True" ViewId="HistoricoFuncional_ListView" ObjectKey="" />
+          <Item Id="Matricula_ListView" IsNewNode="True" ViewId="Matricula_ListView" ObjectKey="" />
+          <Item Id="Pessoa_ListView" IsNewNode="True" ViewId="Pessoa_ListView" ObjectKey="" />
+          <Item Id="Profissao_ListView" IsNewNode="True" ViewId="Profissao_ListView" ObjectKey="" />
+        </Items>
+      </Item>
+      <Item Id="@dbef8e7e-d6c2-409f-8208-a05c0a51fdb8" IsNewNode="True" Caption="Sistema" Index="2">
+        <Items IsNewNode="True">
+          <Item Id="ConfiguracaoEmpresa_ListView" IsNewNode="True" ViewId="ConfiguracaoEmpresa_ListView" ObjectKey="" />
+          <Item Id="ConfiguracaoGeral_ListView" IsNewNode="True" ViewId="ConfiguracaoGeral_ListView" ObjectKey="" />
+          <Item Id="ConfiguracaoUsuario_ListView" IsNewNode="True" ViewId="ConfiguracaoUsuario_ListView" ObjectKey="" />
+          <Item Id="Papel_ListView" IsNewNode="True" ViewId="Papel_ListView" ObjectKey="" />
+          <Item Id="Usuario_ListView" IsNewNode="True" ViewId="Usuario_ListView" ObjectKey="" />
+        </Items>
+      </Item>
+      <Item Id="@8ef42b3a-8d5b-41a5-b40f-bb6d1ee0086a" IsNewNode="True" Caption="Administração" Index="3">
+        <Items IsNewNode="True">
+          <Item Id="Departamento_ListView" IsNewNode="True" ViewId="Departamento_ListView" ObjectKey="" />
+          <Item Id="Empresa_ListView" IsNewNode="True" ViewId="Empresa_ListView" ObjectKey="" />
+        </Items>
+      </Item>
+      <Item Id="Default" Removed="True">
+        <Items>
+          <Item Id="Colaborador_ListView" Removed="True" />
+          <Item Id="ColaboradorCargo_ListView" Removed="True" />
+          <Item Id="ConfiguracaoEmpresa_ListView" Removed="True" />
+          <Item Id="ConfiguracaoGeral_ListView" Removed="True" />
+          <Item Id="ConfiguracaoUsuario_ListView" Removed="True" />
+          <Item Id="Departamento_ListView" Removed="True" />
+          <Item Id="Empresa_ListView" Removed="True" />
+          <Item Id="Feriado_ListView" Removed="True" />
+          <Item Id="HistoricoFuncional_ListView" Removed="True" />
+          <Item Id="Matricula_ListView" Removed="True" />
+          <Item Id="Papel_ListView" Removed="True" />
+          <Item Id="Pessoa_ListView" Removed="True" />
+          <Item Id="Profissao_ListView" Removed="True" />
+          <Item Id="Usuario_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="10.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>
