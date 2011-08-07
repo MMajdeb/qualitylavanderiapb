@@ -29,6 +29,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
         private Colaborador entregador;
         private PontoDeColeta pontoDeColetaDeRecebimento;
         private PontoDeColeta pontoDeColetaParaEntrega;
+        private decimal valor;
 
         public Lavagem(Session session)
             : base(session)
@@ -159,6 +160,11 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             }
         }
 
+        public decimal Valor
+        {
+            get { return valor; }
+            set { SetPropertyValue("Valor", ref valor, value); }
+        }
 
         [Association("Lavagem-RoupaLavagem")]
         public XPCollection<RoupaLavagem> Roupas
