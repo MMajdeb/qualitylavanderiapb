@@ -18,6 +18,7 @@ using ERP.Lavanderia.Module.PacotePessoa;
 using ERP.Lavanderia.Module.PacoteRecursosHumanos;
 using ERP.Lavanderia.Module.PacoteEmpresa;
 using ERP.Lavanderia.Module.PacoteGeral;
+using ERP.Lavanderia.Module.PacoteSeguranca;
 
 namespace ERP.Lavanderia.Module.PacoteColaborador
 {
@@ -37,11 +38,11 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
         private Matricula matricula;
         private string observacoes;
         private Departamento departamento;
-        private string senhaAcesso;
-        private bool alterarSenha;
         private bool desativapainel;
         private DateTime dataAdmissao;
         private DateTime? dataDemissao;
+        private Usuario usuario;
+        private string senha;
 
         public Colaborador(Session session) : base(session) { }
 
@@ -98,6 +99,15 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
                 {
                     return true;
                 }
+            }
+        }
+
+        [RuleRequiredField("Colaborador.RuleRequiredField.Senha", DefaultContexts.Save)]
+        public string Senha
+        {
+            get { return senha; }
+            set {
+                SetPropertyValue("Senha", ref senha, value);
             }
         }
 
@@ -172,19 +182,6 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
             }
         }
 
-        [Size(50)]
-        public string SenhaAcesso
-        {
-            get { return senhaAcesso; }
-            set { SetPropertyValue("SenhaAcesso", ref senhaAcesso, value); }
-        }
-
-        public bool AlterarSenhaAcesso
-        {
-            get { return alterarSenha; }
-            set { SetPropertyValue("AlterarSenhaAcesso", ref alterarSenha, value); }
-        }
-
         public bool DesativarPainelColaborador
         {
             get { return desativapainel; }
@@ -202,6 +199,15 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
         {
             get { return dataDemissao; }
             set { SetPropertyValue("DataDemissao", ref dataDemissao, value); }
+        }
+
+        [ExpandObjectMembers(ExpandObjectMembers.Always)]
+        [RuleUniqueValue("Colaborador.Usuario", DefaultContexts.Save, @"""Usuário"" já cadastrada a outro colaborador.")]
+        [RuleRequiredField("Colaborador.RuleRequiredField.Usuario", DefaultContexts.Save)]
+        public Usuario Usuario
+        {
+            get { return usuario; }
+            set { SetPropertyValue("Usuario", ref usuario, value); }
         }
 
         #region Modulo Auditoria
@@ -238,6 +244,17 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
             this.DataUltimaAtualizacao = DateTime.Now;
 
             base.OnSaving();
+
+            Usuario.SetPassword(Senha);
+        }
+
+        [NonPersistent, Browsable(false)]
+        public bool IsNew
+        {
+            get
+            {
+                return Session.IsNewObject(this);
+            }
         }
 
         [RuleFromBoolProperty("Colaborador.RuleFromBoolProperty.ValidaDeletar", DefaultContexts.Delete,

@@ -540,6 +540,21 @@ namespace ERP.Lavanderia.Module
 
             #endregion
 
+            #region Cria empresa Padrão
+
+            Empresa empresa = Empresa.RetornaEmpresa(ObjectSpace.Session);
+
+            if (empresa == null) {
+                empresa = new Empresa(ObjectSpace.Session);
+                
+                empresa.Pessoa = new PacotePessoa.Pessoa(ObjectSpace.Session);
+                empresa.Pessoa.TipoPessoa = PacotePessoa.TipoPessoa.Juridica;
+
+                empresa.Save();
+            }
+
+            #endregion
+
             AtualizaBanco();
         }
 

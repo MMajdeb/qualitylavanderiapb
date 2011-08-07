@@ -18,6 +18,7 @@ using DevExpress.Persistent.Base.Security;
 
 namespace ERP.Lavanderia.Module.PacoteSeguranca
 {
+    [DefaultProperty("UserName")]
     [DefaultClassOptions]
     public class Usuario : BaseObject, IUserWithRoles, IAuthenticationActiveDirectoryUser, IAuthenticationStandardUser
     {
@@ -84,8 +85,8 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
                 return new ListConverter<IRole, Papel>(Roles);
             }
         }
-        [RuleRequiredField("Fill User Name", "Save", "The user name must not be empty")]
-        [RuleUniqueValue("Unique User Name", "Save", "The login with the entered UserName was already registered within the system")]
+        [RuleRequiredField("Fill User Name", "Save", "O nome de usuario não pode ser vazio")]
+        [RuleUniqueValue("Unique User Name", "Save", "Esse nome de usuário já está em uso")]
         public string UserName
         {
             get { return this._userName; }

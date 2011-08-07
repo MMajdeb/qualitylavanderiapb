@@ -208,6 +208,16 @@ namespace ERP.Lavanderia.Module.PacoteEmpresa
             }
         }
         #endregion
+
+        internal static Empresa RetornaEmpresa(DevExpress.Xpo.Session session)
+        {
+            var col = new XPCollection<Empresa>(session);
+
+            if (col == null || col.Count == 0)
+                return null;
+
+            return col[0];
+        }
     }
 
 }
