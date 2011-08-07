@@ -103,7 +103,8 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
 
             /*** Permissoes de funcionario ***/
             // Allow full access to all objects to the Users role
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.NoAccess));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess));
+            funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
             // Deny editing access to the User type objects to the Users role
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Usuario), ObjectAccess.ChangeAccess, ObjectAccessModifier.Deny));
             // Deny full access to the Role type objects to the Users role
