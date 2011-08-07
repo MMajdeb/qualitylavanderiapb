@@ -58,6 +58,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             }
         }
 
+        [ImmediatePostData]
         public Colaborador Recebedor
         {
             get { return recebedor; }
@@ -66,6 +67,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             }
         }
 
+        [ImmediatePostData]
         public Colaborador Anotador
         {
             get { return anotador; }
@@ -75,6 +77,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             }
         }
 
+        [ImmediatePostData]
         public Colaborador Lavador
         {
             get { return lavador; }
@@ -84,6 +87,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             }
         }
 
+        [ImmediatePostData]
         public Colaborador Passador
         {
             get { return passador; }
@@ -93,6 +97,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             }
         }
 
+        [ImmediatePostData]
         public Colaborador Entregador
         {
             get { return entregador; }
@@ -153,6 +158,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
                 SetPropertyValue("PontoDeColetaParaEntrega", ref pontoDeColetaParaEntrega, value);
             }
         }
+
 
         [Association("Lavagem-RoupaLavagem")]
         public XPCollection<RoupaLavagem> Roupas

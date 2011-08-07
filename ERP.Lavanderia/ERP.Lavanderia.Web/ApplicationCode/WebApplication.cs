@@ -94,9 +94,14 @@ namespace ERP.Lavanderia.Web
             this.Modules.Add(this.module4);
             this.Modules.Add(this.module5);
             this.Security = this.securityComplex1;
+            this.LoggedOn += new System.EventHandler<DevExpress.ExpressApp.LogonEventArgs>(this.ERP_LoggedOn);
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.LavanderiaAspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+        }
 
+        private void ERP_LoggedOn(object sender, DevExpress.ExpressApp.LogonEventArgs e)
+        {
+            ((ShowViewStrategy)base.ShowViewStrategy).CollectionsEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
         }
     }
 }

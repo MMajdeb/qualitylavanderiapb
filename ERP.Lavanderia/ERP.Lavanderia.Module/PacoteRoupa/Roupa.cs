@@ -104,6 +104,26 @@ namespace ERP.Lavanderia.Module.PacoteRoupa
             }
         }
 
+        [NonPersistent]
+        [System.ComponentModel.Browsable(false)]
+        [RuleFromBoolProperty("RuleFromBoolProperty Roupa.ValidaCodigo", DefaultContexts.Save, @"O código da roupa deve ser único entre todas as outras ou igual ao código de seu dono.")]
+        public bool ValidaRoupasDoCliente
+        {
+            get
+            {
+                if (Codigo == null || Cliente == null)
+                    return true;
+
+                if (Codigo.Equals(Cliente.Codigo)) {
+                    return true;
+                }
+
+                CriteriaOperator crit = new OperandProperty("This") != new OperandValue(this) & new BinaryOperator("Codigo", Codigo);
+
+                return new XPCollection<Roupa>(Session, crit).Count == 0;
+            }
+        }
+
         [Browsable(false)]
         [NonPersistent]
         public string ToStringProperty
