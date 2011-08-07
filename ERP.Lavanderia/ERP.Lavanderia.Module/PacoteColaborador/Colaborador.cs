@@ -221,6 +221,19 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
             set { SetPropertyValue("Usuario", ref usuario, value); }
         }
 
+        [RuleFromBoolProperty("Colaborador.RuleFromBoolProperty.ValidaUsuario", DefaultContexts.Save,
+CustomMessageTemplate = "Já existe uma pessoa com esse nome de usuário")]
+        [Browsable(false)]
+        public bool ValidaUsuario
+        {
+            get
+            {
+                var user = Usuario.RetornaUsuarioPorNomeDeUsuario(Session, NomeDeUsuario);
+
+                return user == null || user.Equals(Usuario);
+            }
+        }
+
         #region Modulo Auditoria
         //Módulo de auditoria
         private ReadOnlyCollection<AuditDataItemPersistent> changeHistory;

@@ -12,6 +12,7 @@ using ERP.Lavanderia.Module.PacotePessoa;
 using System.Collections;
 using DevExpress.Xpo.Metadata;
 using DevExpress.ExpressApp.ConditionalEditorState;
+using ERP.Lavanderia.Module.PacoteSeguranca;
 
 namespace ERP.Lavanderia.Module.PacoteCliente
 {
@@ -24,10 +25,11 @@ namespace ERP.Lavanderia.Module.PacoteCliente
         private DateTime dataCadastro;
         private DateTime dataUltimaAtualizacao;
         private string observacoes;
-        private string senhaAcesso;
-        private bool alterarSenha;
     ﻿    private Classificacao classificacao;
         private string codigo;
+        private Usuario usuario;
+        private string senha;
+        private string nomeDeUsuario;
 
         public Cliente(Session session)
             : base(session)
@@ -45,6 +47,9 @@ namespace ERP.Lavanderia.Module.PacoteCliente
             // Place here your initialization code.
 
             DataCadastro = System.DateTime.Now;
+
+            Usuario = new Usuario(Session);
+            Usuario.UserName = DateTime.Now.ToString();
         }
 
         [RuleUniqueValue("Cliente.CodigoUnico", DefaultContexts.Save, @"""Código"" já existe.")]
@@ -122,22 +127,42 @@ CustomMessageTemplate = "Esta pessoa já está registrada como cliente.")]
             }
         }
 
-        [Size(50)]
-        public string SenhaAcesso
+
+        [RuleRequiredField("Cliente.RuleRequiredField.Senha", DefaultContexts.Save)]
+        public string Senha
         {
-            get { return senhaAcesso; }
-            set { SetPropertyValue("SenhaAcesso", ref senhaAcesso, value); }
+            get { return senha; }
+            set
+            {
+                SetPropertyValue("Senha", ref senha, value);
+            }
         }
 
-        public bool AlterarSenhaAcesso
+        [RuleRequiredField("Cliente.RuleRequiredField.NomeDeUsuario", DefaultContexts.Save)]
+        public string NomeDeUsuario
         {
-            get { return alterarSenha; }
-            set { SetPropertyValue("AlterarSenhaAcesso", ref alterarSenha, value); }
+            get { return nomeDeUsuario; }
+            set
+            {
+                SetPropertyValue("NomeDeUsuario", ref nomeDeUsuario, value);
+            }
+        }
+
+        [Browsable(false)]
+        [RuleUniqueValue("Cliente.Usuario", DefaultContexts.Save, @"""Usuário"" já cadastrada a outra pessoa.")]
+        [RuleRequiredField("Cliente.RuleRequiredField.Usuario", DefaultContexts.Save)]
+        public Usuario Usuario
+        {
+            get { return usuario; }
+            set { SetPropertyValue("Usuario", ref usuario, value); }
         }
 
         protected override void OnSaving()
         {
             this.DataUltimaAtualizacao = DateTime.Now;
+
+            Usuario.SetPassword(Senha);
+            Usuario.UserName = NomeDeUsuario;
 
             base.OnSaving();
         }
@@ -169,6 +194,19 @@ CustomMessageTemplate = "Esta pessoa já está registrada como cliente.")]
                 }
 
                 return true;
+            }
+        }
+
+        [RuleFromBoolProperty("Cliente.RuleFromBoolProperty.ValidaUsuario", DefaultContexts.Save,
+    CustomMessageTemplate = "Já existe um usuario com esse nome de usuário")]
+        [Browsable(false)]
+        public bool ValidaUsuario
+        {
+            get
+            {
+                var user = Usuario.RetornaUsuarioPorNomeDeUsuario(Session, NomeDeUsuario);
+
+                return user == null || user.Equals(Usuario);
             }
         }
 

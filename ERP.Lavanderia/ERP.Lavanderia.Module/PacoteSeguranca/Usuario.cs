@@ -85,8 +85,8 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
                 return new ListConverter<IRole, Papel>(Roles);
             }
         }
-        [RuleRequiredField("Fill User Name", "Save", "O nome de usuario não pode ser vazio")]
-        [RuleUniqueValue("Unique User Name", "Save", "Esse nome de usuário já está em uso")]
+        [RuleRequiredField("Fill User Name", DefaultContexts.Save, "O nome de usuario não pode ser vazio")]
+        [RuleUniqueValue("Unique User Name", DefaultContexts.Save, "Esse nome de usuário já está em uso")]
         public string UserName
         {
             get { return this._userName; }
@@ -230,6 +230,12 @@ CustomMessageTemplate = "O administrador não pode ser deletado")]
             return usr;
         }
 
+        public static Usuario RetornaUsuarioPorNomeDeUsuario(Session session, string userName)
+        {
+            Usuario usr = session.FindObject<Usuario>(new BinaryOperator("UserName", userName));
+            return usr;
+        }
+
         /// <summary>
         /// Verifica se o usuário tem permissão de acesso a uma determinada empresa.
         /// </summary>
@@ -248,6 +254,11 @@ CustomMessageTemplate = "O administrador não pode ser deletado")]
             }
 
             return false;
+        }
+
+        internal static object RetornaUsuarioPorUserName(DevExpress.Xpo.Session Session, string NomeDeUsuario)
+        {
+            throw new NotImplementedException();
         }
     }
 
