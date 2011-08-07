@@ -124,6 +124,22 @@ namespace ERP.Lavanderia.Module.PacoteRoupa
             }
         }
 
+        private string ToStringCores() {
+            string coresString = "";
+
+            if (Cores != null && Cores.Count > 0)
+            {
+                coresString = Cores[0].Descricao;
+
+                for (int i = 1; i < Cores.Count; i++) {
+                    coresString += ", " + Cores[i].Descricao;
+                }
+            }
+
+            return coresString;
+
+        }
+
         [Browsable(false)]
         [NonPersistent]
         public string ToStringProperty
@@ -136,8 +152,8 @@ namespace ERP.Lavanderia.Module.PacoteRoupa
 
         public override string ToString()
         {
-            return "(" + Codigo + ") " + Tipo + "; " + Tecido + "; " + Marca + "; " + 
-                Tamanho + "; " + Cores;
+            return "(" + Codigo + ") " + Tipo + "; " + Tecido + "; " + Marca + "; " +
+                Tamanho + "; " + ToStringCores() + "; " + Observacao;
         }
     }
 
