@@ -44,6 +44,7 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
         private Usuario usuario;
         private string senha;
         private string nomeDeUsuario;
+        private PapelColaborador papel;
 
         public Colaborador(Session session) : base(session) { }
 
@@ -75,6 +76,15 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
             set
             {
                 SetPropertyValue("Pessoa", ref pessoa, value);
+            }
+        }
+
+        [RuleRequiredField("RuleRequiredField Colaborador.Papel", DefaultContexts.Save)]
+        public PapelColaborador Papel
+        {
+            get { return papel; }
+            set {
+                SetPropertyValue("Papel", ref papel, value);
             }
         }
 
@@ -261,6 +271,7 @@ CustomMessageTemplate = "Já existe uma pessoa com esse nome de usuário")]
             base.AfterConstruction();
             //Define o valor padrão da data de cadastro
             dataCadastro = System.DateTime.Now;
+            Papel = PacoteColaborador.PapelColaborador.Nivel1;
 
             Usuario = new Usuario(Session);
             Usuario.UserName = DateTime.Now.ToString();
@@ -270,8 +281,30 @@ CustomMessageTemplate = "Já existe uma pessoa com esse nome de usuário")]
         {
             this.DataUltimaAtualizacao = DateTime.Now;
 
-            Usuario.SetPassword(Senha);
-            Usuario.UserName = NomeDeUsuario;
+            if (Usuario != null)
+            {
+                Usuario.SetPassword(Senha);
+                Usuario.UserName = NomeDeUsuario;
+
+                TipoPapelLavanderia tipo = TipoPapelLavanderia.FuncionarioNivel1;
+
+                switch (Papel) {
+                    case PacoteColaborador.PapelColaborador.Nivel1: {
+                        tipo = TipoPapelLavanderia.FuncionarioNivel1;
+                    }; break;
+                    case PacoteColaborador.PapelColaborador.Nivel2:
+                    {
+                        tipo = TipoPapelLavanderia.FuncionarioNivel2;
+                    }; break;
+                    case PacoteColaborador.PapelColaborador.Gerente:
+                    {
+                        tipo = TipoPapelLavanderia.Gerente;
+                    }; break;
+                }
+
+                Papel papelEscolhido = ERP.Lavanderia.Module.PacoteSeguranca.Papel.RetornaPapel(tipo, Session);
+                Usuario.Roles.Add(papelEscolhido);
+            }
 
             base.OnSaving();
         }
@@ -384,6 +417,10 @@ CustomMessageTemplate = "Já existe uma pessoa com esse nome de usuário")]
         }
 
         #endregion
+    }
+
+    public enum PapelColaborador { 
+        Nivel1, Nivel2, Gerente
     }
 
 }

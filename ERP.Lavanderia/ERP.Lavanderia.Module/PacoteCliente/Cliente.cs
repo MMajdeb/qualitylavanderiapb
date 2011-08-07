@@ -161,8 +161,14 @@ CustomMessageTemplate = "Esta pessoa já está registrada como cliente.")]
         {
             this.DataUltimaAtualizacao = DateTime.Now;
 
-            Usuario.SetPassword(Senha);
-            Usuario.UserName = NomeDeUsuario;
+            if (Usuario != null)
+            {
+                Usuario.SetPassword(Senha);
+                Usuario.UserName = NomeDeUsuario;
+
+                Papel papel = Papel.RetornaPapel(TipoPapelLavanderia.Cliente, Session);
+                Usuario.Roles.Add(papel);
+            }
 
             base.OnSaving();
         }

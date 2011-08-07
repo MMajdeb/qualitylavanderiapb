@@ -456,7 +456,9 @@ namespace ERP.Lavanderia.Module
 
             #endregion
 
-            #region Cria usuario padrao
+            #region Cria papéis e usuario padrao
+            Papel.CriarPapeis(ObjectSpace.Session);
+            
             // If a user named 'Sam' doesn't exist in the database, create this user
             Usuario user1 = ObjectSpace.FindObject<Usuario>(new BinaryOperator("UserName", "Administrador"));
             if (user1 == null)
@@ -468,51 +470,9 @@ namespace ERP.Lavanderia.Module
                 // Set a password if the standard authentication type is used
                 user1.SetPassword("senha");
             }
-            // If a role with the Administrators name doesn't exist in the database, create this role
-            Papel adminRole = ObjectSpace.FindObject<Papel>(new BinaryOperator("Name", "Administradores"));
-            if (adminRole == null)
-            {
-                adminRole = new Papel(ObjectSpace.Session);
-                adminRole.Name = "Administradores";
-            }
-            // If a role with the Users name doesn't exist in the database, create this role
-            Papel userRole = ObjectSpace.FindObject<Papel>(new BinaryOperator("Name", "Usuários"));
-            if (userRole == null)
-            {
-                userRole = new Papel(ObjectSpace.Session);
-                userRole.Name = "Usuários";
-            }
-            // Delete all permissions assigned to the Administrators and Users roles
-            while (adminRole.PersistentPermissions.Count > 0)
-            {
-                ObjectSpace.Delete(adminRole.PersistentPermissions[0]);
-            }
-            while (userRole.PersistentPermissions.Count > 0)
-            {
-                ObjectSpace.Delete(userRole.PersistentPermissions[0]);
-            }
-            // Allow full access to all objects to the Administrators role
-            adminRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess));
-            // Deny editing access to the AuditDataItemPersistent type objects to the Administrators role
-            adminRole.AddPermission(new ObjectAccessPermission(typeof(AuditDataItemPersistent), ObjectAccess.ChangeAccess, ObjectAccessModifier.Deny));
-            // Allow editing the application model to the Administrators role
-            adminRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
-            // Save the Administrators role to the database
-            adminRole.Save();
-            // Allow full access to all objects to the Users role
-            userRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess));
-            // Deny editing access to the User type objects to the Users role
-            userRole.AddPermission(new ObjectAccessPermission(typeof(Usuario), ObjectAccess.ChangeAccess, ObjectAccessModifier.Deny));
-            // Deny full access to the Role type objects to the Users role
-            userRole.AddPermission(new ObjectAccessPermission(typeof(Papel), ObjectAccess.AllAccess, ObjectAccessModifier.Deny));
-            // Deny editing the application model to the Users role
-            userRole.AddPermission(new EditModelPermission(ModelAccessModifier.Deny));
-            // Nega acesso ao objeto Empresa
-            userRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Write, ObjectAccessModifier.Deny));
-            userRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Delete, ObjectAccessModifier.Deny));
-            userRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Create, ObjectAccessModifier.Deny));
-            // Save the Users role to the database
-            userRole.Save();
+
+            Papel adminRole = Papel.RetornaPapel(TipoPapelLavanderia.Administrador, ObjectSpace.Session);
+            
             // Add the Administrators role to the user1
             user1.Roles.Add(adminRole);
 
