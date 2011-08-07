@@ -16,6 +16,7 @@ using ERP.Lavanderia.Module.PacoteEmpresa;
 using ERP.Lavanderia.Module.PacoteCliente;
 using ERP.Lavanderia.Module.PacoteRoupa;
 using ERP.Lavanderia.Module.PacoteLavagem;
+using ERP.Lavanderia.Module.PacoteColaborador;
 
 namespace ERP.Lavanderia.Module.PacoteSeguranca
 {
@@ -154,6 +155,8 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
 
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Usuario), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Cliente), ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(PontoDeColeta), ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Colaborador), ObjectAccess.Read, ObjectAccessModifier.Allow));
             
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Roupa), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Roupa), ObjectAccess.Create, ObjectAccessModifier.Allow));
