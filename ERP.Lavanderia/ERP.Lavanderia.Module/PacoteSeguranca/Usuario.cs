@@ -160,7 +160,7 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
         {
             base.AfterConstruction();
 
-            this.ChangePasswordOnFirstLogon = true;
+            this.ChangePasswordOnFirstLogon = false;
             this.Configuracao = new ConfiguracaoUsuario(Session);
             IsActive = true;
         }

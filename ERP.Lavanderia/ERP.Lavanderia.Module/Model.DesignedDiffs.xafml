@@ -11,6 +11,7 @@
       <OwnMembers>
         <Member Name="DataCadastro" AllowEdit="False" />
         <Member Name="DataUltimaAtualizacao" AllowEdit="False" />
+        <Member Name="Senha" IsPassword="True" />
       </OwnMembers>
     </Class>
   </BOModel>
@@ -78,18 +79,4 @@
   <SchemaModules>
     <SchemaModule Name="SystemModule" Version="10.2.4.0" IsNewNode="True" />
   </SchemaModules>
-  <Views>
-    <DetailView Id="Colaborador_DetailView">
-      <Items>
-        <PropertyEditor Id="Usuario.ChangePasswordOnFirstLogon" Caption="Alterar senha no primeiro acesso" />
-        <PropertyEditor Id="Usuario.Configuracao" DataSourceCriteria="false" />
-        <PropertyEditor Id="Usuario.Departamentos" DataSourceCriteria="false" />
-        <PropertyEditor Id="Usuario.Empresas" DataSourceCriteria="false" />
-        <PropertyEditor Id="Usuario.IsActive" Caption="Ativo" />
-        <PropertyEditor Id="Usuario.Permissions" DataSourceCriteria="false" Caption="Permissões" />
-        <PropertyEditor Id="Usuario.Roles" Caption="Papéis" />
-        <PropertyEditor Id="Usuario.UserName" Caption="Nome de usuário" />
-      </Items>
-    </DetailView>
-  </Views>
 </Application>

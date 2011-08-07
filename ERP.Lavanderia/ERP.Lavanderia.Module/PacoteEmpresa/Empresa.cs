@@ -193,19 +193,21 @@ namespace ERP.Lavanderia.Module.PacoteEmpresa
         public static Empresa RetornaEmpresaAtiva(Session session)
         {
 
-            string empresaOid = "";
-            if (SelecaoEmpresaController.Instance() != null)
-                empresaOid = SelecaoEmpresaController.Instance().EmpresaPadraoOid;
+            //string empresaOid = "";
+            //if (SelecaoEmpresaController.Instance() != null)
+            //    empresaOid = SelecaoEmpresaController.Instance().EmpresaPadraoOid;
 
-            if (empresaOid != "")
-            {
-                Empresa empresa = session.FindObject<Empresa>(new BinaryOperator("Oid", empresaOid));
-                return empresa;
-            }
-            else
-            {
-                return null;
-            }
+            //if (empresaOid != "")
+            //{
+            //    Empresa empresa = session.FindObject<Empresa>(new BinaryOperator("Oid", empresaOid));
+            //    return empresa;
+            //}
+            //else
+            //{
+            //    return null;
+            //}
+
+            return RetornaEmpresa(session);
         }
         #endregion
 

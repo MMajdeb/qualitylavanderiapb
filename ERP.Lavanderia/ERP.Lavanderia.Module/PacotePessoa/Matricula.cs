@@ -50,6 +50,7 @@ namespace ERP.Lavanderia.Module.PacotePessoa
             set { SetPropertyValue("Situacao", ref situacao, value); }
         }
 
+        [Browsable(false)]
         [RuleRequiredField("RuleRequiredField.Matricula.Empresa", DefaultContexts.Save)]
         [ExpandObjectMembers(ExpandObjectMembers.Never)]
         public Empresa Empresa
@@ -62,6 +63,7 @@ namespace ERP.Lavanderia.Module.PacotePessoa
             }
         }
 
+        [Browsable(false)]
         [NoForeignKey]
         public Colaborador Colaborador
         {
@@ -75,6 +77,7 @@ namespace ERP.Lavanderia.Module.PacotePessoa
             }
         }
 
+        [Browsable(false)]
         [NonPersistent]
         public Pessoa Pessoa
         {
