@@ -43,6 +43,7 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
         private DateTime? dataDemissao;
         private Usuario usuario;
         private string senha;
+        private string nomeDeUsuario;
 
         public Colaborador(Session session) : base(session) { }
 
@@ -108,6 +109,16 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
             get { return senha; }
             set {
                 SetPropertyValue("Senha", ref senha, value);
+            }
+        }
+
+        [RuleRequiredField("Colaborador.RuleRequiredField.NomeDeUsuario", DefaultContexts.Save)]
+        public string NomeDeUsuario
+        {
+            get { return nomeDeUsuario; }
+            set
+            {
+                SetPropertyValue("NomeDeUsuario", ref nomeDeUsuario, value);
             }
         }
 
@@ -201,7 +212,7 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
             set { SetPropertyValue("DataDemissao", ref dataDemissao, value); }
         }
 
-        [ExpandObjectMembers(ExpandObjectMembers.Always)]
+        [Browsable(false)]
         [RuleUniqueValue("Colaborador.Usuario", DefaultContexts.Save, @"""Usuário"" já cadastrada a outro colaborador.")]
         [RuleRequiredField("Colaborador.RuleRequiredField.Usuario", DefaultContexts.Save)]
         public Usuario Usuario
@@ -237,15 +248,19 @@ namespace ERP.Lavanderia.Module.PacoteColaborador
             base.AfterConstruction();
             //Define o valor padrão da data de cadastro
             dataCadastro = System.DateTime.Now;
+
+            Usuario = new Usuario(Session);
+            Usuario.UserName = DateTime.Now.ToString();
         }
 
         protected override void OnSaving()
         {
             this.DataUltimaAtualizacao = DateTime.Now;
 
-            base.OnSaving();
-
             Usuario.SetPassword(Senha);
+            Usuario.UserName = NomeDeUsuario;
+
+            base.OnSaving();
         }
 
         [NonPersistent, Browsable(false)]

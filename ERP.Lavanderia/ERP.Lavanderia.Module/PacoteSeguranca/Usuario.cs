@@ -162,6 +162,7 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
 
             this.ChangePasswordOnFirstLogon = true;
             this.Configuracao = new ConfiguracaoUsuario(Session);
+            IsActive = true;
         }
 
         [RuleFromBoolProperty("Usuario.RuleFromBoolProperty.ValidaDeletar", DefaultContexts.Delete,
