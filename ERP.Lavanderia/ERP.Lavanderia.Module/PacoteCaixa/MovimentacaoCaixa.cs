@@ -8,6 +8,7 @@ using DevExpress.ExpressApp;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using ERP.Lavanderia.Module.PacoteColaborador;
 
 namespace ERP.Lavanderia.Module.PacoteCaixa
 {
@@ -79,6 +80,13 @@ namespace ERP.Lavanderia.Module.PacoteCaixa
         {
             get { return observacoes; }
             set { SetPropertyValue("Observacoes", ref observacoes, value); }
+        }
+
+        [Browsable(false)]
+        [Association("Colaborador-MovimentacaoCaixa", typeof(Colaborador))]
+        public XPCollection Colaboradores
+        {
+            get { return GetCollection("Colaboradores"); }
         }
 
         [Browsable(false)]

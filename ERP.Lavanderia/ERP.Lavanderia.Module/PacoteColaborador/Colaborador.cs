@@ -19,6 +19,7 @@ using ERP.Lavanderia.Module.PacoteRecursosHumanos;
 using ERP.Lavanderia.Module.PacoteEmpresa;
 using ERP.Lavanderia.Module.PacoteGeral;
 using ERP.Lavanderia.Module.PacoteSeguranca;
+using ERP.Lavanderia.Module.PacoteCaixa;
 
 namespace ERP.Lavanderia.Module.PacoteColaborador
 {
@@ -242,6 +243,12 @@ CustomMessageTemplate = "Já existe uma pessoa com esse nome de usuário")]
 
                 return user == null || user.Equals(Usuario);
             }
+        }
+
+        [Association("Colaborador-MovimentacaoCaixa")]
+        public XPCollection<MovimentacaoCaixa> Pagamentos
+        {
+            get { return GetCollection<MovimentacaoCaixa>("Pagamentos"); }
         }
 
         #region Modulo Auditoria
