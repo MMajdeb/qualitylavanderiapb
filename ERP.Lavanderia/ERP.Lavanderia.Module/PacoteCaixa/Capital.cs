@@ -11,12 +11,13 @@ using DevExpress.Persistent.Validation;
 
 namespace ERP.Lavanderia.Module.PacoteCaixa
 {
+    [DefaultProperty("Descricao")]
     [DefaultClassOptions]
-    public class TipoMovimentacao : BaseObject
+    public class Capital : BaseObject
     {
         private string descricao;
 
-        public TipoMovimentacao(Session session)
+        public Capital(Session session)
             : base(session)
         {
             // This constructor is used when an object is loaded from a persistent storage.
@@ -32,8 +33,8 @@ namespace ERP.Lavanderia.Module.PacoteCaixa
             // Place here your initialization code.
         }
 
-        [RuleRequiredField("RuleRequiredField TipoMovimentacao.Nome", DefaultContexts.Save)]
-        [RuleUniqueValue("TipoMovimentacao.DescricaoUnica", DefaultContexts.Save, @"""Descrição"" já existe.")]
+        [RuleRequiredField("RuleRequiredField Capital.Nome", DefaultContexts.Save)]
+        [RuleUniqueValue("Capital.DescricaoUnica", DefaultContexts.Save, @"""Descrição"" já existe.")]
         public string Descricao
         {
             get { return descricao; }

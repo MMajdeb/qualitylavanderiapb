@@ -11,6 +11,7 @@ using DevExpress.Persistent.Validation;
 
 namespace ERP.Lavanderia.Module.PacoteCaixa
 {
+    [DefaultProperty("Nome")]
     [DefaultClassOptions]
     public class Caixa : BaseObject
     {

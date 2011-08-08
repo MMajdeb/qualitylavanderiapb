@@ -11,13 +11,16 @@ using DevExpress.Persistent.Validation;
 
 namespace ERP.Lavanderia.Module.PacoteCaixa
 {
+    [DefaultProperty("ToStringProperty")]
     [DefaultClassOptions]
     public class MovimentacaoCaixa : BaseObject
     {
         private DateTime data;
         private string observacoes;
         private Modo modo;
-        private TipoMovimentacao tipoMovimentacao;
+        private Capital capital;
+        private Caixa caixa;
+        private TipoMovimentacao tipo;
 
         public MovimentacaoCaixa(Session session)
             : base(session)
@@ -33,6 +36,64 @@ namespace ERP.Lavanderia.Module.PacoteCaixa
         {
             base.AfterConstruction();
             // Place here your initialization code.
+
+            Data = DateTime.Now;
+        }
+
+        [RuleRequiredField("RuleRequiredField MovimentacaoCaixa.Caixa", DefaultContexts.Save)]
+        public Caixa Caixa
+        {
+            get { return caixa; }
+            set { SetPropertyValue("Caixa", ref caixa, value); }
+        }
+
+        [RuleRequiredField("RuleRequiredField MovimentacaoCaixa.Data", DefaultContexts.Save)]
+        public DateTime Data
+        {
+            get { return data; }
+            set { SetPropertyValue("Data", ref data, value); }
+        }
+
+        [RuleRequiredField("RuleRequiredField MovimentacaoCaixa.Modo", DefaultContexts.Save)]
+        public Modo Modo
+        {
+            get { return modo; }
+            set { SetPropertyValue("Modo", ref modo, value); }
+        }
+
+        [RuleRequiredField("RuleRequiredField MovimentacaoCaixa.Tipo", DefaultContexts.Save)]
+        public TipoMovimentacao Tipo
+        {
+            get { return tipo; }
+            set { SetPropertyValue("Tipo", ref tipo, value); }
+        }
+
+        [RuleRequiredField("RuleRequiredField MovimentacaoCaixa.Capital", DefaultContexts.Save)]
+        public Capital Capital
+        {
+            get { return capital; }
+            set { SetPropertyValue("Capital", ref capital, value); }
+        }
+
+        public string Observacoes
+        {
+            get { return observacoes; }
+            set { SetPropertyValue("Observacoes", ref observacoes, value); }
+        }
+
+        [Browsable(false)]
+        [NonPersistent]
+        public string ToStringProperty {
+            get {
+                try
+                {
+                    return "(" + Caixa.Nome + ") " + Data + "; " + Modo + ";" +
+                        Tipo + "; " + Capital + "; " + Observacoes;
+                }
+                catch {
+                    return "Não foi possível exibir a descrição";
+                }
+            }
         }
     }
 

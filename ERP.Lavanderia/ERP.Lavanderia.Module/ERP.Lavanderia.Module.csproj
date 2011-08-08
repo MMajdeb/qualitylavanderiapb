@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="PacoteCaixa\Caixa.cs" />
     <Compile Include="PacoteCaixa\MovimentacaoCaixa.cs" />
+    <Compile Include="PacoteCaixa\Capital.cs" />
     <Compile Include="PacoteCaixa\TipoMovimentacao.cs" />
     <Compile Include="PacoteCliente\Cliente.cs" />
     <Compile Include="PacoteColaborador\Colaborador.cs" />
