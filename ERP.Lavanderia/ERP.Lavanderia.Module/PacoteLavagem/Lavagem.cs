@@ -15,6 +15,7 @@ using ERP.Lavanderia.Module.PacoteCaixa;
 
 namespace ERP.Lavanderia.Module.PacoteLavagem
 {
+    [DefaultProperty("ToStringProperty")]
     [DefaultClassOptions]
     public class Lavagem : BaseObject
     {
@@ -200,6 +201,24 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
                 }
 
                 return true;
+            }
+        }
+
+        [Browsable(false)]
+        [NonPersistent]
+        public string ToStringProperty
+        {
+            get
+            {
+                try
+                {
+                    string pago = MovimentacaoCaixa != null ? "Pago" : "Não pago";
+                    return "(" + DataHoraDeRecebimento + ") " + Cliente.Pessoa.Nome +"; " + pago;
+                }
+                catch
+                {
+                    return "Não foi possível exibir a descrição";
+                }
             }
         }
     }
