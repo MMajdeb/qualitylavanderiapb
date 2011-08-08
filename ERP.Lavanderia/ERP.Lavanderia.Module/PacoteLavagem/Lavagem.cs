@@ -11,6 +11,7 @@ using DevExpress.Persistent.Validation;
 using ERP.Lavanderia.Module.PacoteCliente;
 using ERP.Lavanderia.Module.PacoteEmpresa;
 using ERP.Lavanderia.Module.PacoteColaborador;
+using ERP.Lavanderia.Module.PacoteCaixa;
 
 namespace ERP.Lavanderia.Module.PacoteLavagem
 {
@@ -30,6 +31,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
         private PontoDeColeta pontoDeColetaDeRecebimento;
         private PontoDeColeta pontoDeColetaParaEntrega;
         private decimal valor;
+        private MovimentacaoCaixa movimentacaoCaixa;
 
         public Lavagem(Session session)
             : base(session)
@@ -170,6 +172,13 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
         public XPCollection<RoupaLavagem> Roupas
         {
             get { return GetCollection<RoupaLavagem>("Roupas"); }
+        }
+
+        [RuleUniqueValue("Lavagem.MovimentacaoCaixa", DefaultContexts.Save, @"""Movimentação"" já associada a outra lavagem ou entidade.")]
+        public MovimentacaoCaixa MovimentacaoCaixa
+        {
+            get { return movimentacaoCaixa; }
+            set { SetPropertyValue("MovimentacaoCaixa", ref movimentacaoCaixa, value); }
         }
 
         [NonPersistent]

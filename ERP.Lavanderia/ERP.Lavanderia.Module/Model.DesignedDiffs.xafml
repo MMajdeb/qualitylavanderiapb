@@ -56,6 +56,14 @@
           <Item Id="Empresa_ListView" IsNewNode="True" ObjectKey="" ViewId="Empresa_DetailView" />
         </Items>
       </Item>
+      <Item Id="@a49e0482-a006-40f1-abb2-67a167b4fc43" IsNewNode="True" Caption="Financeiro">
+        <Items IsNewNode="True">
+          <Item Id="@e0e4f796-7b3a-4f22-9e51-6f839a0703f2" IsNewNode="True" ViewId="Caixa_ListView" Index="0" />
+          <Item Id="@2ea5289d-d76d-4983-bc19-dda4a286296a" IsNewNode="True" ViewId="MovimentacaoCaixa_ListView" Index="1" />
+          <Item Id="@c25347ed-6d16-4e19-8f3e-7c106ba63eac" IsNewNode="True" ViewId="Capital_ListView" />
+          <Item Id="@cbffb209-6cc9-499f-bec3-2b2bc3b28d3d" IsNewNode="True" ViewId="TipoMovimentacao_ListView" />
+        </Items>
+      </Item>
       <Item Id="Default" Removed="True">
         <Items>
           <Item Id="Colaborador_ListView" Removed="True" />
