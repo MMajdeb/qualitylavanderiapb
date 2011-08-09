@@ -495,6 +495,8 @@ namespace ERP.Lavanderia.Module
                 cfgGeral.DiaMensagemAniversario = 0;
                 cfgGeral.MensagemAniversario = "";
 
+                cfgGeral.DiasParaEntrega = 2;
+
                 cfgGeral.Save();
             }
 

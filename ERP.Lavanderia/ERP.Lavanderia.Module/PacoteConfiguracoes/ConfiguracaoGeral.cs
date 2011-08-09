@@ -8,6 +8,7 @@ using DevExpress.ExpressApp;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using ERP.Lavanderia.Module.PacoteEmpresa;
 
 namespace ERP.Lavanderia.Module.PacoteConfiguracoes
 {
@@ -26,6 +27,9 @@ namespace ERP.Lavanderia.Module.PacoteConfiguracoes
         private DiaMensagemFelicitacao diaMensagemAniversario;
 
         private string emailAlerta;
+
+        private int diasParaEntrega;
+        private PontoDeColeta pontoDeColetaPadrao;
 
         public ConfiguracaoGeral(Session session) : base(session) { }
 
@@ -91,9 +95,32 @@ namespace ERP.Lavanderia.Module.PacoteConfiguracoes
                 return null;
         }
 
+        public int DiasParaEntrega
+        {
+            get { return diasParaEntrega; }
+            set { SetPropertyValue("DiasParaEntrega", ref diasParaEntrega, value); }
+        }
+
+        public PontoDeColeta PontoDeColetaPadrao
+        {
+            get { return pontoDeColetaPadrao; }
+            set { SetPropertyValue("PontoDeColetaPadrao", ref pontoDeColetaPadrao, value); }
+        }
+
         public override void AfterConstruction()
         {
             base.AfterConstruction();
+        }
+
+        [NonPersistent]
+        [System.ComponentModel.Browsable(false)]
+        [RuleFromBoolProperty("ConfiguracaoGeral.DiasParaEntregaMaiorOuIgualAZero", DefaultContexts.Save, @"""Dias para a entrega"" deve ser maior ou igual a zero.")]
+        public bool DiasParaEntregaMaiorOuIgualAZero
+        {
+            get
+            {
+                return DiasParaEntrega >= 0;
+            }
         }
 
     }

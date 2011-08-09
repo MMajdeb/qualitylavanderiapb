@@ -168,7 +168,8 @@ namespace ERP.Lavanderia.Module.PacoteMaterial
                 return changeHistory;
             }
         }
-        #endregion
+        #endregion
+
     }
 
     public enum Modo
