@@ -1,5 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="ERP.Lavanderia" Logo="ExpressAppLogo">
+  <ActionDesign>
+    <Actions>
+      <Action Id="About Info" Caption="Sobre..." />
+      <Action Id="Cancel" Caption="Cancelar" />
+      <Action Id="ChangePasswordByUser" Caption="Modificar minha senha" />
+      <Action Id="CreateDashboard" Caption="Criar painel" />
+      <Action Id="Delete" Caption="Deletar" />
+      <Action Id="Delete Item" Caption="Deletar Ítem" />
+      <Action Id="Diagnostic Info" Caption="Diagnostico" />
+      <Action Id="DialogCancel" Caption="Cancelar" />
+      <Action Id="FullTextSearch" Caption="Filtrado por texto" />
+      <Action Id="HideItemsFromDashboard" Caption="Esconder do painel" />
+      <Action Id="Link" Caption="Associar" />
+      <Action Id="ListViewShowObject" Caption="Abrir" />
+      <Action Id="Logon" Caption="Autenticar" />
+      <Action Id="MyDetails" Caption="Meus Dados" />
+      <Action Id="NavigateBack" Caption="Voltar" />
+      <Action Id="NavigateForward" Caption="Avançar" />
+      <Action Id="New" Caption="Novo" />
+      <Action Id="NextObject" Caption="Novo Objeto" />
+      <Action Id="OrganizeDashboard" Caption="Organizar Painel" />
+      <Action Id="PreviousObject" Caption="Objeto Anterior" />
+      <Action Id="Refresh" Caption="Atualizar" />
+      <Action Id="ResetPassword" Caption="Resetar Senha" />
+      <Action Id="Save" Caption="Salvar" />
+      <Action Id="SaveAndClose" Caption="Salvar e Fechar" />
+      <Action Id="SaveAndNew" Caption="Salvar e Novo" />
+      <Action Id="SetFilter" Caption="Aplicar Filtro" />
+      <Action Id="ShowItemsOnDashboard" Caption="Exibir ítens no Painel" />
+      <Action Id="ShowNavigationItem" Caption="Navegação" />
+      <Action Id="Unlink" Caption="Deassociar" />
+    </Actions>
+  </ActionDesign>
   <BOModel>
     <Class Name="ERP.Lavanderia.Module.PacoteCliente.Cliente">
       <OwnMembers>
@@ -22,6 +55,12 @@
     <Class Name="ERP.Lavanderia.Module.PacoteMaterial.MovimentacaoMaterial">
       <OwnMembers>
         <Member Name="Colaborador" AllowEdit="True" />
+      </OwnMembers>
+    </Class>
+    <Class Name="ERP.Lavanderia.Module.PacoteSeguranca.ParametrosLogon" Caption="Painel Quality Lavanderia">
+      <OwnMembers>
+        <Member Name="Password" Caption="Senha" />
+        <Member Name="UserName" Caption="Usuário" />
       </OwnMembers>
     </Class>
   </BOModel>
