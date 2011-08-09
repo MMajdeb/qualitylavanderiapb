@@ -35,6 +35,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
         private PontoDeColeta pontoDeColetaParaEntrega;
         private decimal valor;
         private MovimentacaoCaixa movimentacaoCaixa;
+        private StatusLavagem statusLavagem;
 
         public Lavagem(Session session)
             : base(session)
@@ -64,6 +65,8 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             PontoDeColetaParaEntrega = cfg.PontoDeColetaPadrao;
 
             Anotador = Colaborador.RetornaColaboradorLogado(Session);
+
+            StatusLavagem = StatusLavagem.Anotada;
         }
 
         [RuleRequiredField("RuleRequiredField Lavagem.Cliente", DefaultContexts.Save)]
@@ -198,6 +201,13 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             set { SetPropertyValue("MovimentacaoCaixa", ref movimentacaoCaixa, value); }
         }
 
+        [RuleRequiredField("RuleRequiredField Lavagem.StatusLavagem", DefaultContexts.Save)]
+        public StatusLavagem StatusLavagem
+        {
+            get { return statusLavagem; }
+            set { SetPropertyValue("StatusLavagem", ref statusLavagem, value); }
+        }
+
         [NonPersistent]
         [System.ComponentModel.Browsable(false)]
         [RuleFromBoolProperty("RuleFromBoolProperty Lavagem.ValidaRoupasDoCliente", DefaultContexts.Save, @"Você cadastrou roupas que não são desse cliente.")]
@@ -237,6 +247,10 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
                 }
             }
         }
+    }
+
+    public enum StatusLavagem { 
+        Anotada, Lavando, Passando, Pronta
     }
 
 }
