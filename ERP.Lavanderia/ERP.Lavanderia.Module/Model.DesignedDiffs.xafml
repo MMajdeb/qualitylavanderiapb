@@ -155,6 +155,44 @@
     <SchemaModule Name="SystemModule" Version="10.2.4.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <ListView Id="Cliente_ListView">
+      <Columns>
+        <ColumnInfo Id="Pessoa.Nome" Index="0" />
+        <ColumnInfo Id="@2f39d006-89a4-4979-a678-879a778c020d" IsNewNode="True" PropertyName="Pessoa.EnderecoPrincipal" />
+        <ColumnInfo Id="@e306f5b6-89ac-490a-b7e6-191d8aef525d" IsNewNode="True" PropertyName="Pessoa.TelefoneConvencional1" Caption="Telefone Convencional" />
+        <ColumnInfo Id="DataCadastro" Removed="True" />
+        <ColumnInfo Id="DataUltimaAtualizacao" Removed="True" />
+        <ColumnInfo Id="NomeDeUsuario" Removed="True" />
+        <ColumnInfo Id="Observacoes" Removed="True" />
+        <ColumnInfo Id="Pessoa.Cei" Removed="True" />
+        <ColumnInfo Id="Pessoa.CpfCnpj" Removed="True" />
+        <ColumnInfo Id="Pessoa.DataAbertura" Removed="True" />
+        <ColumnInfo Id="Pessoa.DataNascimento" Removed="True" />
+        <ColumnInfo Id="Pessoa.Email" Removed="True" />
+        <ColumnInfo Id="Pessoa.Email2" Removed="True" />
+        <ColumnInfo Id="Pessoa.EnderecoIm" Removed="True" />
+        <ColumnInfo Id="Pessoa.EnderecoPrincipal" Removed="True" />
+        <ColumnInfo Id="Pessoa.EnderecoWeb" Removed="True" />
+        <ColumnInfo Id="Pessoa.EstadoCivil" Removed="True" />
+        <ColumnInfo Id="Pessoa.Fax" Removed="True" />
+        <ColumnInfo Id="Pessoa.Imagem" Removed="True" />
+        <ColumnInfo Id="Pessoa.InscricaoEstadual" Removed="True" />
+        <ColumnInfo Id="Pessoa.InscricaoMunicipal" Removed="True" />
+        <ColumnInfo Id="Pessoa.NomeFantasia" Removed="True" />
+        <ColumnInfo Id="Pessoa.NomeMae" Removed="True" />
+        <ColumnInfo Id="Pessoa.NomePai" Removed="True" />
+        <ColumnInfo Id="Pessoa.OrgaoExpeditorRg" Removed="True" />
+        <ColumnInfo Id="Pessoa.Pis" Removed="True" />
+        <ColumnInfo Id="Pessoa.Profissao" Removed="True" />
+        <ColumnInfo Id="Pessoa.Rg" Removed="True" />
+        <ColumnInfo Id="Pessoa.Sexo" Removed="True" />
+        <ColumnInfo Id="Pessoa.TelefoneConvencional1" Removed="True" />
+        <ColumnInfo Id="Pessoa.TelefoneConvencional2" Removed="True" />
+        <ColumnInfo Id="Pessoa.TelefoneMovel" Removed="True" />
+        <ColumnInfo Id="Pessoa.TipoPessoa" Removed="True" />
+        <ColumnInfo Id="Senha" Removed="True" />
+      </Columns>
+    </ListView>
     <ListView Id="Lavagem_ListView">
       <Columns>
         <ColumnInfo Id="DataHoraPreferivelParaEntrega" SortIndex="0" GroupIndex="-1" SortOrder="Descending" />
