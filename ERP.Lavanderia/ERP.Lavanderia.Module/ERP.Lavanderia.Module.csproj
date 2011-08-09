@@ -127,7 +127,6 @@
     <Compile Include="PacoteGeral\Feriado.cs" />
     <Compile Include="PacoteLavagem\Lavagem.cs" />
     <Compile Include="PacoteLavagem\RoupaLavagem.cs" />
-    <Compile Include="PacoteMaterial\DescricaoMovimentacaoMaterial.cs" />
     <Compile Include="PacoteMaterial\Material.cs" />
     <Compile Include="PacoteMaterial\MovimentacaoMaterial.cs" />
     <Compile Include="PacotePessoa\Matricula.cs" />

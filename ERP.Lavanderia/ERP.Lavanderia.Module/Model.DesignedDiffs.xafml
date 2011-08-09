@@ -14,6 +14,16 @@
         <Member Name="Senha" IsPassword="True" />
       </OwnMembers>
     </Class>
+    <Class Name="ERP.Lavanderia.Module.PacoteMaterial.Material">
+      <OwnMembers>
+        <Member Name="QuantidadeEmCaixa" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
+    <Class Name="ERP.Lavanderia.Module.PacoteMaterial.MovimentacaoMaterial">
+      <OwnMembers>
+        <Member Name="Colaborador" AllowEdit="True" />
+      </OwnMembers>
+    </Class>
   </BOModel>
   <NavigationItems>
     <Items>
@@ -62,6 +72,13 @@
           <Item Id="@2ea5289d-d76d-4983-bc19-dda4a286296a" IsNewNode="True" ViewId="MovimentacaoCaixa_ListView" Index="1" />
           <Item Id="@c25347ed-6d16-4e19-8f3e-7c106ba63eac" IsNewNode="True" ViewId="Capital_ListView" />
           <Item Id="@cbffb209-6cc9-499f-bec3-2b2bc3b28d3d" IsNewNode="True" ViewId="TipoMovimentacao_ListView" />
+        </Items>
+      </Item>
+      <Item Id="@b71686eb-72af-42e6-8b82-16dc7406bdc4" IsNewNode="True" Caption="Material">
+        <Items IsNewNode="True">
+          <Item Id="@7a712e6e-5aee-4265-85ae-68df0ae113d0" IsNewNode="True" ViewId="Material_ListView" Index="0" />
+          <Item Id="@41228d2f-dd74-41ae-b62e-9e9f5f3d937c" IsNewNode="True" ViewId="MovimentacaoMaterial_ListView" Index="1" />
+          <Item Id="@9d7ebcb1-d748-4496-ad4b-2bb0780289ee" IsNewNode="True" ViewId="DescricaoMovimentacaoMaterial_ListView" Index="2" />
         </Items>
       </Item>
       <Item Id="Default" Removed="True">

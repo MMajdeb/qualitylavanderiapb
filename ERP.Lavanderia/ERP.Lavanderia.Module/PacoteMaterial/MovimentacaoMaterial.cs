@@ -9,6 +9,8 @@ using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using ERP.Lavanderia.Module.PacoteColaborador;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace ERP.Lavanderia.Module.PacoteMaterial
 {
@@ -49,7 +51,7 @@ namespace ERP.Lavanderia.Module.PacoteMaterial
             set { SetPropertyValue("Colaborador", ref colaborador, value); }
         }
 
-        [Association("Material-MovimentacaoMaterial", typeof(Material)), Aggregated]
+        [Association("Material-MovimentacaoMaterial", typeof(Material))]
         [RuleRequiredField("RuleRequiredField MovimentacaoMaterial.Material", DefaultContexts.Save)]
         public Material Material
         {
@@ -103,6 +105,10 @@ namespace ERP.Lavanderia.Module.PacoteMaterial
         {
             get
             {
+                if (Material == null) {
+                    return true;
+                }
+
                 return Modo == Modo.Entrada || Material.QuantidadeEmCaixa - Quantidade >= 0;
             }
         }
@@ -140,7 +146,29 @@ namespace ERP.Lavanderia.Module.PacoteMaterial
             catch {
                 return "Não foi possível exibir a descrição";
             }
-        }
+        }
+
+        #region Modulo Auditoria
+        //Módulo de auditoria
+        private ReadOnlyCollection<AuditDataItemPersistent> changeHistory;
+        public ReadOnlyCollection<AuditDataItemPersistent> ChangeHistory
+        {
+            get
+            {
+                if (changeHistory == null)
+                {
+                    IList<AuditDataItemPersistent> sourceCollection;
+                    sourceCollection = AuditedObjectWeakReference.GetAuditTrail(Session, this);
+                    if (sourceCollection == null)
+                    {
+                        sourceCollection = new List<AuditDataItemPersistent>();
+                    }
+                    changeHistory = new ReadOnlyCollection<AuditDataItemPersistent>(sourceCollection);
+                }
+                return changeHistory;
+            }
+        }
+        #endregion
     }
 
     public enum Modo

@@ -10,6 +10,8 @@ using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using System.Collections;
 using DevExpress.Xpo.Metadata;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace ERP.Lavanderia.Module.PacoteMaterial
 {
@@ -66,7 +68,7 @@ namespace ERP.Lavanderia.Module.PacoteMaterial
             }
         }
 
-        [Association("Material-MovimentacaoMaterial", typeof(MovimentacaoMaterial)), Aggregated]
+        [Association("Material-MovimentacaoMaterial", typeof(MovimentacaoMaterial))]
         public XPCollection Movimentacoes
         {
             get
@@ -104,6 +106,28 @@ namespace ERP.Lavanderia.Module.PacoteMaterial
                 return true;
             }
         }
+
+        #region Modulo Auditoria
+        //Módulo de auditoria
+        private ReadOnlyCollection<AuditDataItemPersistent> changeHistory;
+        public ReadOnlyCollection<AuditDataItemPersistent> ChangeHistory
+        {
+            get
+            {
+                if (changeHistory == null)
+                {
+                    IList<AuditDataItemPersistent> sourceCollection;
+                    sourceCollection = AuditedObjectWeakReference.GetAuditTrail(Session, this);
+                    if (sourceCollection == null)
+                    {
+                        sourceCollection = new List<AuditDataItemPersistent>();
+                    }
+                    changeHistory = new ReadOnlyCollection<AuditDataItemPersistent>(sourceCollection);
+                }
+                return changeHistory;
+            }
+        }
+        #endregion
     }
 
 }
