@@ -29,10 +29,11 @@
     <Items>
       <Item Id="@0965f345-89fb-495a-9613-d3b2e8b021af" IsNewNode="True" Caption="Principal" Index="0">
         <Items IsNewNode="True">
-          <Item Id="@6886f621-b409-4eec-b890-0a735ef1f63c" IsNewNode="True" ViewId="Cliente_ListView" Index="0" />
-          <Item Id="@76e5c9cd-62d2-4a0e-8372-b0db94be68a6" IsNewNode="True" ViewId="Roupa_ListView" Index="1" />
+          <Item Id="@298ecde2-398e-4bf4-a5bb-fb585a606284" IsNewNode="True" ViewId="Lavagem_ListView" Caption="Início" Index="0" />
+          <Item Id="@6886f621-b409-4eec-b890-0a735ef1f63c" IsNewNode="True" ViewId="Cliente_ListView" Index="1" />
           <Item Id="@2ef41e69-a4db-4525-9d91-01af34bbb0c1" IsNewNode="True" ViewId="Lavagem_ListView" Index="2" />
           <Item Id="Colaborador_ListView" IsNewNode="True" ViewId="Colaborador_ListView" ObjectKey="" Index="3" />
+          <Item Id="@76e5c9cd-62d2-4a0e-8372-b0db94be68a6" IsNewNode="True" ViewId="Roupa_ListView" Index="4" />
         </Items>
       </Item>
       <Item Id="@5ddb1863-5d64-428d-8976-5d64fa247473" IsNewNode="True" Caption="Geral" Index="1">
@@ -105,7 +106,9 @@
     <SchemaModule Name="SystemModule" Version="10.2.4.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
-    <ListView Id="Lavagem_Roupas_ListView" MasterDetailMode="ListViewOnly" />
+    <ListView Id="Lavagem_Roupas_ListView" MasterDetailMode="ListViewOnly">
+      <Sorting Index="8" />
+    </ListView>
     <ListView Id="Material_Movimentacoes_ListView" AllowNew="False" AllowDelete="False" />
     <ListView Id="RoupaLavagem_LookupListView" Criteria="Lavagem is null" />
   </Views>
