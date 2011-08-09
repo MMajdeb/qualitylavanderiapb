@@ -269,6 +269,28 @@
       </Columns>
     </ListView>
     <ListView Id="Material_Movimentacoes_ListView" AllowNew="False" AllowDelete="False" />
+    <ListView Id="Pessoa_ListView">
+      <Columns>
+        <ColumnInfo Id="Cei" Removed="True" />
+        <ColumnInfo Id="DataAbertura" Removed="True" />
+        <ColumnInfo Id="DataNascimento" Removed="True" />
+        <ColumnInfo Id="Email2" Removed="True" />
+        <ColumnInfo Id="EnderecoIm" Removed="True" />
+        <ColumnInfo Id="EstadoCivil" Removed="True" />
+        <ColumnInfo Id="Fax" Removed="True" />
+        <ColumnInfo Id="Imagem" Removed="True" />
+        <ColumnInfo Id="InscricaoEstadual" Removed="True" />
+        <ColumnInfo Id="InscricaoMunicipal" Removed="True" />
+        <ColumnInfo Id="NomeFantasia" Removed="True" />
+        <ColumnInfo Id="NomeMae" Removed="True" />
+        <ColumnInfo Id="NomePai" Removed="True" />
+        <ColumnInfo Id="OrgaoExpeditorRg" Removed="True" />
+        <ColumnInfo Id="Pis" Removed="True" />
+        <ColumnInfo Id="Sexo" Removed="True" />
+        <ColumnInfo Id="TelefoneConvencional2" Removed="True" />
+        <ColumnInfo Id="TelefoneMovel" Removed="True" />
+      </Columns>
+    </ListView>
     <ListView Id="RoupaLavagem_LookupListView" Criteria="Lavagem is null" />
   </Views>
 </Application>
