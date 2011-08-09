@@ -155,6 +155,11 @@
     <SchemaModule Name="SystemModule" Version="10.2.4.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <ListView Id="Lavagem_ListView">
+      <Columns>
+        <ColumnInfo Id="DataHoraPreferivelParaEntrega" SortIndex="0" GroupIndex="-1" SortOrder="Descending" />
+      </Columns>
+    </ListView>
     <ListView Id="Lavagem_Roupas_ListView" MasterDetailMode="ListViewOnly">
       <Sorting Index="8" />
     </ListView>
@@ -164,7 +169,7 @@
         <ColumnInfo Id="Cliente" IsNewNode="True" PropertyName="Cliente" Width="70" />
         <ColumnInfo Id="DataHoraDeRecebimento" IsNewNode="True" PropertyName="DataHoraDeRecebimento" Width="70" />
         <ColumnInfo Id="DataHoraEntrega" IsNewNode="True" PropertyName="DataHoraEntrega" Width="70" />
-        <ColumnInfo Id="DataHoraPreferivelParaEntrega" IsNewNode="True" PropertyName="DataHoraPreferivelParaEntrega" Width="70" />
+        <ColumnInfo Id="DataHoraPreferivelParaEntrega" IsNewNode="True" PropertyName="DataHoraPreferivelParaEntrega" Width="70" SortIndex="0" SortOrder="Descending" />
         <ColumnInfo Id="Entregador" IsNewNode="True" PropertyName="Entregador" Width="70" />
         <ColumnInfo Id="EntregaEmCasa" IsNewNode="True" PropertyName="EntregaEmCasa" Width="50" />
         <ColumnInfo Id="Lavador" IsNewNode="True" PropertyName="Lavador" Width="70" />
