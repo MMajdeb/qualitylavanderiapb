@@ -110,6 +110,12 @@
     <Compile Include="PacoteControladoress\ControladoresEmpresa\SelecaoEmpresaController.Designer.cs">
       <DependentUpon>SelecaoEmpresaController.cs</DependentUpon>
     </Compile>
+    <Compile Include="PacoteControladoress\ControladoresLavagem\LavagensDoDiaViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PacoteControladoress\ControladoresLavagem\LavagensDoDiaViewController.Designer.cs">
+      <DependentUpon>LavagensDoDiaViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="PacoteEmpresa\Departamento.cs" />
     <Compile Include="PacoteEmpresa\Empresa.cs" />
     <Compile Include="PacoteEmpresa\PontoDeColeta.cs" />
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PacoteControladoress\ControladoresEmpresa\SelecaoEmpresaController.resx">
       <DependentUpon>SelecaoEmpresaController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PacoteControladoress\ControladoresLavagem\LavagensDoDiaViewController.resx">
+      <DependentUpon>LavagensDoDiaViewController.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
