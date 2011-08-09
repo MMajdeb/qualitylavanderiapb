@@ -104,4 +104,7 @@
   <SchemaModules>
     <SchemaModule Name="SystemModule" Version="10.2.4.0" IsNewNode="True" />
   </SchemaModules>
+  <Views>
+    <ListView Id="Material_Movimentacoes_ListView" AllowNew="False" AllowDelete="False" />
+  </Views>
 </Application>
