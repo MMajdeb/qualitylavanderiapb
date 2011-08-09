@@ -91,6 +91,10 @@ namespace ERP.Lavanderia.Module.PacoteGeral
             return session.FindObject<Feriado>(new BinaryOperator("dia", dia) & new BinaryOperator("mes", mes));
 
         }
+
+        public static bool VerificaSeEFeriado(DateTime data, Session session) {
+            return RetornaFeriadoPorDiaeMes(data.Day, data.Month, session) != null;
+        }
         #endregion
 
     }

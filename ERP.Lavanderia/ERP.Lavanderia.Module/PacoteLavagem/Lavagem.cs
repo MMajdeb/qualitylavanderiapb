@@ -13,6 +13,7 @@ using ERP.Lavanderia.Module.PacoteEmpresa;
 using ERP.Lavanderia.Module.PacoteColaborador;
 using ERP.Lavanderia.Module.PacoteCaixa;
 using ERP.Lavanderia.Module.PacoteConfiguracoes;
+using ERP.Lavanderia.Module.PacoteGeral;
 
 namespace ERP.Lavanderia.Module.PacoteLavagem
 {
@@ -55,8 +56,14 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             DataHoraDeRecebimento = DateTime.Now;
             DataHoraPreferivelParaEntrega = DataHoraDeRecebimento.AddDays(cfg.DiasParaEntrega);
 
+            while (DataHoraPreferivelParaEntrega.DayOfWeek == DayOfWeek.Sunday || Feriado.VerificaSeEFeriado(DataHoraPreferivelParaEntrega, Session)) {
+                DataHoraPreferivelParaEntrega = DataHoraPreferivelParaEntrega.AddDays(1);
+            }
+
             PontoDeColetaDeRecebimento = cfg.PontoDeColetaPadrao;
             PontoDeColetaParaEntrega = cfg.PontoDeColetaPadrao;
+
+            Anotador = Colaborador.RetornaColaboradorLogado(Session);
         }
 
         [RuleRequiredField("RuleRequiredField Lavagem.Cliente", DefaultContexts.Save)]
