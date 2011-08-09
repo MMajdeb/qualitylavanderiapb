@@ -32,6 +32,7 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
             // LavagensDoDiaViewController
             // 
             this.TargetObjectType = typeof(ERP.Lavanderia.Module.PacoteLavagem.Lavagem);
+            this.TargetViewId = "LavagensDoDia_ListView";
             this.TargetViewType = DevExpress.ExpressApp.ViewType.ListView;
             this.TypeOfView = typeof(DevExpress.ExpressApp.ListView);
 

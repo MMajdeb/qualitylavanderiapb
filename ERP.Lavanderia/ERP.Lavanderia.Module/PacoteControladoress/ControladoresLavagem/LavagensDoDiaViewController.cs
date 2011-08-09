@@ -33,7 +33,7 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
             var limiteInferior = new DateTime(now.Year, now.Month, now.Day);
             var limiteSuperior = new DateTime(now.Year, now.Month, now.Day, 23, 59, 59);
 
-            //((ListView)View).CollectionSource.Criteria["Filter1"] = new BetweenOperator("DataHoraPreferivelParaEntrega", limiteInferior, limiteSuperior);
+            ((ListView)View).CollectionSource.Criteria["Filter1"] = new BetweenOperator("DataHoraPreferivelParaEntrega", limiteInferior, limiteSuperior);
 
         }
     }
