@@ -193,6 +193,11 @@
         <ColumnInfo Id="Senha" Removed="True" />
       </Columns>
     </ListView>
+    <DetailView Id="Colaborador_DetailView">
+      <Items>
+        <PropertyEditor Id="Matricula" DataSourceCriteria="Colaborador is null" />
+      </Items>
+    </DetailView>
     <ListView Id="Colaborador_ListView">
       <Columns>
         <ColumnInfo Id="Pessoa.Nome" Index="0" />

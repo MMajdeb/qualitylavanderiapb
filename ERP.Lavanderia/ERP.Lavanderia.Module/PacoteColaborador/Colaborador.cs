@@ -313,6 +313,10 @@ CustomMessageTemplate = "Já existe uma pessoa com esse nome de usuário")]
                 Usuario.Roles.Add(papelEscolhido);
             }
 
+            if (Matricula != null) {
+                Matricula.Colaborador = this;
+            }
+
             base.OnSaving();
         }
 
