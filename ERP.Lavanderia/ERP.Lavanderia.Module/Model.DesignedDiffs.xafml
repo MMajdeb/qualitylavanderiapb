@@ -158,7 +158,24 @@
     <ListView Id="Lavagem_Roupas_ListView" MasterDetailMode="ListViewOnly">
       <Sorting Index="8" />
     </ListView>
-    <ListView Id="LavagensDoDia_ListView" IsNewNode="True" ClassName="ERP.Lavanderia.Module.PacoteLavagem.Lavagem" Caption="Lavagens do Dia" />
+    <ListView Id="LavagensDoDia_ListView" IsNewNode="True" ClassName="ERP.Lavanderia.Module.PacoteLavagem.Lavagem" Caption="Lavagens do Dia">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Anotador" IsNewNode="True" PropertyName="Anotador" Width="70" />
+        <ColumnInfo Id="Cliente" IsNewNode="True" PropertyName="Cliente" Width="70" />
+        <ColumnInfo Id="DataHoraDeRecebimento" IsNewNode="True" PropertyName="DataHoraDeRecebimento" Width="70" />
+        <ColumnInfo Id="DataHoraEntrega" IsNewNode="True" PropertyName="DataHoraEntrega" Width="70" />
+        <ColumnInfo Id="DataHoraPreferivelParaEntrega" IsNewNode="True" PropertyName="DataHoraPreferivelParaEntrega" Width="70" />
+        <ColumnInfo Id="Entregador" IsNewNode="True" PropertyName="Entregador" Width="70" />
+        <ColumnInfo Id="EntregaEmCasa" IsNewNode="True" PropertyName="EntregaEmCasa" Width="50" />
+        <ColumnInfo Id="Lavador" IsNewNode="True" PropertyName="Lavador" Width="70" />
+        <ColumnInfo Id="MovimentacaoCaixa" IsNewNode="True" PropertyName="MovimentacaoCaixa" Width="70" />
+        <ColumnInfo Id="Passador" IsNewNode="True" PropertyName="Passador" Width="70" />
+        <ColumnInfo Id="PontoDeColetaDeRecebimento" IsNewNode="True" PropertyName="PontoDeColetaDeRecebimento" Width="70" />
+        <ColumnInfo Id="PontoDeColetaParaEntrega" IsNewNode="True" PropertyName="PontoDeColetaParaEntrega" Width="70" />
+        <ColumnInfo Id="Recebedor" IsNewNode="True" PropertyName="Recebedor" Width="70" />
+        <ColumnInfo Id="Valor" IsNewNode="True" PropertyName="Valor" Width="50" />
+      </Columns>
+    </ListView>
     <ListView Id="Material_Movimentacoes_ListView" AllowNew="False" AllowDelete="False" />
     <ListView Id="RoupaLavagem_LookupListView" Criteria="Lavagem is null" />
   </Views>
