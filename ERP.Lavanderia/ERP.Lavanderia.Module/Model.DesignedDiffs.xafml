@@ -63,6 +63,16 @@
         <Member Name="UserName" Caption="Usuário" />
       </OwnMembers>
     </Class>
+    <Class Name="ERP.Lavanderia.Module.PacoteSeguranca.Usuario">
+      <OwnMembers>
+        <Member Name="ChangePasswordOnFirstLogon" Caption="Alterar senha no primeiro login" />
+        <Member Name="Configuracao" Caption="Configuração" />
+        <Member Name="IsActive" Caption="Ativo" />
+        <Member Name="Permissions" Caption="Permissões" />
+        <Member Name="Roles" Caption="Papéis" />
+        <Member Name="UserName" Caption="Nome de usuário" />
+      </OwnMembers>
+    </Class>
   </BOModel>
   <NavigationItems>
     <Items>
