@@ -193,6 +193,49 @@
         <ColumnInfo Id="Senha" Removed="True" />
       </Columns>
     </ListView>
+    <ListView Id="Colaborador_ListView">
+      <Columns>
+        <ColumnInfo Id="Pessoa.Nome" Index="0" />
+        <ColumnInfo Id="Matricula" Index="1" />
+        <ColumnInfo Id="ColaboradorCargo" Index="2" />
+        <ColumnInfo Id="Departamento" Index="3" />
+        <ColumnInfo Id="Pessoa.EnderecoPrincipal" Index="4" />
+        <ColumnInfo Id="DataAdmissao" Removed="True" />
+        <ColumnInfo Id="DataCadastro" Removed="True" />
+        <ColumnInfo Id="DataDemissao" Removed="True" />
+        <ColumnInfo Id="DataUltimaAtualizacao" Removed="True" />
+        <ColumnInfo Id="DesativarPainelColaborador" Removed="True" />
+        <ColumnInfo Id="NomeDeUsuario" Removed="True" />
+        <ColumnInfo Id="Observacoes" Removed="True" />
+        <ColumnInfo Id="Papel" Removed="True" />
+        <ColumnInfo Id="Pessoa.Cei" Removed="True" />
+        <ColumnInfo Id="Pessoa.CpfCnpj" Removed="True" />
+        <ColumnInfo Id="Pessoa.DataAbertura" Removed="True" />
+        <ColumnInfo Id="Pessoa.DataNascimento" Removed="True" />
+        <ColumnInfo Id="Pessoa.Email" Removed="True" />
+        <ColumnInfo Id="Pessoa.Email2" Removed="True" />
+        <ColumnInfo Id="Pessoa.EnderecoIm" Removed="True" />
+        <ColumnInfo Id="Pessoa.EnderecoWeb" Removed="True" />
+        <ColumnInfo Id="Pessoa.EstadoCivil" Removed="True" />
+        <ColumnInfo Id="Pessoa.Fax" Removed="True" />
+        <ColumnInfo Id="Pessoa.Imagem" Removed="True" />
+        <ColumnInfo Id="Pessoa.InscricaoEstadual" Removed="True" />
+        <ColumnInfo Id="Pessoa.InscricaoMunicipal" Removed="True" />
+        <ColumnInfo Id="Pessoa.NomeFantasia" Removed="True" />
+        <ColumnInfo Id="Pessoa.NomeMae" Removed="True" />
+        <ColumnInfo Id="Pessoa.NomePai" Removed="True" />
+        <ColumnInfo Id="Pessoa.OrgaoExpeditorRg" Removed="True" />
+        <ColumnInfo Id="Pessoa.Pis" Removed="True" />
+        <ColumnInfo Id="Pessoa.Profissao" Removed="True" />
+        <ColumnInfo Id="Pessoa.Rg" Removed="True" />
+        <ColumnInfo Id="Pessoa.Sexo" Removed="True" />
+        <ColumnInfo Id="Pessoa.TelefoneConvencional1" Removed="True" />
+        <ColumnInfo Id="Pessoa.TelefoneConvencional2" Removed="True" />
+        <ColumnInfo Id="Pessoa.TelefoneMovel" Removed="True" />
+        <ColumnInfo Id="Pessoa.TipoPessoa" Removed="True" />
+        <ColumnInfo Id="Senha" Removed="True" />
+      </Columns>
+    </ListView>
     <ListView Id="Lavagem_ListView">
       <Columns>
         <ColumnInfo Id="DataHoraPreferivelParaEntrega" SortIndex="0" GroupIndex="-1" SortOrder="Descending" />
