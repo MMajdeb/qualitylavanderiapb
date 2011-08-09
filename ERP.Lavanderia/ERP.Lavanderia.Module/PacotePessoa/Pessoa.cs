@@ -461,28 +461,34 @@ namespace ERP.Lavanderia.Module.PacotePessoa
             get { return GetCollection("Clientes"); }
         }
 
-        protected override void OnDeleting()
+        [RuleFromBoolProperty("Pessoa.RuleFromBoolProperty.ValidaDeletar", DefaultContexts.Delete,
+            CustomMessageTemplate = "Essa pessoa possui associações e não pode ser deletado")]
+        [Browsable(false)]
+        public bool ValidaDeletar
         {
-            ICollection objs = Session.CollectReferencingObjects(this);
-            if (objs.Count > 0)
+            get
             {
-                foreach (XPMemberInfo mi in ClassInfo.CollectionProperties)
+                ICollection objs = Session.CollectReferencingObjects(this);
+                if (objs.Count > 0)
                 {
-                    //if (mi.IsAggregated && mi.IsCollection && mi.IsAssociation)
-                    if (mi.IsCollection && mi.IsAssociation)
+                    foreach (XPMemberInfo mi in ClassInfo.CollectionProperties)
                     {
-                        foreach (IXPObject obj in objs)
+                        //if (mi.IsAggregated && mi.IsCollection && mi.IsAssociation)
+                        if (mi.IsCollection && mi.IsAssociation)
                         {
-                            if (((XPBaseCollection)mi.GetValue(this)).BaseIndexOf(obj) < 0)
+                            foreach (IXPObject obj in objs)
                             {
-                                //throw new InvalidOperationException("The object cannot be deleted. Other objects have references to it.");
-                                Session.Delete(obj);
+                                if (((XPBaseCollection)mi.GetValue(this)).BaseIndexOf(obj) < 0)
+                                {
+                                    return false;
+                                }
                             }
                         }
                     }
                 }
+
+                return true;
             }
-            base.OnDeleting();
         }
 
         #region Modulo Auditoria

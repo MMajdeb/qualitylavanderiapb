@@ -423,6 +423,15 @@ CustomMessageTemplate = "Já existe uma pessoa com esse nome de usuário")]
                 & new OperandProperty("Departamento.Empresa") == empresa);
         }
 
+        public static Colaborador RetornaColaboradorLogado(ObjectSpace space) {
+            return space.FindObject<Colaborador>(new BinaryOperator("Usuario", Usuario.RetornaUsuarioLogado(space)));
+        }
+
+        public static Colaborador RetornaColaboradorLogado(Session session)
+        {
+            return session.FindObject<Colaborador>(new BinaryOperator("Usuario", Usuario.RetornaUsuarioLogado(session)));
+        }
+
         #endregion
     }
 

@@ -218,6 +218,12 @@ CustomMessageTemplate = "O administrador não pode ser deletado")]
             return usr;
         }
 
+        public static Usuario RetornaUsuarioPorId(Session session, string oid)
+        {
+            Usuario usr = session.FindObject<Usuario>(new BinaryOperator("Oid", oid));
+            return usr;
+        }
+
         /// <summary>
         /// Retorna um objeto Usuario pelo 'user name' passado.
         /// </summary>
@@ -256,9 +262,19 @@ CustomMessageTemplate = "O administrador não pode ser deletado")]
             return false;
         }
 
-        internal static object RetornaUsuarioPorUserName(DevExpress.Xpo.Session Session, string NomeDeUsuario)
+        public static Usuario RetornaUsuarioPorUserName(DevExpress.Xpo.Session Session, string NomeDeUsuario)
         {
-            throw new NotImplementedException();
+            return RetornaUsuarioPorUserName(Session, NomeDeUsuario);
+        }
+
+        public static Usuario RetornaUsuarioLogado(ObjectSpace space)
+        {
+            return RetornaUsuarioPorId(space, SecuritySystem.CurrentUserId.ToString());
+        }
+
+        public static Usuario RetornaUsuarioLogado(Session session)
+        {
+            return RetornaUsuarioPorId(session, SecuritySystem.CurrentUserId.ToString());
         }
     }
 
