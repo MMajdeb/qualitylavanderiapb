@@ -50,6 +50,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             // Place here your initialization code.
 
             DataHoraDeRecebimento = DateTime.Now;
+            DataHoraPreferivelParaEntrega = DataHoraDeRecebimento.AddDays(2);
         }
 
         [RuleRequiredField("RuleRequiredField Lavagem.Cliente", DefaultContexts.Save)]
@@ -120,6 +121,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             }
         }
 
+        [RuleRequiredField("RuleRequiredField Lavagem.DataHoraDeRecebimento", DefaultContexts.Save)]
         public DateTime DataHoraDeRecebimento
         {
             get { return dataHoraDeRecebimento; }
@@ -128,6 +130,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             }
         }
 
+        [RuleRequiredField("RuleRequiredField Lavagem.DataHoraPreferivelParaEntrega", DefaultContexts.Save)]
         public DateTime DataHoraPreferivelParaEntrega
         {
             get { return dataHoraPreferivelParaEntrega; }

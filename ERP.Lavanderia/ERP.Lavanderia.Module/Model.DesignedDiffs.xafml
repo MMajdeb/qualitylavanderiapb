@@ -105,6 +105,8 @@
     <SchemaModule Name="SystemModule" Version="10.2.4.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <ListView Id="Lavagem_Roupas_ListView" MasterDetailMode="ListViewOnly" />
     <ListView Id="Material_Movimentacoes_ListView" AllowNew="False" AllowDelete="False" />
+    <ListView Id="RoupaLavagem_LookupListView" Criteria="Lavagem is null" />
   </Views>
 </Application>
