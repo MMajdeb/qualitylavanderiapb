@@ -9,6 +9,7 @@ using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using ERP.Lavanderia.Module.PacoteColaborador;
+using ERP.Lavanderia.Module.PacoteConfiguracoes;
 
 namespace ERP.Lavanderia.Module.PacoteCaixa
 {
@@ -22,6 +23,7 @@ namespace ERP.Lavanderia.Module.PacoteCaixa
         private Capital capital;
         private Caixa caixa;
         private TipoMovimentacao tipo;
+        private decimal valor;
 
         public MovimentacaoCaixa(Session session)
             : base(session)
@@ -39,6 +41,7 @@ namespace ERP.Lavanderia.Module.PacoteCaixa
             // Place here your initialization code.
 
             Data = DateTime.Now;
+            Caixa = ConfiguracaoGeral.RetornaConfiguracaoGeral(Session).CaixaPadrao;
         }
 
         [RuleRequiredField("RuleRequiredField MovimentacaoCaixa.Caixa", DefaultContexts.Save)]
@@ -74,6 +77,13 @@ namespace ERP.Lavanderia.Module.PacoteCaixa
         {
             get { return capital; }
             set { SetPropertyValue("Capital", ref capital, value); }
+        }
+
+        [RuleRequiredField("RuleRequiredField MovimentacaoCaixa.Valor", DefaultContexts.Save)]
+        public decimal Valor
+        {
+            get { return valor; }
+            set { SetPropertyValue("Valor", ref valor, value); }
         }
 
         public string Observacoes

@@ -9,6 +9,7 @@ using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using ERP.Lavanderia.Module.PacoteEmpresa;
+using ERP.Lavanderia.Module.PacoteCaixa;
 
 namespace ERP.Lavanderia.Module.PacoteConfiguracoes
 {
@@ -30,6 +31,7 @@ namespace ERP.Lavanderia.Module.PacoteConfiguracoes
 
         private int diasParaEntrega;
         private PontoDeColeta pontoDeColetaPadrao;
+        private Caixa caixaPadrao;
 
         public ConfiguracaoGeral(Session session) : base(session) { }
 
@@ -105,6 +107,12 @@ namespace ERP.Lavanderia.Module.PacoteConfiguracoes
         {
             get { return pontoDeColetaPadrao; }
             set { SetPropertyValue("PontoDeColetaPadrao", ref pontoDeColetaPadrao, value); }
+        }
+
+        public Caixa CaixaPadrao
+        {
+            get { return caixaPadrao; }
+            set { SetPropertyValue("CaixaPadrao", ref caixaPadrao, value); }
         }
 
         public override void AfterConstruction()
