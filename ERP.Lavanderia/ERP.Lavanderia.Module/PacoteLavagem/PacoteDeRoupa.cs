@@ -16,6 +16,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
     public class PacoteDeRoupa : BaseObject
     {
         private Lavagem lavagem;
+        private TipoPacoteDeRoupa tipoPacoteDeRoupa;
 
         public PacoteDeRoupa(Session session)
             : base(session)
@@ -40,6 +41,13 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
         {
             get { return lavagem; }
             set { SetPropertyValue("Lavagem", ref lavagem, value); }
+        }
+
+        [RuleRequiredField("RuleRequiredField PacoteDeRoupa.TipoPacoteDeRoupa", DefaultContexts.Save)]
+        public TipoPacoteDeRoupa TipoPacoteDeRoupa
+        {
+            get { return tipoPacoteDeRoupa; }
+            set { SetPropertyValue("TipoPacoteDeRoupa", ref tipoPacoteDeRoupa, value); }
         }
 
         [DataSourceCriteria("Lavagem = '@This.Lavagem'")]

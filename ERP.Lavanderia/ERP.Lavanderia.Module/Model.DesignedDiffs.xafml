@@ -127,6 +127,8 @@
         <Items IsNewNode="True">
           <Item Id="@0a3ad9e6-b116-4ce1-8a29-d695c6e4d1ce" IsNewNode="True" ViewId="Tecido_ListView" />
           <Item Id="@2dfde21b-f52f-41ac-a15d-45f7ffc61134" IsNewNode="True" ViewId="Tipo_ListView" />
+          <Item Id="@9556d027-cd95-4178-9990-949083762d02" IsNewNode="True" ViewId="TipoPacoteDeRoupa_ListView" />
+          <Item Id="@9b98b5ea-bbed-4696-8ce0-865aa407fb8b" IsNewNode="True" ViewId="PacoteDeRoupa_ListView" />
           <Item Id="@db51dae9-ad37-4118-b1a7-de3ca5998329" IsNewNode="True" ViewId="Cor_ListView" />
           <Item Id="@e7c49a52-ac15-4e29-abe4-ffd2f955f891" IsNewNode="True" ViewId="Tamanho_ListView" />
           <Item Id="@ed9efd1f-5c72-498a-9cbb-5932993685e8" IsNewNode="True" ViewId="Marca_ListView" />
@@ -289,6 +291,11 @@
         <ColumnInfo Id="Recebedor" Removed="True" />
       </Columns>
     </ListView>
+    <ListView Id="Lavagem_Pacotes_ListView">
+      <Columns>
+        <ColumnInfo Id="@f52138c7-72ef-49e0-b93f-ab76f29ac9c5" IsNewNode="True" PropertyName="Roupas" />
+      </Columns>
+    </ListView>
     <ListView Id="Lavagem_Roupas_ListView" MasterDetailMode="ListViewOnly" AllowNew="True" AllowDelete="False" AllowEdit="True">
       <Sorting Index="8" />
     </ListView>
@@ -307,6 +314,16 @@
       </Columns>
     </ListView>
     <ListView Id="Material_Movimentacoes_ListView" AllowNew="False" AllowDelete="False" />
+    <ListView Id="PacoteDeRoupa_ListView">
+      <Columns>
+        <ColumnInfo Id="@bf57860c-0905-4b82-ae1c-3b2be5c03640" IsNewNode="True" PropertyName="Roupas" />
+      </Columns>
+    </ListView>
+    <ListView Id="PacoteDeRoupa_LookupListView">
+      <Columns>
+        <ColumnInfo Id="@ede96323-268e-4f10-ae75-7b8811b8bbb4" IsNewNode="True" PropertyName="Roupas" />
+      </Columns>
+    </ListView>
     <ListView Id="Pessoa_ListView">
       <Columns>
         <ColumnInfo Id="Cei" Removed="True" />
