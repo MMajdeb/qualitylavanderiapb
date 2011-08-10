@@ -45,6 +45,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             }
         }
 
+        [DataSourceCriteria("Cliente = '@This.Lavagem.Cliente'")]
         [RuleRequiredField("RuleRequiredField RoupaLavagem.Roupa", DefaultContexts.Save)]
         public Roupa Roupa
         {

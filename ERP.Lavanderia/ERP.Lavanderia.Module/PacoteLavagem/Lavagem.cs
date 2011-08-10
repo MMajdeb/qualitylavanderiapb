@@ -69,6 +69,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             StatusLavagem = StatusLavagem.Anotada;
         }
 
+        [ImmediatePostData]
         [RuleRequiredField("RuleRequiredField Lavagem.Cliente", DefaultContexts.Save)]
         public Cliente Cliente
         {
