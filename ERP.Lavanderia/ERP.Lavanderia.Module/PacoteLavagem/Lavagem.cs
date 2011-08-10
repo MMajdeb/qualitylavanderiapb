@@ -195,6 +195,8 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             get { return GetCollection<RoupaLavagem>("Roupas"); }
         }
 
+        /*** Gambis ***/
+        [DataSourceCriteria("Data is null")]
         [RuleUniqueValue("Lavagem.MovimentacaoCaixa", DefaultContexts.Save, @"""Movimentação"" já associada a outra lavagem ou entidade.")]
         public MovimentacaoCaixa MovimentacaoCaixa
         {

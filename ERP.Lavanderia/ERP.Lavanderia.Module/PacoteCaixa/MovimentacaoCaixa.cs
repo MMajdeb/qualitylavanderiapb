@@ -105,12 +105,23 @@ namespace ERP.Lavanderia.Module.PacoteCaixa
             get {
                 try
                 {
-                    return "(" + Caixa.Nome + ") " + Data + "; " + Modo + ";" +
+                    return "(" + Caixa.Nome + ") " + Data + "; " + Modo + "; " +
                         Tipo + "; " + Capital + "; " + Observacoes;
                 }
                 catch {
                     return "Não foi possível exibir a descrição";
                 }
+            }
+        }
+
+        [NonPersistent]
+        [System.ComponentModel.Browsable(false)]
+        [RuleFromBoolProperty("MovimentacaoCaixa.ValorMaiorOuIgualAZero", DefaultContexts.Save, @"""Valor"" deve ser maior ou igual a zero.")]
+        public bool QuantidadeMaiorQueZero
+        {
+            get
+            {
+                return Valor >= 0;
             }
         }
     }
