@@ -289,7 +289,7 @@
         <ColumnInfo Id="Recebedor" Removed="True" />
       </Columns>
     </ListView>
-    <ListView Id="Lavagem_Roupas_ListView" MasterDetailMode="ListViewOnly">
+    <ListView Id="Lavagem_Roupas_ListView" MasterDetailMode="ListViewOnly" AllowNew="True" AllowDelete="False" AllowEdit="True">
       <Sorting Index="8" />
     </ListView>
     <ListView Id="LavagensDoDia_ListView" IsNewNode="True" ClassName="ERP.Lavanderia.Module.PacoteLavagem.Lavagem" Caption="Lavagens do Dia">
