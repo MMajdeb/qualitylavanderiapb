@@ -74,6 +74,44 @@
       </OwnMembers>
     </Class>
   </BOModel>
+  <Localization>
+    <LocalizationGroup Name="DashboardOrganizationItems">
+      <LocalizationItem Name="StaticImage" Value="Imagem" />
+      <LocalizationItem Name="StaticText" Value="Texto" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="DialogButtons">
+      <LocalizationItem Name="Abort" Value="&amp;Cancelar" />
+      <LocalizationItem Name="Add" Value="Adicionar" />
+      <LocalizationItem Name="Apply" Value="Aplicar" />
+      <LocalizationItem Name="Back" Value="&lt; Voltar" />
+      <LocalizationItem Name="Cancel" Value="&amp;Cancelar" />
+      <LocalizationItem Name="Clear" Value="L&amp;impar" />
+      <LocalizationItem Name="Close" Value="Fechar" />
+      <LocalizationItem Name="Find" Value="Procurar" />
+      <LocalizationItem Name="Ignore" Value="&amp;Ignorar" />
+      <LocalizationItem Name="Next" Value="Próximo &gt;" />
+      <LocalizationItem Name="No" Value="&amp;Não" />
+      <LocalizationItem Name="Remove" Value="Remover" />
+      <LocalizationItem Name="Retry" Value="&amp;Tentar novamente" />
+      <LocalizationItem Name="Yes" Value="&amp;Sim" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="DevExpress.ExpressApp.Security.ModelAccessModifier">
+        <LocalizationItem Name="Allow" Value="Permitir" />
+        <LocalizationItem Name="Deny" Value="Não permitir" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.ExpressApp.Security.ObjectAccess">
+        <LocalizationItem Name="AllAccess" Value="Acesso total" />
+        <LocalizationItem Name="ChangeAccess" Value="Alterar acesso" />
+        <LocalizationItem Name="Create" Value="Criar" />
+        <LocalizationItem Name="Delete" Value="Deletar" />
+        <LocalizationItem Name="Navigate" Value="Navegar" />
+        <LocalizationItem Name="NoAccess" Value="Sem acesso" />
+        <LocalizationItem Name="Read" Value="Ler" />
+        <LocalizationItem Name="Write" Value="Escrever" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
   <NavigationItems>
     <Items>
       <Item Id="@0965f345-89fb-495a-9613-d3b2e8b021af" IsNewNode="True" Caption="Principal" Index="0">
