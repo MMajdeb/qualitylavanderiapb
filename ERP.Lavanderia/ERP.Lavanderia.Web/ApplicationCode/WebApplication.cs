@@ -16,6 +16,8 @@ namespace ERP.Lavanderia.Web
         private System.Data.SqlClient.SqlConnection sqlConnection1;
         private DevExpress.ExpressApp.Security.SecurityComplex securityComplex1;
         private DevExpress.ExpressApp.Security.AuthenticationStandard authenticationStandard1;
+        private DevExpress.ExpressApp.ConditionalEditorState.Web.ConditionalEditorStateAspNetModule conditionalEditorStateAspNetModule1;
+        private DevExpress.ExpressApp.ConditionalEditorState.ConditionalEditorStateModuleBase conditionalEditorStateModuleBase1;
         private DevExpress.ExpressApp.Validation.ValidationModule module5;
 
         public LavanderiaAspNetApplication()
@@ -60,6 +62,8 @@ namespace ERP.Lavanderia.Web
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.securityComplex1 = new DevExpress.ExpressApp.Security.SecurityComplex();
             this.authenticationStandard1 = new DevExpress.ExpressApp.Security.AuthenticationStandard();
+            this.conditionalEditorStateAspNetModule1 = new DevExpress.ExpressApp.ConditionalEditorState.Web.ConditionalEditorStateAspNetModule();
+            this.conditionalEditorStateModuleBase1 = new DevExpress.ExpressApp.ConditionalEditorState.ConditionalEditorStateModuleBase();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // module5
@@ -93,10 +97,13 @@ namespace ERP.Lavanderia.Web
             this.Modules.Add(this.module3);
             this.Modules.Add(this.module4);
             this.Modules.Add(this.module5);
+            this.Modules.Add(this.conditionalEditorStateModuleBase1);
+            this.Modules.Add(this.conditionalEditorStateAspNetModule1);
             this.Security = this.securityComplex1;
-            this.LoggedOn += new System.EventHandler<DevExpress.ExpressApp.LogonEventArgs>(this.ERP_LoggedOn);
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.LavanderiaAspNetApplication_DatabaseVersionMismatch);
+            this.LoggedOn += new System.EventHandler<DevExpress.ExpressApp.LogonEventArgs>(this.ERP_LoggedOn);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+
         }
 
         private void ERP_LoggedOn(object sender, DevExpress.ExpressApp.LogonEventArgs e)
