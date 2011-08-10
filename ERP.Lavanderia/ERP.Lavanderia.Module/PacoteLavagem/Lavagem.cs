@@ -211,6 +211,12 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             set { SetPropertyValue("StatusLavagem", ref statusLavagem, value); }
         }
 
+        [Association("Lavagem-PacoteDeRoupa", typeof(PacoteDeRoupa))]
+        public XPCollection Pacotes
+        {
+            get { return GetCollection("Pacotes"); }
+        }
+
         [NonPersistent]
         [System.ComponentModel.Browsable(false)]
         [RuleFromBoolProperty("RuleFromBoolProperty Lavagem.ValidaRoupasDoCliente", DefaultContexts.Save, @"Você cadastrou roupas que não são desse cliente.")]

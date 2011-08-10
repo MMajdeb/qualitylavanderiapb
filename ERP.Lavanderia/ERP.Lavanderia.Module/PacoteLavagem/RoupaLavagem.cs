@@ -19,6 +19,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
         private int quantidade;
         private Roupa roupa;
         private Lavagem lavagem;
+        private PacoteDeRoupa pacoteDeRoupa;
 
         public RoupaLavagem(Session session)
             : base(session)
@@ -63,6 +64,13 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
             set {
                 SetPropertyValue("Lavagem", ref lavagem, value);
             }
+        }
+
+        [Association("PacoteDeRoupa-RoupaLavagem")]
+        public PacoteDeRoupa PacoteDeRoupa
+        {
+            get { return pacoteDeRoupa; }
+            set { SetPropertyValue("PacoteDeRoupa", ref pacoteDeRoupa, value); }
         }
 
         [Browsable(false)]

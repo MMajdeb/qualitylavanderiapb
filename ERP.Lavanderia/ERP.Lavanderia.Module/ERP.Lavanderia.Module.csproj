@@ -132,7 +132,9 @@
     <Compile Include="PacoteGeral\BaseObjectExtension.cs" />
     <Compile Include="PacoteGeral\Feriado.cs" />
     <Compile Include="PacoteLavagem\Lavagem.cs" />
+    <Compile Include="PacoteLavagem\PacoteDeRoupa.cs" />
     <Compile Include="PacoteLavagem\RoupaLavagem.cs" />
+    <Compile Include="PacoteLavagem\TipoPacoteDeRoupa.cs" />
     <Compile Include="PacoteMaterial\Material.cs" />
     <Compile Include="PacoteMaterial\MovimentacaoMaterial.cs" />
     <Compile Include="PacotePessoa\Matricula.cs" />
