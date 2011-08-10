@@ -73,6 +73,17 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
                 return "(" + Quantidade + ") " + Roupa;
             }
         }
+
+        [NonPersistent]
+        [System.ComponentModel.Browsable(false)]
+        [RuleFromBoolProperty("RuleFromBoolProperty RoupaLavagem.ValidaQuantidade", DefaultContexts.Save, @"Quantidade deve ser maior que zero.")]
+        public bool ValidaQuantidade
+        {
+            get
+            {
+                return Quantidade > 0;
+            }
+        }
     }
 
 }
