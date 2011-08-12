@@ -37,7 +37,7 @@
     <Class Name="ERP.Lavanderia.Module.PacoteCaixa.Caixa" ImageName="caixa" />
     <Class Name="ERP.Lavanderia.Module.PacoteCaixa.Capital" ImageName="capital" />
     <Class Name="ERP.Lavanderia.Module.PacoteCaixa.MovimentacaoCaixa" ImageName="movimentacao-de-caixa" Caption="Movimentação de Caixa" />
-    <Class Name="ERP.Lavanderia.Module.PacoteCaixa.TipoMovimentacao" ImageName="tipo-de-movimentacao" />
+    <Class Name="ERP.Lavanderia.Module.PacoteCaixa.TipoMovimentacao" ImageName="tipo-de-movimentacao" Caption="Tipo de Movimentação" />
     <Class Name="ERP.Lavanderia.Module.PacoteCliente.Cliente" ImageName="cliente">
       <OwnMembers>
         <Member Name="DataCadastro" AllowEdit="False" />
@@ -51,16 +51,18 @@
         <Member Name="Senha" IsPassword="True" />
       </OwnMembers>
     </Class>
-    <Class Name="ERP.Lavanderia.Module.PacoteConfiguracoes.ConfiguracaoEmpresa" ImageName="empresa" />
-    <Class Name="ERP.Lavanderia.Module.PacoteConfiguracoes.ConfiguracaoGeral" ImageName="configuracao-geral" />
-    <Class Name="ERP.Lavanderia.Module.PacoteConfiguracoes.ConfiguracaoUsuario" ImageName="configuracao-usuario" />
+    <Class Name="ERP.Lavanderia.Module.PacoteConfiguracoes.ConfiguracaoEmpresa" ImageName="empresa" Caption="Configuração da Empresa" />
+    <Class Name="ERP.Lavanderia.Module.PacoteConfiguracoes.ConfiguracaoGeral" ImageName="configuracao-geral" Caption="Configuração Geral" />
+    <Class Name="ERP.Lavanderia.Module.PacoteConfiguracoes.ConfiguracaoUsuario" ImageName="configuracao-usuario" Caption="Configuração de Usuário" />
     <Class Name="ERP.Lavanderia.Module.PacoteEmpresa.Departamento" ImageName="departamento" />
     <Class Name="ERP.Lavanderia.Module.PacoteEmpresa.Empresa" ImageName="empresa" />
-    <Class Name="ERP.Lavanderia.Module.PacoteEmpresa.PontoDeColeta" ImageName="ponto-de-coleta" />
+    <Class Name="ERP.Lavanderia.Module.PacoteEmpresa.PontoDeColeta" ImageName="ponto-de-coleta" Caption="Ponto de Coleta" />
+    <Class Name="ERP.Lavanderia.Module.PacoteEndereco.Endereco" Caption="Endereço" />
+    <Class Name="ERP.Lavanderia.Module.PacoteEndereco.Pais" Caption="País" />
     <Class Name="ERP.Lavanderia.Module.PacoteGeral.Feriado" ImageName="feriado" />
     <Class Name="ERP.Lavanderia.Module.PacoteLavagem.Lavagem" ImageName="lavagem" />
     <Class Name="ERP.Lavanderia.Module.PacoteLavagem.PacoteDeRoupa" ImageName="pacote-de-roupa" />
-    <Class Name="ERP.Lavanderia.Module.PacoteLavagem.TipoPacoteDeRoupa" ImageName="tipo-de-pacote-de-roupa" />
+    <Class Name="ERP.Lavanderia.Module.PacoteLavagem.TipoPacoteDeRoupa" ImageName="tipo-de-pacote-de-roupa" Caption="Tipo de Pacote de Roupa" />
     <Class Name="ERP.Lavanderia.Module.PacoteMaterial.Material" ImageName="material">
       <OwnMembers>
         <Member Name="QuantidadeEmCaixa" AllowEdit="False" />
@@ -71,10 +73,10 @@
         <Member Name="Colaborador" AllowEdit="True" />
       </OwnMembers>
     </Class>
-    <Class Name="ERP.Lavanderia.Module.PacotePessoa.Matricula" ImageName="matrcula" />
+    <Class Name="ERP.Lavanderia.Module.PacotePessoa.Matricula" ImageName="matrcula" Caption="Matrícula" />
     <Class Name="ERP.Lavanderia.Module.PacotePessoa.Pessoa" ImageName="pessoa" />
-    <Class Name="ERP.Lavanderia.Module.PacoteRecursosHumanos.ColaboradorCargo" ImageName="cargo" />
-    <Class Name="ERP.Lavanderia.Module.PacoteRecursosHumanos.HistoricoFuncional" ImageName="historico-funcional" />
+    <Class Name="ERP.Lavanderia.Module.PacoteRecursosHumanos.ColaboradorCargo" ImageName="cargo" Caption="Cargo de Colaborador" />
+    <Class Name="ERP.Lavanderia.Module.PacoteRecursosHumanos.HistoricoFuncional" ImageName="historico-funcional" Caption="Histórico Funcional" />
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Cor" ImageName="cor" />
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Marca" ImageName="marca" />
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Roupa" ImageName="roupa" />
@@ -87,7 +89,7 @@
         <Member Name="UserName" Caption="Usuário" />
       </OwnMembers>
     </Class>
-    <Class Name="ERP.Lavanderia.Module.PacoteSeguranca.Usuario" ImageName="usuario">
+    <Class Name="ERP.Lavanderia.Module.PacoteSeguranca.Usuario" ImageName="usuario" Caption="Usuário">
       <OwnMembers>
         <Member Name="ChangePasswordOnFirstLogon" Caption="Alterar senha no primeiro login" />
         <Member Name="Configuracao" Caption="Configuração" />
