@@ -175,6 +175,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Functional Tests\Config.xml" />
+    <EmbeddedResource Include="Images\tipo-de-roupa.png" />
+    <EmbeddedResource Include="Images\tipo-de-roupa_32x32.png" />
     <EmbeddedResource Include="Images\tipo-de-pacote-de-roupa.png" />
     <EmbeddedResource Include="Images\tipo-de-pacote-de-roupa_32x32.png" />
     <EmbeddedResource Include="Images\caixa.png" />

@@ -80,7 +80,7 @@
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Roupa" ImageName="roupa" />
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Tamanho" ImageName="tamanho" />
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Tecido" ImageName="tecido" />
-    <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Tipo" ImageName="tipo" />
+    <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Tipo" ImageName="tipo-de-roupa" Caption="Tipo de Roupa" />
     <Class Name="ERP.Lavanderia.Module.PacoteSeguranca.ParametrosLogon" Caption="Painel Quality Lavanderia">
       <OwnMembers>
         <Member Name="Password" Caption="Senha" />
