@@ -5,7 +5,11 @@
   </BOModel>
   <NavigationItems>
     <Items>
-      <Item Id="Reports" Caption="Relatórios" />
+      <Item Id="Reports" Caption="Relatórios">
+        <Items>
+          <Item Id="Reports" Caption="Relatórios" />
+        </Items>
+      </Item>
     </Items>
   </NavigationItems>
   <SchemaModules>

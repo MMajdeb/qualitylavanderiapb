@@ -17,6 +17,7 @@ using ERP.Lavanderia.Module.PacoteLavagem;
 using ERP.Lavanderia.Module.PacoteRecursosHumanos;
 using ERP.Lavanderia.Module.PacoteMaterial;
 using ERP.Lavanderia.Module.PacoteCaixa;
+using DevExpress.ExpressApp.Reports;
 
 namespace ERP.Lavanderia.Module
 {
@@ -698,7 +699,33 @@ namespace ERP.Lavanderia.Module
 
             #endregion
 
+            #region Cria Relatórios
+
+            CreateReport("Lavagem", "Lavagem");
+
+            #endregion
+
             AtualizaBanco();
+        }
+
+        private void CreateReport(string reportFile, string reportName)
+        {
+            ReportData reportdata = ObjectSpace.FindObject<ReportData>(new BinaryOperator("Name", reportName));
+
+            if (reportdata != null)
+            {
+                reportdata.Delete();
+                reportdata.Session.CommitTransaction();
+            }
+
+            reportdata = ObjectSpace.CreateObject<ReportData>();
+            XafReport rep = new XafReport();
+            rep.ObjectSpace = ObjectSpace;
+
+            rep.LoadLayout(GetType().Assembly.GetManifestResourceStream("ERP.Lavanderia.Module.PacoteRelatorios." + reportFile + ".repx"));
+            rep.ReportName = reportName;
+            reportdata.SaveXtraReport(rep);
+            reportdata.Save();
         }
 
          private void AtualizaBanco()
