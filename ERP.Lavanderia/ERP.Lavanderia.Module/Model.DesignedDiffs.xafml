@@ -77,11 +77,11 @@
     <Class Name="ERP.Lavanderia.Module.PacotePessoa.Pessoa" ImageName="pessoa" />
     <Class Name="ERP.Lavanderia.Module.PacoteRecursosHumanos.ColaboradorCargo" ImageName="cargo" Caption="Cargo de Colaborador" />
     <Class Name="ERP.Lavanderia.Module.PacoteRecursosHumanos.HistoricoFuncional" ImageName="historico-funcional" Caption="Histórico Funcional" />
-    <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Cor" ImageName="cor" />
-    <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Marca" ImageName="marca" />
+    <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Cor" ImageName="cor" Caption="Cor de Roupa" />
+    <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Marca" ImageName="marca" Caption="Marca de Roupa" />
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Roupa" ImageName="roupa" />
-    <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Tamanho" ImageName="tamanho" />
-    <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Tecido" ImageName="tecido" />
+    <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Tamanho" ImageName="tamanho" Caption="Tamanho de Roupa" />
+    <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Tecido" ImageName="tecido" Caption="Tecido de Roupa" />
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Tipo" ImageName="tipo-de-roupa" Caption="Tipo de Roupa" />
     <Class Name="ERP.Lavanderia.Module.PacoteSeguranca.ParametrosLogon" Caption="Painel Quality Lavanderia">
       <OwnMembers>
@@ -150,15 +150,19 @@
           <Item Id="@76e5c9cd-62d2-4a0e-8372-b0db94be68a6" IsNewNode="True" ViewId="Roupa_ListView" Index="4" />
         </Items>
       </Item>
-      <Item Id="@5ddb1863-5d64-428d-8976-5d64fa247473" IsNewNode="True" Caption="Geral" Index="1">
+      <Item Id="@1f10c100-c12f-4e4a-9649-16bb1850b072" IsNewNode="True" Caption="Lavagem" Index="1">
         <Items IsNewNode="True">
+          <Item Id="@2ef41e69-a4db-4525-9d91-01af34bbb0c1" IsNewNode="True" ViewId="Lavagem_ListView" Index="2" />
           <Item Id="@0a3ad9e6-b116-4ce1-8a29-d695c6e4d1ce" IsNewNode="True" ViewId="Tecido_ListView" />
           <Item Id="@2dfde21b-f52f-41ac-a15d-45f7ffc61134" IsNewNode="True" ViewId="Tipo_ListView" />
           <Item Id="@9556d027-cd95-4178-9990-949083762d02" IsNewNode="True" ViewId="TipoPacoteDeRoupa_ListView" />
-          <Item Id="@9b98b5ea-bbed-4696-8ce0-865aa407fb8b" IsNewNode="True" ViewId="PacoteDeRoupa_ListView" />
           <Item Id="@db51dae9-ad37-4118-b1a7-de3ca5998329" IsNewNode="True" ViewId="Cor_ListView" />
           <Item Id="@e7c49a52-ac15-4e29-abe4-ffd2f955f891" IsNewNode="True" ViewId="Tamanho_ListView" />
           <Item Id="@ed9efd1f-5c72-498a-9cbb-5932993685e8" IsNewNode="True" ViewId="Marca_ListView" />
+        </Items>
+      </Item>
+      <Item Id="@5ddb1863-5d64-428d-8976-5d64fa247473" IsNewNode="True" Caption="Geral" Index="2">
+        <Items IsNewNode="True">
           <Item Id="ColaboradorCargo_ListView" IsNewNode="True" ViewId="ColaboradorCargo_ListView" ObjectKey="" />
           <Item Id="Feriado_ListView" IsNewNode="True" ViewId="Feriado_ListView" ObjectKey="" />
           <Item Id="HistoricoFuncional_ListView" IsNewNode="True" ViewId="HistoricoFuncional_ListView" ObjectKey="" />
@@ -167,7 +171,22 @@
           <Item Id="Profissao_ListView" IsNewNode="True" ViewId="Profissao_ListView" ObjectKey="" />
         </Items>
       </Item>
-      <Item Id="@dbef8e7e-d6c2-409f-8208-a05c0a51fdb8" IsNewNode="True" Caption="Sistema" Index="2">
+      <Item Id="@b71686eb-72af-42e6-8b82-16dc7406bdc4" IsNewNode="True" Caption="Material" Index="3">
+        <Items IsNewNode="True">
+          <Item Id="@7a712e6e-5aee-4265-85ae-68df0ae113d0" IsNewNode="True" ViewId="Material_ListView" Index="0" />
+          <Item Id="@41228d2f-dd74-41ae-b62e-9e9f5f3d937c" IsNewNode="True" ViewId="MovimentacaoMaterial_ListView" Index="1" />
+          <Item Id="@9d7ebcb1-d748-4496-ad4b-2bb0780289ee" IsNewNode="True" ViewId="DescricaoMovimentacaoMaterial_ListView" Index="2" />
+        </Items>
+      </Item>
+      <Item Id="@a49e0482-a006-40f1-abb2-67a167b4fc43" IsNewNode="True" Caption="Financeiro" Index="4">
+        <Items IsNewNode="True">
+          <Item Id="@e0e4f796-7b3a-4f22-9e51-6f839a0703f2" IsNewNode="True" ViewId="Caixa_ListView" Index="0" />
+          <Item Id="@2ea5289d-d76d-4983-bc19-dda4a286296a" IsNewNode="True" ViewId="MovimentacaoCaixa_ListView" Index="1" />
+          <Item Id="@c25347ed-6d16-4e19-8f3e-7c106ba63eac" IsNewNode="True" ViewId="Capital_ListView" />
+          <Item Id="@cbffb209-6cc9-499f-bec3-2b2bc3b28d3d" IsNewNode="True" ViewId="TipoMovimentacao_ListView" />
+        </Items>
+      </Item>
+      <Item Id="@dbef8e7e-d6c2-409f-8208-a05c0a51fdb8" IsNewNode="True" Caption="Sistema" Index="5">
         <Items IsNewNode="True">
           <Item Id="ConfiguracaoEmpresa_ListView" IsNewNode="True" ObjectKey="" ViewId="ConfiguracaoEmpresa_DetailView" />
           <Item Id="ConfiguracaoGeral_ListView" IsNewNode="True" ObjectKey="" ViewId="ConfiguracaoGeral_DetailView" />
@@ -176,26 +195,11 @@
           <Item Id="Usuario_ListView" IsNewNode="True" ViewId="Usuario_ListView" ObjectKey="" />
         </Items>
       </Item>
-      <Item Id="@8ef42b3a-8d5b-41a5-b40f-bb6d1ee0086a" IsNewNode="True" Caption="Administração" Index="3">
+      <Item Id="@8ef42b3a-8d5b-41a5-b40f-bb6d1ee0086a" IsNewNode="True" Caption="Administração" Index="6">
         <Items IsNewNode="True">
           <Item Id="@3d8b0db6-f187-4d68-ad9a-4e533aba0f4e" IsNewNode="True" ViewId="PontoDeColeta_ListView" />
           <Item Id="Departamento_ListView" IsNewNode="True" ViewId="Departamento_ListView" ObjectKey="" />
           <Item Id="Empresa_ListView" IsNewNode="True" ObjectKey="" ViewId="Empresa_DetailView" />
-        </Items>
-      </Item>
-      <Item Id="@a49e0482-a006-40f1-abb2-67a167b4fc43" IsNewNode="True" Caption="Financeiro">
-        <Items IsNewNode="True">
-          <Item Id="@e0e4f796-7b3a-4f22-9e51-6f839a0703f2" IsNewNode="True" ViewId="Caixa_ListView" Index="0" />
-          <Item Id="@2ea5289d-d76d-4983-bc19-dda4a286296a" IsNewNode="True" ViewId="MovimentacaoCaixa_ListView" Index="1" />
-          <Item Id="@c25347ed-6d16-4e19-8f3e-7c106ba63eac" IsNewNode="True" ViewId="Capital_ListView" />
-          <Item Id="@cbffb209-6cc9-499f-bec3-2b2bc3b28d3d" IsNewNode="True" ViewId="TipoMovimentacao_ListView" />
-        </Items>
-      </Item>
-      <Item Id="@b71686eb-72af-42e6-8b82-16dc7406bdc4" IsNewNode="True" Caption="Material">
-        <Items IsNewNode="True">
-          <Item Id="@7a712e6e-5aee-4265-85ae-68df0ae113d0" IsNewNode="True" ViewId="Material_ListView" Index="0" />
-          <Item Id="@41228d2f-dd74-41ae-b62e-9e9f5f3d937c" IsNewNode="True" ViewId="MovimentacaoMaterial_ListView" Index="1" />
-          <Item Id="@9d7ebcb1-d748-4496-ad4b-2bb0780289ee" IsNewNode="True" ViewId="DescricaoMovimentacaoMaterial_ListView" Index="2" />
         </Items>
       </Item>
       <Item Id="Default" Removed="True">
@@ -326,7 +330,7 @@
     <ListView Id="Lavagem_Roupas_ListView" MasterDetailMode="ListViewOnly" AllowNew="True" AllowDelete="False" AllowEdit="True">
       <Sorting Index="8" />
     </ListView>
-    <ListView Id="LavagensDoDia_ListView" IsNewNode="True" ClassName="ERP.Lavanderia.Module.PacoteLavagem.Lavagem" Caption="Lavagens do Dia">
+    <ListView Id="LavagensDoDia_ListView" IsNewNode="True" ClassName="ERP.Lavanderia.Module.PacoteLavagem.Lavagem" Caption="Lavagens do Dia" ImageName="inicio">
       <Columns IsNewNode="True">
         <ColumnInfo Id="Cliente" IsNewNode="True" PropertyName="Cliente" Width="70" Index="0" />
         <ColumnInfo Id="@a0fb9319-91c5-48e1-98d2-bb60ced9a90e" IsNewNode="True" PropertyName="StatusLavagem" Caption="Status" Index="1" />
