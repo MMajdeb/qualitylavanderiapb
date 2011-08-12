@@ -44,6 +44,16 @@ namespace ERP.Lavanderia.Module.PacoteCaixa
                 SetPropertyValue("Nome", ref nome, value);
             }
         }
+
+        public static Caixa RetornaCaixa(Session session, string nome)
+        {
+            return session.FindObject<Caixa>(new BinaryOperator("Nome", nome));
+        }
+
+        public static XPCollection RetornaCaixas(Session session)
+        {
+            return new XPCollection(session, typeof(Caixa));
+        }
     }
 
 }

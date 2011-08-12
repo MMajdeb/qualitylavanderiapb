@@ -77,6 +77,16 @@ namespace ERP.Lavanderia.Module.PacoteEmpresa
                 SetPropertyValue("TelefoneMovel", ref telefoneMovel, value);
             }
         }
+
+        public static PontoDeColeta RetornaPontoDeColeta(Session session, string nome)
+        {
+            return session.FindObject<PontoDeColeta>(new BinaryOperator("Nome", nome));
+        }
+
+        public static XPCollection RetornaPontosDeColeta(Session session)
+        {
+            return new XPCollection(session, typeof(PontoDeColeta));
+        }
     }
 
 }

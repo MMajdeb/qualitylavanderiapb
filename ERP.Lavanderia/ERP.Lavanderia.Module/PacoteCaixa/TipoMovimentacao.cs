@@ -43,6 +43,11 @@ namespace ERP.Lavanderia.Module.PacoteCaixa
                 SetPropertyValue("Descricao", ref descricao, value);
             }
         }
+
+        public static TipoMovimentacao RetornaTipoMovimentacao(Session session, string descricao)
+        {
+            return session.FindObject<TipoMovimentacao>(new BinaryOperator("Descricao", descricao));
+        }
     }
 
 }

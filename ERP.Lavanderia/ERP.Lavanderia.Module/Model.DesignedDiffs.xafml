@@ -37,7 +37,7 @@
     <Class Name="ERP.Lavanderia.Module.PacoteCaixa.Caixa" ImageName="caixa" />
     <Class Name="ERP.Lavanderia.Module.PacoteCaixa.Capital" ImageName="capital" />
     <Class Name="ERP.Lavanderia.Module.PacoteCaixa.MovimentacaoCaixa" ImageName="movimentacao-de-caixa" Caption="Movimentação de Caixa" />
-    <Class Name="ERP.Lavanderia.Module.PacoteCaixa.TipoMovimentacao" ImageName="tipo-de-movimentacao" Caption="Tipo de Movimentação" />
+    <Class Name="ERP.Lavanderia.Module.PacoteCaixa.TipoMovimentacao" ImageName="tipo-de-movimentacao" Caption="Tipo de Movimentação de Caixa" />
     <Class Name="ERP.Lavanderia.Module.PacoteCliente.Cliente" ImageName="cliente">
       <OwnMembers>
         <Member Name="DataCadastro" AllowEdit="False" />

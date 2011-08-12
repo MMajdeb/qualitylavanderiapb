@@ -35,6 +35,11 @@ namespace ERP.Lavanderia.Module.PacoteRecursosHumanos
             get { return observacoes; }
             set { SetPropertyValue("Observacoes", ref observacoes, value); }
         }
+
+        public static ColaboradorCargo RetornaCargo(Session session, string descricao)
+        {
+            return session.FindObject<ColaboradorCargo>(new BinaryOperator("Descricao", descricao));
+        }
     }
 
 }

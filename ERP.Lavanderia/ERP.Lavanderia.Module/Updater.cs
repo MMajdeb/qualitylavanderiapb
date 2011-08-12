@@ -14,6 +14,9 @@ using System.Collections.Generic;
 using ERP.Lavanderia.Module.PacoteConfiguracoes;
 using ERP.Lavanderia.Module.PacoteRoupa;
 using ERP.Lavanderia.Module.PacoteLavagem;
+using ERP.Lavanderia.Module.PacoteRecursosHumanos;
+using ERP.Lavanderia.Module.PacoteMaterial;
+using ERP.Lavanderia.Module.PacoteCaixa;
 
 namespace ERP.Lavanderia.Module
 {
@@ -519,6 +522,31 @@ namespace ERP.Lavanderia.Module
 
             #endregion
 
+            #region Cria caixa padrão
+
+            var caixas = Caixa.RetornaCaixas(Session);
+
+            if (caixas == null || caixas.Count == 0) {
+                Caixa caixa = new Caixa(Session);
+                caixa.Nome = "Caixa Padrão";
+                caixa.Save();
+            }
+
+            #endregion
+
+            #region Cria ponto de coleta padrão
+
+            var pontosDeColeta = PontoDeColeta.RetornaPontosDeColeta(Session);
+
+            if (pontosDeColeta == null || pontosDeColeta.Count == 0)
+            {
+                PontoDeColeta caixa = new PontoDeColeta(Session);
+                caixa.Nome = "Ponto de Coleta Padrão";
+                caixa.Save();
+            }
+
+            #endregion
+
             #region Criar Tipos de pacotes de roupa padrão
 
             String tipoDePacote1 = "Pacote de roupas dobradas";
@@ -586,6 +614,88 @@ namespace ERP.Lavanderia.Module
                     obj.Save();
                 }
             }
+
+            #endregion
+
+            #region Cria cargos padrão
+
+            string[] cargosDeColaborador = new string[] { "Lavadeira", "Passadeira", "Atendente", "Gerente de Operações", "Gerente Geral", "Entregador" };
+
+            foreach (string s in cargosDeColaborador)
+            {
+                if (ColaboradorCargo.RetornaCargo(Session, s) == null)
+                {
+                    var obj = new ColaboradorCargo(Session);
+                    obj.Descricao = s;
+                    obj.Save();
+                }
+            }
+
+            #endregion
+
+            #region Cria material padrão
+
+            string[] material = new string[] { "Sabão em Pó", "Sabão em Pedra", "Amaciante", "Cheirinho", "Cabide", "Cloro", "Álcool" };
+
+            foreach (string s in material)
+            {
+                if (Material.RetornaMaterial(Session, s) == null)
+                {
+                    var obj = new Material(Session);
+                    obj.Nome = s;
+                    obj.Save();
+                }
+            }
+
+            #endregion
+
+            #region Cria capital padrão
+
+            string[] capitalPadrao = new string[] { "Dinheiro", "Cartão de Crédito", "Cartão de Débito", "Cheque" };
+
+            foreach (string s in capitalPadrao)
+            {
+                if (Capital.RetornaCapital(Session, s) == null)
+                {
+                    var obj = new Capital(Session);
+                    obj.Descricao = s;
+                    obj.Save();
+                }
+            }
+
+            #endregion
+
+            #region Cria tipo de movimentação padrão
+
+            string[] tipoDeMovimentacaoPadrao = new string[] { "Pagamento de Lavagem", "Salário de Funcionário", "Pagamento de Almoço", "Compra de Material", 
+                "Pagamento de Conta Energia", "Pagamento de Conta Água" };
+
+            foreach (string s in tipoDeMovimentacaoPadrao)
+            {
+                if (TipoMovimentacao.RetornaTipoMovimentacao(Session, s) == null)
+                {
+                    var obj = new TipoMovimentacao(Session);
+                    obj.Descricao = s;
+                    obj.Save();
+                }
+            }
+
+            #endregion
+
+            #region Cria tecidos padrão
+
+            //string[] tipoDeMovimentacaoPadrao = new string[] { "Pagamento de Lavagem", "Salário de Funcionário", "Pagamento de Almoço", "Compra de Material", 
+            //    "Pagamento de Conta Energia", "Pagamento de Conta Água" };
+
+            //foreach (string s in tipoDeMovimentacaoPadrao)
+            //{
+            //    if (TipoMovimentacao.RetornaTipoMovimentacao(Session, s) == null)
+            //    {
+            //        var obj = new TipoMovimentacao(Session);
+            //        obj.Descricao = s;
+            //        obj.Save();
+            //    }
+            //}
 
             #endregion
 

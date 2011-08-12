@@ -128,6 +128,11 @@ namespace ERP.Lavanderia.Module.PacoteMaterial
             }
         }
         #endregion
+
+        public static Material RetornaMaterial(Session session, string nome)
+        {
+            return session.FindObject<Material>(new BinaryOperator("Nome", nome));
+        }
     }
 
 }
