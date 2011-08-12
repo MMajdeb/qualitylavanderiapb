@@ -42,6 +42,11 @@ namespace ERP.Lavanderia.Module.PacoteRoupa
                 SetPropertyValue("Descricao", ref descricao, value);
             }
         }
+
+        public static Tecido RetornaTecido(Session session, string descricao)
+        {
+            return session.FindObject<Tecido>(new BinaryOperator("Descricao", descricao));
+        }
     }
 
 }

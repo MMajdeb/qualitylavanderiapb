@@ -684,18 +684,17 @@ namespace ERP.Lavanderia.Module
 
             #region Cria tecidos padrão
 
-            //string[] tipoDeMovimentacaoPadrao = new string[] { "Pagamento de Lavagem", "Salário de Funcionário", "Pagamento de Almoço", "Compra de Material", 
-            //    "Pagamento de Conta Energia", "Pagamento de Conta Água" };
+            string[] tecidosDeRoupaPadrao = new string[] { "Linho", "Jeans", "Malha", "Seda" };
 
-            //foreach (string s in tipoDeMovimentacaoPadrao)
-            //{
-            //    if (TipoMovimentacao.RetornaTipoMovimentacao(Session, s) == null)
-            //    {
-            //        var obj = new TipoMovimentacao(Session);
-            //        obj.Descricao = s;
-            //        obj.Save();
-            //    }
-            //}
+            foreach (string s in tecidosDeRoupaPadrao)
+            {
+                if (Tecido.RetornaTecido(Session, s) == null)
+                {
+                    var obj = new Tecido(Session);
+                    obj.Descricao = s;
+                    obj.Save();
+                }
+            }
 
             #endregion
 
