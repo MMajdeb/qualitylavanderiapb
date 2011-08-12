@@ -175,6 +175,64 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Functional Tests\Config.xml" />
+    <EmbeddedResource Include="Images\caixa.png" />
+    <EmbeddedResource Include="Images\caixa_32x32.png" />
+    <EmbeddedResource Include="Images\capital.png" />
+    <EmbeddedResource Include="Images\capital_32x32.png" />
+    <EmbeddedResource Include="Images\cargo.png" />
+    <EmbeddedResource Include="Images\cargo_32x32.png" />
+    <EmbeddedResource Include="Images\cliente.png" />
+    <EmbeddedResource Include="Images\cliente_32x32.png" />
+    <EmbeddedResource Include="Images\colaborador.png" />
+    <EmbeddedResource Include="Images\colaborador_32x32.png" />
+    <EmbeddedResource Include="Images\configuracao-empresa.png" />
+    <EmbeddedResource Include="Images\configuracao-empresa_32x32.png" />
+    <EmbeddedResource Include="Images\configuracao-geral.png" />
+    <EmbeddedResource Include="Images\configuracao-geral_32x32.png" />
+    <EmbeddedResource Include="Images\configuracao-usuario.png" />
+    <EmbeddedResource Include="Images\configuracao-usuario_32x32.png" />
+    <EmbeddedResource Include="Images\cor.png" />
+    <EmbeddedResource Include="Images\cor_32x32.png" />
+    <EmbeddedResource Include="Images\edpartamento.png" />
+    <EmbeddedResource Include="Images\edpartamento_32x32.png" />
+    <EmbeddedResource Include="Images\empresa.png" />
+    <EmbeddedResource Include="Images\empresa_32x32.png" />
+    <EmbeddedResource Include="Images\feriado.png" />
+    <EmbeddedResource Include="Images\feriado_32x32.png" />
+    <EmbeddedResource Include="Images\historico-funcional.png" />
+    <EmbeddedResource Include="Images\historico-funcional_32x32.png" />
+    <EmbeddedResource Include="Images\inicio.png" />
+    <EmbeddedResource Include="Images\inicio_32x32.png" />
+    <EmbeddedResource Include="Images\lavagem.png" />
+    <EmbeddedResource Include="Images\lavagem_32x32.png" />
+    <EmbeddedResource Include="Images\marca.png" />
+    <EmbeddedResource Include="Images\marca_32x32.png" />
+    <EmbeddedResource Include="Images\material.png" />
+    <EmbeddedResource Include="Images\material_32x32.png" />
+    <EmbeddedResource Include="Images\matricula.png" />
+    <EmbeddedResource Include="Images\matricula_32x32.png" />
+    <EmbeddedResource Include="Images\movimentacao-de-caixa.png" />
+    <EmbeddedResource Include="Images\movimentacao-de-caixa_32x32.png" />
+    <EmbeddedResource Include="Images\movimentacao-de-material.png" />
+    <EmbeddedResource Include="Images\movimentacao-de-material_32x32.png" />
+    <EmbeddedResource Include="Images\pacote-de-roupa.png" />
+    <EmbeddedResource Include="Images\pacote-de-roupa_32x32.png" />
+    <EmbeddedResource Include="Images\pessoa.png" />
+    <EmbeddedResource Include="Images\pessoa_32x32.png" />
+    <EmbeddedResource Include="Images\ponto-de-coleta.png" />
+    <EmbeddedResource Include="Images\ponto-de-coleta_32x32.png" />
+    <EmbeddedResource Include="Images\profissao.png" />
+    <EmbeddedResource Include="Images\profissao_32x32.png" />
+    <EmbeddedResource Include="Images\roupa.png" />
+    <EmbeddedResource Include="Images\roupa_32x32.png" />
+    <EmbeddedResource Include="Images\tamanho.png" />
+    <EmbeddedResource Include="Images\tamanho_32x32.png" />
+    <EmbeddedResource Include="Images\tecido.png" />
+    <EmbeddedResource Include="Images\tecido_32x32.png" />
+    <EmbeddedResource Include="Images\tipo-de-movimentacao.png" />
+    <EmbeddedResource Include="Images\tipo-de-movimentacao_32x32.png" />
+    <EmbeddedResource Include="Images\usuario.png" />
+    <EmbeddedResource Include="Images\usuario_32x32.png" />
     <None Include="UnusableNodes1.xml">
       <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
       <SubType>Designer</SubType>
@@ -204,9 +262,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
