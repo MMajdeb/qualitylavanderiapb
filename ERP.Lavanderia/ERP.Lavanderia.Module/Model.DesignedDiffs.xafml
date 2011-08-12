@@ -79,7 +79,11 @@
     <Class Name="ERP.Lavanderia.Module.PacoteRecursosHumanos.HistoricoFuncional" ImageName="historico-funcional" Caption="Histórico Funcional" />
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Cor" ImageName="cor" Caption="Cor de Roupa" />
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Marca" ImageName="marca" Caption="Marca de Roupa" />
-    <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Roupa" ImageName="roupa" />
+    <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Roupa" ImageName="roupa">
+      <OwnMembers>
+        <Member Name="ToStringProperty" Caption="Impressão" />
+      </OwnMembers>
+    </Class>
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Tamanho" ImageName="tamanho" Caption="Tamanho de Roupa" />
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Tecido" ImageName="tecido" Caption="Tecido de Roupa" />
     <Class Name="ERP.Lavanderia.Module.PacoteRoupa.Tipo" ImageName="tipo-de-roupa" Caption="Tipo de Roupa" />
@@ -375,6 +379,16 @@
         <ColumnInfo Id="Sexo" Removed="True" />
         <ColumnInfo Id="TelefoneConvencional2" Removed="True" />
         <ColumnInfo Id="TelefoneMovel" Removed="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Roupa_DetailView">
+      <Items>
+        <PropertyEditor Id="ToStringProperty" Removed="True" />
+      </Items>
+    </DetailView>
+    <ListView Id="Roupa_ListView">
+      <Columns>
+        <ColumnInfo Id="ToStringProperty" Removed="True" />
       </Columns>
     </ListView>
     <ListView Id="RoupaLavagem_LookupListView" Criteria="Lavagem is null" />

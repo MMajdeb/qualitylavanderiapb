@@ -140,7 +140,6 @@ namespace ERP.Lavanderia.Module.PacoteRoupa
 
         }
 
-        [Browsable(false)]
         [NonPersistent]
         public string ToStringProperty
         {
