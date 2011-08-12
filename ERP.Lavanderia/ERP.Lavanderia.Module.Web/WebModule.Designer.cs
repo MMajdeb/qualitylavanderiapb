@@ -33,6 +33,7 @@ namespace ERP.Lavanderia.Module.Web
             // 
             this.RequiredModuleTypes.Add(typeof(ERP.Lavanderia.Module.LavanderiaModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule));
+            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Reports.Web.ReportsAspNetModule));
 
         }
 

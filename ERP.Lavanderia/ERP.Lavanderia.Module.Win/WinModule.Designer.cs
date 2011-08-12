@@ -33,6 +33,7 @@ namespace ERP.Lavanderia.Module.Win
             // 
             this.RequiredModuleTypes.Add(typeof(ERP.Lavanderia.Module.LavanderiaModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule));
+            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Reports.Win.ReportsWindowsFormsModule));
 
         }
 
