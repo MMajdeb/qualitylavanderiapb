@@ -50,6 +50,11 @@ namespace ERP.Lavanderia.Module.PacoteRoupa
         {
             get { return GetCollection("Roupas"); }
         }
+
+        public static Cor RetornaCor(Session session, string descricao)
+        {
+            return session.FindObject<Cor>(new BinaryOperator("Descricao", descricao));
+        }
     }
 
 }

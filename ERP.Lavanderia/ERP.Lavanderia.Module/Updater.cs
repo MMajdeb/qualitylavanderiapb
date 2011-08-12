@@ -12,6 +12,8 @@ using DevExpress.ExpressApp.Security;
 using ERP.Lavanderia.Module.PacoteEmpresa;
 using System.Collections.Generic;
 using ERP.Lavanderia.Module.PacoteConfiguracoes;
+using ERP.Lavanderia.Module.PacoteRoupa;
+using ERP.Lavanderia.Module.PacoteLavagem;
 
 namespace ERP.Lavanderia.Module
 {
@@ -513,6 +515,76 @@ namespace ERP.Lavanderia.Module
                 empresa.Pessoa.TipoPessoa = PacotePessoa.TipoPessoa.Juridica;
 
                 empresa.Save();
+            }
+
+            #endregion
+
+            #region Criar Tipos de pacotes de roupa padrão
+
+            String tipoDePacote1 = "Pacote de roupas dobradas";
+            String tipoDePacote2 = "Pacote de Cabides";
+
+            if (TipoPacoteDeRoupa.RetornaTipoDePacoteDeRoupa(Session, tipoDePacote1) == null)
+            {
+                TipoPacoteDeRoupa tipo = new TipoPacoteDeRoupa(Session);
+                tipo.Descricao = tipoDePacote1;
+                tipo.Save();
+            }
+
+            if (TipoPacoteDeRoupa.RetornaTipoDePacoteDeRoupa(Session, tipoDePacote2) == null)
+            {
+                TipoPacoteDeRoupa tipo = new TipoPacoteDeRoupa(Session);
+                tipo.Descricao = tipoDePacote2;
+                tipo.Save();
+            }
+
+            #endregion
+
+            #region Cria tipos de roupa padrão
+
+            string[] tiposDeRoupa = new string[] {"Calça", "Vestido", "Bermuda", "Camisa", "Paletó", "Blazer", "Lençol", "Colcha", 
+                "Toalha de Rosto", "Toalha de Banho", "Meia", "Cueca", "Calcinha"};
+
+            foreach (string t in tiposDeRoupa) {
+                if (Tipo.RetornaTipo(Session, t) == null)
+                {
+                    Tipo tipo = new Tipo(Session);
+                    tipo.Descricao = t;
+                    tipo.Save();
+                }
+            }
+
+            #endregion
+
+            #region Cria cores de roupa padrão
+
+            string[] coresDeRoupa = new string[] {"Azul", "Amarelo", "Vermelho", "Verde", "Branco", "Preto", "Cinza", "Laranja"};
+
+            foreach (string s in coresDeRoupa)
+            {
+                if (Cor.RetornaCor(Session, s) == null)
+                {
+                    var obj = new Cor(Session);
+                    obj.Descricao = s;
+                    obj.Save();
+                }
+            }
+
+            #endregion
+
+            #region Cria tamanho de roupa padrão
+
+            string[] tamanhosDeRoupa = new string[] { "P", "M", "G", "GG", "XG", "Baby Look", "40", "42", "44", "48", "50", 
+                "1", "2", "3", "4", "5", "Casal", "Solteiro", "King" };
+
+            foreach (string s in tamanhosDeRoupa)
+            {
+                if (Tamanho.RetornaTamanho(Session, s) == null)
+                {
+                    var obj = new Tamanho(Session);
+                    obj.Descricao = s;
+                    obj.Save();
+                }
             }
 
             #endregion
