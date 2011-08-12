@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
+  <BOModel>
+    <Class Name="DevExpress.ExpressApp.Reports.ReportData" Caption="Relatório" />
+  </BOModel>
   <NavigationItems>
     <Items>
       <Item Id="Reports" Caption="Relatórios" />
