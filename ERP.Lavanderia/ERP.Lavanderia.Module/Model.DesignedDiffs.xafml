@@ -60,6 +60,7 @@
     <Class Name="ERP.Lavanderia.Module.PacoteGeral.Feriado" ImageName="feriado" />
     <Class Name="ERP.Lavanderia.Module.PacoteLavagem.Lavagem" ImageName="lavagem" />
     <Class Name="ERP.Lavanderia.Module.PacoteLavagem.PacoteDeRoupa" ImageName="pacote-de-roupa" />
+    <Class Name="ERP.Lavanderia.Module.PacoteLavagem.TipoPacoteDeRoupa" ImageName="tipo-de-pacote-de-roupa" />
     <Class Name="ERP.Lavanderia.Module.PacoteMaterial.Material" ImageName="material">
       <OwnMembers>
         <Member Name="QuantidadeEmCaixa" AllowEdit="False" />

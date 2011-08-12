@@ -175,6 +175,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Functional Tests\Config.xml" />
+    <EmbeddedResource Include="Images\tipo-de-pacote-de-roupa.png" />
+    <EmbeddedResource Include="Images\tipo-de-pacote-de-roupa_32x32.png" />
     <EmbeddedResource Include="Images\caixa.png" />
     <EmbeddedResource Include="Images\caixa_32x32.png" />
     <EmbeddedResource Include="Images\capital.png" />
@@ -193,8 +195,8 @@
     <EmbeddedResource Include="Images\configuracao-usuario_32x32.png" />
     <EmbeddedResource Include="Images\cor.png" />
     <EmbeddedResource Include="Images\cor_32x32.png" />
-    <EmbeddedResource Include="Images\edpartamento.png" />
-    <EmbeddedResource Include="Images\edpartamento_32x32.png" />
+    <EmbeddedResource Include="Images\departamento.png" />
+    <EmbeddedResource Include="Images\departamento_32x32.png" />
     <EmbeddedResource Include="Images\empresa.png" />
     <EmbeddedResource Include="Images\empresa_32x32.png" />
     <EmbeddedResource Include="Images\feriado.png" />
