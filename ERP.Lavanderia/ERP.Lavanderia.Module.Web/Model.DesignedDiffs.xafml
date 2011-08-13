@@ -2,6 +2,7 @@
 <Application>
   <BOModel>
     <Class Name="DevExpress.ExpressApp.Reports.ReportData" Caption="Relatório" />
+    <Class Name="ERP.Lavanderia.Module.PacotePessoa.Matricula" ImageName="matricula" />
   </BOModel>
   <NavigationItems>
     <Items>
