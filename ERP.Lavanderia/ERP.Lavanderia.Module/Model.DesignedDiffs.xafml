@@ -60,7 +60,11 @@
     <Class Name="ERP.Lavanderia.Module.PacoteEndereco.Endereco" Caption="Endereço" />
     <Class Name="ERP.Lavanderia.Module.PacoteEndereco.Pais" Caption="País" />
     <Class Name="ERP.Lavanderia.Module.PacoteGeral.Feriado" ImageName="feriado" />
-    <Class Name="ERP.Lavanderia.Module.PacoteLavagem.Lavagem" ImageName="lavagem" />
+    <Class Name="ERP.Lavanderia.Module.PacoteLavagem.Lavagem" ImageName="lavagem">
+      <OwnMembers>
+        <Member Name="MovimentacaoCaixa" Caption="Pagamento" />
+      </OwnMembers>
+    </Class>
     <Class Name="ERP.Lavanderia.Module.PacoteLavagem.PacoteDeRoupa" ImageName="pacote-de-roupa" />
     <Class Name="ERP.Lavanderia.Module.PacoteLavagem.TipoPacoteDeRoupa" ImageName="tipo-de-pacote-de-roupa" Caption="Tipo de Pacote de Roupa" />
     <Class Name="ERP.Lavanderia.Module.PacoteMaterial.Material" ImageName="material">

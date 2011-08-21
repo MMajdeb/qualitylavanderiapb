@@ -14,11 +14,14 @@ using ERP.Lavanderia.Module.PacoteColaborador;
 using ERP.Lavanderia.Module.PacoteCaixa;
 using ERP.Lavanderia.Module.PacoteConfiguracoes;
 using ERP.Lavanderia.Module.PacoteGeral;
+using ERP.Lavanderia.Module.PacoteSeguranca;
+using DevExpress.ExpressApp.ConditionalEditorState;
 
 namespace ERP.Lavanderia.Module.PacoteLavagem
 {
     [DefaultProperty("ToStringProperty")]
     [DefaultClassOptions]
+    [EditorStateRuleAttribute("Lavagem.DesativaFinanceiro", "Valor;MovimentacaoCaixa", EditorState.Hidden, "UsuarioPodeVeValor == false", ViewType.Any)]
     public class Lavagem : BaseObject
     {
         private Cliente cliente;
@@ -254,6 +257,25 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
                 {
                     return "Não foi possível exibir a descrição";
                 }
+            }
+        }
+
+        [NonPersistent]
+        [Browsable(false)]
+        public bool UsuarioPodeVeValor {
+            get {
+                Papel adminRole = Papel.RetornaPapel(TipoPapelLavanderia.Administrador, Session);
+                Papel gerenteRole = Papel.RetornaPapel(TipoPapelLavanderia.Gerente, Session);
+
+                Usuario usuarioLogado = Usuario.RetornaUsuarioLogado(Session);
+
+                foreach (var role in usuarioLogado.Roles) {
+                    if (role.Equals(adminRole) || role.Equals(gerenteRole)) {
+                        return true;
+                    }
+                }
+
+                return false;
             }
         }
     }
