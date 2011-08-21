@@ -17,6 +17,8 @@ using ERP.Lavanderia.Module.PacoteCliente;
 using ERP.Lavanderia.Module.PacoteRoupa;
 using ERP.Lavanderia.Module.PacoteLavagem;
 using ERP.Lavanderia.Module.PacoteColaborador;
+using ERP.Lavanderia.Module.PacoteMaterial;
+using ERP.Lavanderia.Module.PacotePessoa;
 
 namespace ERP.Lavanderia.Module.PacoteSeguranca
 {
@@ -74,14 +76,13 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
                 session.Delete(clienteRole.PersistentPermissions[0]);
             }
 
-            /*** Permissoes de cliente ***/
-            clienteRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.NoAccess));
+            clienteRole.AddPermission(new ObjectAccessPermission(typeof(Pessoa), ObjectAccess.Read, ObjectAccessModifier.Allow));
             clienteRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Read, ObjectAccessModifier.Allow));
-            clienteRole.AddPermission(new ObjectAccessPermission(typeof(Usuario), ObjectAccess.Read, ObjectAccessModifier.Allow));
             clienteRole.AddPermission(new ObjectAccessPermission(typeof(Cliente), ObjectAccess.Read, ObjectAccessModifier.Allow));
-            clienteRole.AddPermission(new ObjectAccessPermission(typeof(Roupa), ObjectAccess.Read, ObjectAccessModifier.Allow));
-            clienteRole.AddPermission(new ObjectAccessPermission(typeof(Lavagem), ObjectAccess.Read, ObjectAccessModifier.Allow));
-            clienteRole.AddPermission(new ObjectAccessPermission(typeof(RoupaLavagem), ObjectAccess.Read, ObjectAccessModifier.Allow));
+
+            /*** Padrao ***/
+            clienteRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
+            clienteRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.NoAccess));
 
             clienteRole.Save();
         }
@@ -102,21 +103,13 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
                 session.Delete(funcionarioRole.PersistentPermissions[0]);
             }
 
-            /*** Permissoes de funcionario ***/
-            // Allow full access to all objects to the Users role
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess));
-            funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
-            // Deny editing access to the User type objects to the Users role
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Usuario), ObjectAccess.ChangeAccess, ObjectAccessModifier.Deny));
-            // Deny full access to the Role type objects to the Users role
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Papel), ObjectAccess.AllAccess, ObjectAccessModifier.Deny));
-            // Deny editing the application model to the Users role
-            funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Deny));
-            // Nega acesso ao objeto Empresa
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.ChangeAccess, ObjectAccessModifier.Deny));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Delete, ObjectAccessModifier.Deny));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Create, ObjectAccessModifier.Deny));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pessoa), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Colaborador), ObjectAccess.Read, ObjectAccessModifier.Allow));
+
+            /*** Padrao ***/
+            funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.NoAccess));
 
             // Save the Users role to the database
             funcionarioRole.Save();
@@ -138,21 +131,8 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
                 session.Delete(funcionarioRole.PersistentPermissions[0]);
             }
 
-            /*** Permissoes de funcionario ***/
-            // Allow full access to all objects to the Users role
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.NoAccess));
-            // Deny editing access to the User type objects to the Users role
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Usuario), ObjectAccess.ChangeAccess, ObjectAccessModifier.Deny));
-            // Deny full access to the Role type objects to the Users role
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Papel), ObjectAccess.AllAccess, ObjectAccessModifier.Deny));
-            // Deny editing the application model to the Users role
-            funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Deny));
-            // Nega acesso ao objeto Empresa
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.ChangeAccess, ObjectAccessModifier.Deny));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Delete, ObjectAccessModifier.Deny));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Create, ObjectAccessModifier.Deny));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pessoa), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Read, ObjectAccessModifier.Allow));
-
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Usuario), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Cliente), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(PontoDeColeta), ObjectAccess.Read, ObjectAccessModifier.Allow));
@@ -169,6 +149,23 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(RoupaLavagem), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(RoupaLavagem), ObjectAccess.Create, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(RoupaLavagem), ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
+
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(PacoteDeRoupa), ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(PacoteDeRoupa), ObjectAccess.Create, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(PacoteDeRoupa), ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
+
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(TipoPacoteDeRoupa), ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(TipoPacoteDeRoupa), ObjectAccess.Create, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(TipoPacoteDeRoupa), ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
+
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Material), ObjectAccess.Read, ObjectAccessModifier.Allow));
+
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(MovimentacaoMaterial), ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(MovimentacaoMaterial), ObjectAccess.Create, ObjectAccessModifier.Allow));
+
+            /*** Padrao ***/
+            funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.NoAccess));
 
             // Save the Users role to the database
             funcionarioRole.Save();
