@@ -19,6 +19,8 @@ using ERP.Lavanderia.Module.PacoteLavagem;
 using ERP.Lavanderia.Module.PacoteColaborador;
 using ERP.Lavanderia.Module.PacoteMaterial;
 using ERP.Lavanderia.Module.PacotePessoa;
+using ERP.Lavanderia.Module.PacoteRecursosHumanos;
+using ERP.Lavanderia.Module.PacoteEndereco;
 
 namespace ERP.Lavanderia.Module.PacoteSeguranca
 {
@@ -112,6 +114,13 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Colaborador), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pessoa), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Matricula), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(ColaboradorCargo), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Departamento), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Endereco), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pais), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Estado), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Cidade), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
 
             // Save the Users role to the database
             funcionarioRole.Save();
@@ -138,35 +147,34 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
                ObjectAccess.AllAccess, ObjectAccessModifier.Deny));
             funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
 
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pessoa), ObjectAccess.AllAccess ^ ObjectAccess.Navigate));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.AllAccess ^ ObjectAccess.Navigate));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Usuario), ObjectAccess.AllAccess ^ ObjectAccess.Navigate));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Cliente), ObjectAccess.AllAccess ^ ObjectAccess.Navigate));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(PontoDeColeta), ObjectAccess.AllAccess ^ ObjectAccess.Navigate));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Colaborador), ObjectAccess.AllAccess ^ ObjectAccess.Navigate));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pessoa), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Usuario), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Cliente), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(PontoDeColeta), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Colaborador), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Matricula), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(ColaboradorCargo), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Departamento), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Endereco), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pais), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Estado), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Cidade), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
 
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Roupa), ObjectAccess.AllAccess ^ ObjectAccess.Create ^ ObjectAccess.ChangeAccess));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Roupa), 
+                ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create ^ ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Lavagem),
+                ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create ^ ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(RoupaLavagem),
+                ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create ^ ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(PacoteDeRoupa),
+                ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create ^ ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(TipoPacoteDeRoupa),
+                ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create ^ ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
 
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Lavagem), ObjectAccess.Read, ObjectAccessModifier.Allow));
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Lavagem), ObjectAccess.Create, ObjectAccessModifier.Allow));
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Lavagem), ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
-
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(RoupaLavagem), ObjectAccess.Read, ObjectAccessModifier.Allow));
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(RoupaLavagem), ObjectAccess.Create, ObjectAccessModifier.Allow));
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(RoupaLavagem), ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
-
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(PacoteDeRoupa), ObjectAccess.Read, ObjectAccessModifier.Allow));
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(PacoteDeRoupa), ObjectAccess.Create, ObjectAccessModifier.Allow));
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(PacoteDeRoupa), ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
-
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(TipoPacoteDeRoupa), ObjectAccess.Read, ObjectAccessModifier.Allow));
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(TipoPacoteDeRoupa), ObjectAccess.Create, ObjectAccessModifier.Allow));
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(TipoPacoteDeRoupa), ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
-
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Material), ObjectAccess.Read, ObjectAccessModifier.Allow));
-
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(MovimentacaoMaterial), ObjectAccess.Read, ObjectAccessModifier.Allow));
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(MovimentacaoMaterial), ObjectAccess.Create, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Material), ObjectAccess.Navigate ^ ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(TipoPacoteDeRoupa),
+                ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create, ObjectAccessModifier.Allow));
 
             // Save the Users role to the database
             funcionarioRole.Save();
