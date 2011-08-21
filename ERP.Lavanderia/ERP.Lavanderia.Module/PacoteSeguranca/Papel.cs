@@ -163,6 +163,17 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
 
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Roupa), 
                 ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create ^ ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Marca),
+                ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Cor),
+                ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Tamanho),
+                ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Tecido),
+                ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Tipo),
+                ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create, ObjectAccessModifier.Allow));
+            
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Lavagem),
                 ObjectAccess.Navigate ^ ObjectAccess.Read ^ ObjectAccess.Create ^ ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(RoupaLavagem),
