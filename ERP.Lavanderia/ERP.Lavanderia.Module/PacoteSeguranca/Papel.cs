@@ -103,13 +103,14 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
                 session.Delete(funcionarioRole.PersistentPermissions[0]);
             }
 
+            funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
+
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pessoa), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Colaborador), ObjectAccess.Read, ObjectAccessModifier.Allow));
 
             /*** Padrao ***/
-            funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.NoAccess));
+            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess, ObjectAccessModifier.Deny));
 
             // Save the Users role to the database
             funcionarioRole.Save();
@@ -130,6 +131,8 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
             {
                 session.Delete(funcionarioRole.PersistentPermissions[0]);
             }
+
+            funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
 
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pessoa), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Read, ObjectAccessModifier.Allow));
@@ -164,8 +167,7 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(MovimentacaoMaterial), ObjectAccess.Create, ObjectAccessModifier.Allow));
 
             /*** Padrao ***/
-            funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.NoAccess));
+            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess, ObjectAccessModifier.Deny));
 
             // Save the Users role to the database
             funcionarioRole.Save();
