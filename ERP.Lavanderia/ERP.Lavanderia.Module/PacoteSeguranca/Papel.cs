@@ -44,7 +44,8 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
             base.AddPermission(permission);
         }
 
-        public static void CriarPapeis(Session session) {
+        public static void CriarPapeis(Session session)
+        {
             /*** Papel cliente ***/
             criarPapelCliente(session);
 
@@ -103,14 +104,19 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
                 session.Delete(funcionarioRole.PersistentPermissions[0]);
             }
 
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(XPBaseObject),
+               ObjectAccess.AllAccess, ObjectAccessModifier.Deny));
             funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
 
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pessoa), ObjectAccess.Read, ObjectAccessModifier.Allow));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Read, ObjectAccessModifier.Allow));
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Colaborador), ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pessoa),
+                ObjectAccess.AllAccess ^ ObjectAccess.Navigate));
 
-            /*** Padrao ***/
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess, ObjectAccessModifier.Deny));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa),
+                ObjectAccess.AllAccess ^ ObjectAccess.Navigate));
+
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Colaborador),
+                ObjectAccess.AllAccess ^ ObjectAccess.Navigate));
 
             // Save the Users role to the database
             funcionarioRole.Save();
@@ -132,19 +138,24 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
                 session.Delete(funcionarioRole.PersistentPermissions[0]);
             }
 
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(XPBaseObject),
+               ObjectAccess.AllAccess, ObjectAccessModifier.Deny));
             funcionarioRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
 
-            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pessoa), ObjectAccess.Read, ObjectAccessModifier.Allow));
+            funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Pessoa),
+                ObjectAccess.AllAccess));
+
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Usuario), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Cliente), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(PontoDeColeta), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Colaborador), ObjectAccess.Read, ObjectAccessModifier.Allow));
-            
+
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Roupa), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Roupa), ObjectAccess.Create, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Roupa), ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
-            
+
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Lavagem), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Lavagem), ObjectAccess.Create, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(Lavagem), ObjectAccess.ChangeAccess, ObjectAccessModifier.Allow));
@@ -165,9 +176,6 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
 
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(MovimentacaoMaterial), ObjectAccess.Read, ObjectAccessModifier.Allow));
             funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(MovimentacaoMaterial), ObjectAccess.Create, ObjectAccessModifier.Allow));
-
-            /*** Padrao ***/
-            //funcionarioRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess, ObjectAccessModifier.Deny));
 
             // Save the Users role to the database
             funcionarioRole.Save();
@@ -233,7 +241,8 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
         }
     }
 
-    public enum TipoPapelLavanderia {
+    public enum TipoPapelLavanderia
+    {
         Cliente, FuncionarioNivel1, FuncionarioNivel2, Gerente, Administrador
     }
 
