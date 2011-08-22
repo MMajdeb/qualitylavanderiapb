@@ -30,6 +30,7 @@ namespace ERP.Lavanderia.Module.PacoteEmpresa
 
         public Departamento(Session session) : base(session) { }
 
+        [RuleUniqueValue("RuleUniqueValue Departamento.Nome", DefaultContexts.Save, @"""Nome"" já existe.")]
         [RuleRequiredField("RuleRequiredField Departamento.Nome", DefaultContexts.Save)]
         public string Nome
         {
@@ -223,6 +224,17 @@ namespace ERP.Lavanderia.Module.PacoteEmpresa
             return departamento;
         }
 
+        public static Departamento RetornaDepartamentoPorNomeEEmpresa(string nome, Empresa empresa, IObjectSpace objectSpace)
+        {
+            Departamento departamento = objectSpace.FindObject<Departamento>(new BinaryOperator("Nome", nome) & new BinaryOperator("Empresa.Oid", empresa.Oid));
+            return departamento;
+        }
+
+        public static Departamento RetornaDepartamentoPorNomeEEmpresa(string nome, Empresa empresa, Session session)
+        {
+            Departamento departamento = session.FindObject<Departamento>(new BinaryOperator("Nome", nome) & new BinaryOperator("Empresa.Oid", empresa.Oid));
+            return departamento;
+        }
 
         #endregion
     }

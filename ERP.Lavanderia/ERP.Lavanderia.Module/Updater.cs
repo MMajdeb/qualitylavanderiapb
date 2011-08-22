@@ -517,8 +517,27 @@ namespace ERP.Lavanderia.Module
                 
                 empresa.Pessoa = new PacotePessoa.Pessoa(ObjectSpace.Session);
                 empresa.Pessoa.TipoPessoa = PacotePessoa.TipoPessoa.Juridica;
+                empresa.Pessoa.Nome = "Empresa Padrão";
 
                 empresa.Save();
+            }
+
+            #endregion
+
+            #region Cria Departamentos Padrão
+            
+            string[] departamentosPadrao = new string[] {"Recepção", "Gerência", "Operação", "Presidência"};
+
+            foreach (string t in departamentosPadrao)
+            {
+                Departamento dep = Departamento.RetornaDepartamentoPorNomeEEmpresa(t, empresa, ObjectSpace.Session);
+                if (dep == null)
+                {
+                    dep = new Departamento(ObjectSpace.Session);
+                    dep.Nome = t;
+                    dep.Empresa = empresa;
+                    dep.Save();
+                }
             }
 
             #endregion
