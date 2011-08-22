@@ -199,7 +199,7 @@
         <Items IsNewNode="True">
           <Item Id="ConfiguracaoEmpresa_ListView" IsNewNode="True" ObjectKey="" ViewId="ConfiguracaoEmpresa_DetailView" />
           <Item Id="ConfiguracaoGeral_ListView" IsNewNode="True" ObjectKey="" ViewId="ConfiguracaoGeral_DetailView" />
-          <Item Id="ConfiguracaoUsuario_ListView" IsNewNode="True" ObjectKey="" ViewId="ConfiguracaoUsuario_DetailView" />
+          <Item Id="ConfiguracaoUsuario_ListView" IsNewNode="True" ObjectKey="" ViewId="ConfiguracaoUsuario_ListView" />
           <Item Id="Papel_ListView" IsNewNode="True" ViewId="Papel_ListView" ObjectKey="" />
           <Item Id="Usuario_ListView" IsNewNode="True" ViewId="Usuario_ListView" ObjectKey="" />
         </Items>
