@@ -323,6 +323,8 @@
     </ListView>
     <ListView Id="Lavagem_ListView">
       <Columns>
+        <ColumnInfo Id="MovimentacaoCaixa" Index="-1" Removed="True" />
+        <ColumnInfo Id="Valor" Index="-1" Removed="True" />
         <ColumnInfo Id="DataHoraPreferivelParaEntrega" SortIndex="0" GroupIndex="-1" SortOrder="Descending" />
         <ColumnInfo Id="Anotador" Removed="True" />
         <ColumnInfo Id="Entregador" Removed="True" />
@@ -349,8 +351,6 @@
         <ColumnInfo Id="EntregaEmCasa" IsNewNode="True" PropertyName="EntregaEmCasa" Width="50" Index="5" />
         <ColumnInfo Id="PontoDeColetaDeRecebimento" IsNewNode="True" PropertyName="PontoDeColetaDeRecebimento" Width="70" Index="6" />
         <ColumnInfo Id="PontoDeColetaParaEntrega" IsNewNode="True" PropertyName="PontoDeColetaParaEntrega" Width="70" Index="7" />
-        <ColumnInfo Id="MovimentacaoCaixa" IsNewNode="True" PropertyName="MovimentacaoCaixa" Width="70" Index="8" />
-        <ColumnInfo Id="Valor" IsNewNode="True" PropertyName="Valor" Width="50" Index="9" />
       </Columns>
     </ListView>
     <ListView Id="Material_Movimentacoes_ListView" AllowNew="False" AllowDelete="False" />
