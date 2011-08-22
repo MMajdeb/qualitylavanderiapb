@@ -62,6 +62,8 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
 
             /*** Papel administrador ***/
             criarPapelAdministrador(session);
+
+            session.CommitTransaction();
         }
 
         private static void criarPapelCliente(Session session)
