@@ -321,11 +321,20 @@
         <ColumnInfo Id="Senha" Removed="True" />
       </Columns>
     </ListView>
+    <DetailView Id="Lavagem_DetailView">
+      <Items>
+        <PropertyEditor Id="DataHoraDeRecebimento" DisplayFormat="dd/MM/yyyy HH:mm:ss" EditMask="dd/MM/yyyy HH:mm:ss" />
+        <PropertyEditor Id="DataHoraEntrega" DisplayFormat="dd/MM/yyyy HH:mm:ss" EditMask="dd/MM/yyyy HH:mm:ss" />
+        <PropertyEditor Id="DataHoraPreferivelParaEntrega" DisplayFormat="dd/MM/yyyy HH:mm:ss" EditMask="dd/MM/yyyy HH:mm:ss" />
+      </Items>
+    </DetailView>
     <ListView Id="Lavagem_ListView">
       <Columns>
         <ColumnInfo Id="MovimentacaoCaixa" Index="-1" Removed="True" />
         <ColumnInfo Id="Valor" Index="-1" Removed="True" />
-        <ColumnInfo Id="DataHoraPreferivelParaEntrega" SortIndex="0" GroupIndex="-1" SortOrder="Descending" />
+        <ColumnInfo Id="DataHoraDeRecebimento" DisplayFormat="dd/MM/yyyy HH:mm:ss" EditMask="dd/MM/yyyy HH:mm:ss" />
+        <ColumnInfo Id="DataHoraPreferivelParaEntrega" SortIndex="0" GroupIndex="-1" SortOrder="Descending" DisplayFormat="dd/MM/yyyy HH:mm:ss" EditMask="dd/MM/yyyy HH:mm:ss" />
+        <ColumnInfo Id="DataHoraEntrega" DisplayFormat="dd/MM/yyyy HH:mm:ss" EditMask="dd/MM/yyyy HH:mm:ss" />
         <ColumnInfo Id="Anotador" Removed="True" />
         <ColumnInfo Id="Entregador" Removed="True" />
         <ColumnInfo Id="Lavador" Removed="True" />
@@ -345,9 +354,9 @@
       <Columns IsNewNode="True">
         <ColumnInfo Id="Cliente" IsNewNode="True" PropertyName="Cliente" Width="70" Index="0" />
         <ColumnInfo Id="@a0fb9319-91c5-48e1-98d2-bb60ced9a90e" IsNewNode="True" PropertyName="StatusLavagem" Caption="Status" Index="1" />
-        <ColumnInfo Id="DataHoraDeRecebimento" IsNewNode="True" PropertyName="DataHoraDeRecebimento" Width="70" Index="2" />
-        <ColumnInfo Id="DataHoraPreferivelParaEntrega" IsNewNode="True" PropertyName="DataHoraPreferivelParaEntrega" Width="70" SortIndex="0" SortOrder="Descending" Index="3" />
-        <ColumnInfo Id="DataHoraEntrega" IsNewNode="True" PropertyName="DataHoraEntrega" Width="70" Index="4" />
+        <ColumnInfo Id="DataHoraDeRecebimento" IsNewNode="True" PropertyName="DataHoraDeRecebimento" Width="70" Index="2" DisplayFormat="dd/MM/yyyy HH:mm:ss" EditMask="dd/MM/yyyy HH:mm:ss" />
+        <ColumnInfo Id="DataHoraPreferivelParaEntrega" IsNewNode="True" PropertyName="DataHoraPreferivelParaEntrega" Width="70" SortIndex="0" SortOrder="Descending" Index="3" DisplayFormat="dd/MM/yyyy HH:mm:ss" EditMask="dd/MM/yyyy HH:mm:ss" />
+        <ColumnInfo Id="DataHoraEntrega" IsNewNode="True" PropertyName="DataHoraEntrega" Width="70" Index="4" DisplayFormat="dd/MM/yyyy HH:mm:ss" EditMask="dd/MM/yyyy HH:mm:ss" />
         <ColumnInfo Id="EntregaEmCasa" IsNewNode="True" PropertyName="EntregaEmCasa" Width="50" Index="5" />
         <ColumnInfo Id="PontoDeColetaDeRecebimento" IsNewNode="True" PropertyName="PontoDeColetaDeRecebimento" Width="70" Index="6" />
         <ColumnInfo Id="PontoDeColetaParaEntrega" IsNewNode="True" PropertyName="PontoDeColetaParaEntrega" Width="70" Index="7" />
