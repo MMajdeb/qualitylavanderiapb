@@ -199,6 +199,12 @@
     <Compile Include="PacoteControladoress\ControladoresEmpresa\SelecaoEmpresaController.Designer.cs">
       <DependentUpon>SelecaoEmpresaController.cs</DependentUpon>
     </Compile>
+    <Compile Include="PacoteControladoress\ControladoresLavagem\ImprimirLavagemViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PacoteControladoress\ControladoresLavagem\ImprimirLavagemViewController.Designer.cs">
+      <DependentUpon>ImprimirLavagemViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="PacoteControladoress\ControladoresLavagem\LavagensDoDiaViewController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -258,12 +264,17 @@
     <EmbeddedResource Include="PacoteControladoress\ControladoresEmpresa\SelecaoEmpresaController.resx">
       <DependentUpon>SelecaoEmpresaController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PacoteControladoress\ControladoresLavagem\ImprimirLavagemViewController.resx">
+      <DependentUpon>ImprimirLavagemViewController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PacoteControladoress\ControladoresLavagem\LavagensDoDiaViewController.resx">
       <DependentUpon>LavagensDoDiaViewController.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Functional Tests\Config.xml" />
+    <EmbeddedResource Include="Images\imprimir.png" />
+    <EmbeddedResource Include="Images\imprimir_32x32.png" />
     <EmbeddedResource Include="Images\tipo-de-roupa.png" />
     <EmbeddedResource Include="Images\tipo-de-roupa_32x32.png" />
     <EmbeddedResource Include="Images\tipo-de-pacote-de-roupa.png" />
