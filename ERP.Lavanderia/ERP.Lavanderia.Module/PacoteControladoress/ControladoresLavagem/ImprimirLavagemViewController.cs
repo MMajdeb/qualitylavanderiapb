@@ -10,6 +10,8 @@ using DevExpress.Persistent.Base;
 using ERP.Lavanderia.Module.PacoteLavagem;
 using DevExpress.ExpressApp.Reports;
 using DevExpress.Data.Filtering;
+using DevExpress.XtraPrinting;
+using DevExpress.XtraReports.UI;
 
 namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
 {
@@ -47,7 +49,10 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
                 ReportData reportdata = ObjectSpace.FindObject<ReportData>(new BinaryOperator("Name", NOME_RELATORIO_LAVAGEM));
                 var xtraReport = reportdata.LoadXtraReport(ObjectSpace);
                 xtraReport.FilterString = new BinaryOperator("Oid", lavagemSelecionada.Oid).ToString();
-                xtraReport.ShowPreviewDialog();
+                xtraReport.CreateDocument();
+
+                ReportPrintTool pt = new ReportPrintTool(xtraReport);
+                pt.ShowPreviewDialog();
             }
             catch (Exception ex){
                 throw new UserFriendlyException("Erro ao imprimir a lavagem: " + ex.Message);
