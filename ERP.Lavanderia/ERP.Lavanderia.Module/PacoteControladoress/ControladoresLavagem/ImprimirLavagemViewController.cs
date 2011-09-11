@@ -51,8 +51,20 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
                 xtraReport.FilterString = new BinaryOperator("Oid", lavagemSelecionada.Oid).ToString();
                 xtraReport.CreateDocument();
 
-                ReportPrintTool pt = new ReportPrintTool(xtraReport);
-                pt.ShowPreviewDialog();
+                bool jaImprimiu = true;
+                try { 
+                    /*** Tenta faz a impressao para a web ***/
+                }
+                catch (Exception exe){
+                    jaImprimiu = false;
+                }
+
+                /*** Tenta faz a impressao para windows se nao imprimiu para web ***/
+                if (!jaImprimiu)
+                {
+                    ReportPrintTool pt = new ReportPrintTool(xtraReport);
+                    pt.ShowPreviewDialog();
+                }
             }
             catch (Exception ex){
                 throw new UserFriendlyException("Erro ao imprimir a lavagem: " + ex.Message);
