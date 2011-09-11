@@ -30,7 +30,9 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
                 {
                     lavagemSelecionada = listView.SelectedObjects[0] as Lavagem;
                 }
-                catch { }
+                catch {
+                    throw new UserFriendlyException("Selecione uma lavagem.");
+                }
             }
             else {
                 DetailView detailView = View as DetailView;
