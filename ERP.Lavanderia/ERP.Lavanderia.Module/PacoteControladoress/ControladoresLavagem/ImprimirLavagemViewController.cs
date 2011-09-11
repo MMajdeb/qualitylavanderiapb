@@ -8,11 +8,15 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Actions;
 using DevExpress.Persistent.Base;
 using ERP.Lavanderia.Module.PacoteLavagem;
+using DevExpress.ExpressApp.Reports;
+using DevExpress.Data.Filtering;
 
 namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
 {
     public partial class ImprimirLavagemViewController : ViewController
     {
+        public readonly static string NOME_RELATORIO_LAVAGEM = "Lavagem";
+
         public ImprimirLavagemViewController()
         {
             InitializeComponent();
@@ -37,6 +41,16 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
             else {
                 DetailView detailView = View as DetailView;
                 lavagemSelecionada = detailView.CurrentObject as Lavagem;
+            }
+
+            try {
+                ReportData reportdata = ObjectSpace.FindObject<ReportData>(new BinaryOperator("Name", NOME_RELATORIO_LAVAGEM));
+                var xtraReport = reportdata.LoadXtraReport(ObjectSpace);
+                xtraReport.FilterString = new BinaryOperator("Oid", lavagemSelecionada.Oid).ToString();
+                xtraReport.ShowPreviewDialog();
+            }
+            catch (Exception ex){
+                throw new UserFriendlyException("Erro ao imprimir a lavagem: " + ex.Message);
             }
         }
 
