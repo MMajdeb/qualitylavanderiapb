@@ -25,6 +25,12 @@ namespace ERP.Lavanderia.Module.PacoteMaterial
         private int quantidade;
         private Colaborador colaborador;
 
+        /// <summary>
+        /// Usado para atualizacoes na quantidade
+        /// </summary>
+        private int quantidadeAnterior;
+        private Modo? modoAnterior;
+
         public MovimentacaoMaterial(Session session)
             : base(session)
         {
@@ -70,14 +76,27 @@ namespace ERP.Lavanderia.Module.PacoteMaterial
         public Modo Modo
         {
             get { return modo; }
-            set { SetPropertyValue("Modo", ref modo, value); }
+            set {
+                if (modoAnterior == null) {
+                    modoAnterior = modo;
+                }
+
+                SetPropertyValue("Modo", ref modo, value); 
+            }
         }
 
         [RuleRequiredField("RuleRequiredField MovimentacaoMaterial.Quantidade", DefaultContexts.Save)]
         public int Quantidade
         {
             get { return quantidade; }
-            set { SetPropertyValue("Quantidade", ref quantidade, value); }
+            set {
+                if (quantidadeAnterior == 0)
+                {
+                    quantidadeAnterior = quantidade;
+                }
+
+                SetPropertyValue("Quantidade", ref quantidade, value); 
+            }
         }
 
         public string Observacoes
@@ -115,6 +134,12 @@ namespace ERP.Lavanderia.Module.PacoteMaterial
 
         protected override void OnSaving()
         {
+            if (quantidadeAnterior != 0) {
+                Modo modoUtilizado = modoAnterior != null ? (Modo) modoAnterior : modo;
+
+                Material.QuantidadeEmCaixa += modoUtilizado == Modo.Entrada ? -quantidadeAnterior : quantidadeAnterior;
+            }
+
             Material.QuantidadeEmCaixa += Modo == Modo.Entrada ? Quantidade : -Quantidade;
 
             base.OnSaving();
