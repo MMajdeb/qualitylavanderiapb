@@ -721,6 +721,7 @@ namespace ERP.Lavanderia.Module
             #region Cria Relatórios
 
             CreateReport("Lavagem", "Lavagem");
+            CreateReport("LavagensDoDia", "Lavagens do Dia");
 
             #endregion
 

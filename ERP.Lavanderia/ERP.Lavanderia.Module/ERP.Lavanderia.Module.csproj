@@ -339,6 +339,7 @@
     <EmbeddedResource Include="Images\usuario.png" />
     <EmbeddedResource Include="Images\usuario_32x32.png" />
     <EmbeddedResource Include="PacoteRelatorios\Lavagem.repx" />
+    <EmbeddedResource Include="PacoteRelatorios\LavagensDoDia.repx" />
     <None Include="UnusableNodes1.xml">
       <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
       <SubType>Designer</SubType>
