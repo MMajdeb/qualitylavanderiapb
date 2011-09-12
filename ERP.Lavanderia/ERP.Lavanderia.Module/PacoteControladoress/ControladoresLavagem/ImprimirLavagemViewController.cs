@@ -13,12 +13,13 @@ using DevExpress.Data.Filtering;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraReports.Web;
 using DevExpress.XtraReports.UI;
+using ERP.Lavanderia.Module.PacoteConfiguracoes;
+using System.IO;
 
 namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
 {
     public partial class ImprimirLavagemViewController : ViewController
     {
-        public readonly static string NOME_RELATORIO_LAVAGEM = "Lavagem";
 
         public ImprimirLavagemViewController()
         {
@@ -47,22 +48,41 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
             }
 
             try {
-                ReportData reportdata = ObjectSpace.FindObject<ReportData>(new BinaryOperator("Name", NOME_RELATORIO_LAVAGEM));
+                ReportData reportdata = ObjectSpace.FindObject<ReportData>(new BinaryOperator("Name", ConfiguracaoGeral.NOME_RELATORIO_LAVAGEM));
                 var xtraReport = reportdata.LoadXtraReport(ObjectSpace);
                 xtraReport.FilterString = new BinaryOperator("Oid", lavagemSelecionada.Oid).ToString();
                 xtraReport.CreateDocument();
 
-                //ReportViewer rv = new ReportViewer();
-                //rv.Report = xtraReport;
+                var info = Directory.CreateDirectory(ConfiguracaoGeral.DIRETORIO_PARA_TEMPORARIOS);
+                ConfiguracaoGeral cfg = ConfiguracaoGeral.RetornaConfiguracaoGeral(View.ObjectSpace);
+
+                string reportPath = ConfiguracaoGeral.DIRETORIO_PARA_TEMPORARIOS + "\\Test.pdf";
+
+                reportPath = reportPath.Replace(" ", "-");
+
+                xtraReport.ExportToPdf(reportPath);
+                StartProcess(reportPath);
 
                 /*** Essa porra so funciona pra Windows ***/
-                ReportPrintTool pt = new ReportPrintTool(xtraReport);
-                pt.ShowPreviewDialog();
+                //ReportPrintTool pt = new ReportPrintTool(xtraReport);
+                //pt.ShowPreviewDialog();
                 
             }
             catch (Exception ex){
                 throw new UserFriendlyException("Erro ao imprimir a lavagem: " + ex.Message);
             }
+        }
+
+        public void StartProcess(string path)
+        {
+            Process process = new Process();
+            try
+            {
+                process.StartInfo.FileName = path;
+                process.Start();
+                process.WaitForInputIdle();
+            }
+            catch { }
         }
 
     }

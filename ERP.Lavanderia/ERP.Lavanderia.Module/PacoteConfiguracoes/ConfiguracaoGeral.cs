@@ -16,6 +16,9 @@ namespace ERP.Lavanderia.Module.PacoteConfiguracoes
     [DefaultClassOptions]
     public class ConfiguracaoGeral : BaseObject
     {
+        public readonly static string NOME_RELATORIO_LAVAGEM = "Lavagem";
+        public readonly static string DIRETORIO_PARA_TEMPORARIOS = @"temp";
+
         //Servidor SMTP
         private string servidorSmtp;
         private int portaSmpt;
