@@ -234,6 +234,7 @@
     <Compile Include="PacoteMaterial\MovimentacaoMaterial.cs" />
     <Compile Include="PacotePessoa\Matricula.cs" />
     <Compile Include="PacotePessoa\Pessoa.cs" />
+    <Compile Include="PacoteRelatorios\ReportParameters\DataLavagensReportParametersObject.cs" />
     <Compile Include="PacoteRoupa\Cor.cs" />
     <Compile Include="PacoteRoupa\Marca.cs" />
     <Compile Include="PacoteRoupa\Roupa.cs" />

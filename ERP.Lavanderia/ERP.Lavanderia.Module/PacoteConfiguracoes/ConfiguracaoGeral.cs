@@ -131,6 +131,16 @@ namespace ERP.Lavanderia.Module.PacoteConfiguracoes
             }
         }
 
+        [NonPersistent]
+        [System.ComponentModel.Browsable(false)]
+        public DateTime DataHoraAtual
+        {
+            get
+            {
+                return DateTime.Now;
+            }
+        }
+
     }
 
     public enum DiaMensagemFelicitacao
