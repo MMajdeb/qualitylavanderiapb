@@ -11,6 +11,7 @@ using ERP.Lavanderia.Module.PacoteLavagem;
 using DevExpress.ExpressApp.Reports;
 using DevExpress.Data.Filtering;
 using DevExpress.XtraPrinting;
+using DevExpress.XtraReports.Web;
 using DevExpress.XtraReports.UI;
 
 namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
@@ -50,10 +51,11 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
                 var xtraReport = reportdata.LoadXtraReport(ObjectSpace);
                 xtraReport.FilterString = new BinaryOperator("Oid", lavagemSelecionada.Oid).ToString();
                 xtraReport.CreateDocument();
-
                 bool jaImprimiu = true;
                 try { 
                     /*** Tenta faz a impressao para a web ***/
+                    ReportViewer rv = new ReportViewer();
+                    rv.Report = xtraReport;
                 }
                 catch (Exception exe){
                     jaImprimiu = false;
