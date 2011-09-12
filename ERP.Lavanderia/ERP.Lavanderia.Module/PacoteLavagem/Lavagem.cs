@@ -57,7 +57,7 @@ namespace ERP.Lavanderia.Module.PacoteLavagem
 
             var cfg = ConfiguracaoGeral.RetornaConfiguracaoGeral(Session);
 
-            DataHoraDeRecebimento = DateTime.Now;
+            DataHoraDeRecebimento = cfg.DataHoraAtual;
             DataHoraPreferivelParaEntrega = DataHoraDeRecebimento.AddDays(cfg.DiasParaEntrega);
 
             while (DataHoraPreferivelParaEntrega.DayOfWeek == DayOfWeek.Sunday || Feriado.VerificaSeEFeriado(DataHoraPreferivelParaEntrega, Session)) {
