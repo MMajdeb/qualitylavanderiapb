@@ -24,7 +24,7 @@ namespace ERP.Lavanderia.Module.PacoteRelatorios.ReportParameters
         public DateTime Data
         {
             get { return data; }
-            set { SetPropertyValue("DataInicial", ref data, value); }
+            set { SetPropertyValue("Data", ref data, value); }
         }
 
         public override void AfterConstruction()
@@ -36,7 +36,10 @@ namespace ERP.Lavanderia.Module.PacoteRelatorios.ReportParameters
 
         public override CriteriaOperator GetCriteria()
         {
-            return new BinaryOperator("DataHoraDeRecebimento", data);
+            DateTime dataInicio = new DateTime(data.Year, data.Month, data.Day, 0, 0, 0);
+            DateTime dataFim = new DateTime(data.Year, data.Month, data.Day, 23, 59, 59);
+
+            return new BetweenOperator("DataHoraDeRecebimento", dataInicio, dataFim);
         }
 
         public override SortingCollection GetSorting()
