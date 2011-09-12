@@ -146,7 +146,7 @@ namespace ERP.Lavanderia.Module.PacoteConfiguracoes
             get
             {
                 DateTime now = DateTime.Now;
-                now.AddHours(diferencaFusoHorario);
+                now = now.AddHours(diferencaFusoHorario);
 
                 return now;
             }
