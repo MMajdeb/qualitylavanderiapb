@@ -33,6 +33,8 @@ namespace ERP.Lavanderia.Module.PacoteConfiguracoes
         private PontoDeColeta pontoDeColetaPadrao;
         private Caixa caixaPadrao;
 
+        private int diferencaFusoHorario;
+
         public ConfiguracaoGeral(Session session) : base(session) { }
 
         //[Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
@@ -101,6 +103,12 @@ namespace ERP.Lavanderia.Module.PacoteConfiguracoes
         {
             get { return diasParaEntrega; }
             set { SetPropertyValue("DiasParaEntrega", ref diasParaEntrega, value); }
+        }
+
+        public int DiferencaFusoHorario
+        {
+            get { return diferencaFusoHorario; }
+            set { SetPropertyValue("DiferencaFusoHorario", ref diferencaFusoHorario, value); }
         }
 
         public PontoDeColeta PontoDeColetaPadrao
