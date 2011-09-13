@@ -56,7 +56,8 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
                 var info = Directory.CreateDirectory(ConfiguracaoGeral.DIRETORIO_PARA_TEMPORARIOS);
                 ConfiguracaoGeral cfg = ConfiguracaoGeral.RetornaConfiguracaoGeral(View.ObjectSpace);
 
-                string reportPath = ConfiguracaoGeral.DIRETORIO_PARA_TEMPORARIOS + "\\lv" + lavagemSelecionada.Oid.ToString() + ".pdf";
+                string reportPath = ConfiguracaoGeral.DIRETORIO_PARA_TEMPORARIOS + "\\lv" + lavagemSelecionada.Oid.ToString()
+                    + "-" + cfg.DataHoraAtual.Ticks + ".pdf";
 
                 reportPath = reportPath.Replace(" ", "-");
 
