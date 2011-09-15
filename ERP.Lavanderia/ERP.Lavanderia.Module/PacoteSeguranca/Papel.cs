@@ -215,10 +215,10 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
             adminRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess));
             // Deny editing access to the AuditDataItemPersistent type objects to the Administrators role
             adminRole.AddPermission(new ObjectAccessPermission(typeof(AuditDataItemPersistent), ObjectAccess.ChangeAccess, ObjectAccessModifier.Deny));
-            adminRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Create, ObjectAccessModifier.Deny));
-            adminRole.AddPermission(new ObjectAccessPermission(typeof(ConfiguracaoEmpresa), ObjectAccess.Create, ObjectAccessModifier.Deny));
-            adminRole.AddPermission(new ObjectAccessPermission(typeof(ConfiguracaoGeral), ObjectAccess.Create, ObjectAccessModifier.Deny));
-            adminRole.AddPermission(new ObjectAccessPermission(typeof(ConfiguracaoUsuario), ObjectAccess.Create, ObjectAccessModifier.Deny));
+            adminRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Create ^ ObjectAccess.Delete, ObjectAccessModifier.Deny));
+            adminRole.AddPermission(new ObjectAccessPermission(typeof(ConfiguracaoEmpresa), ObjectAccess.Create ^ ObjectAccess.Delete, ObjectAccessModifier.Deny));
+            adminRole.AddPermission(new ObjectAccessPermission(typeof(ConfiguracaoGeral), ObjectAccess.Create ^ ObjectAccess.Delete, ObjectAccessModifier.Deny));
+            adminRole.AddPermission(new ObjectAccessPermission(typeof(ConfiguracaoUsuario), ObjectAccess.Create ^ ObjectAccess.Delete, ObjectAccessModifier.Deny));
             // Allow editing the application model to the Administrators role
             adminRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
             // Save the Administrators role to the database
@@ -246,10 +246,10 @@ namespace ERP.Lavanderia.Module.PacoteSeguranca
             adminRole.AddPermission(new ObjectAccessPermission(typeof(object), ObjectAccess.AllAccess));
             // Deny editing access to the AuditDataItemPersistent type objects to the Administrators role
             adminRole.AddPermission(new ObjectAccessPermission(typeof(AuditDataItemPersistent), ObjectAccess.ChangeAccess, ObjectAccessModifier.Deny));
-            adminRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Create, ObjectAccessModifier.Deny));
-            adminRole.AddPermission(new ObjectAccessPermission(typeof(ConfiguracaoEmpresa), ObjectAccess.Create, ObjectAccessModifier.Deny));
-            adminRole.AddPermission(new ObjectAccessPermission(typeof(ConfiguracaoGeral), ObjectAccess.Create, ObjectAccessModifier.Deny));
-            adminRole.AddPermission(new ObjectAccessPermission(typeof(ConfiguracaoUsuario), ObjectAccess.Create, ObjectAccessModifier.Deny));
+            adminRole.AddPermission(new ObjectAccessPermission(typeof(Empresa), ObjectAccess.Create ^ ObjectAccess.Delete, ObjectAccessModifier.Deny));
+            adminRole.AddPermission(new ObjectAccessPermission(typeof(ConfiguracaoEmpresa), ObjectAccess.Create ^ ObjectAccess.Delete, ObjectAccessModifier.Deny));
+            adminRole.AddPermission(new ObjectAccessPermission(typeof(ConfiguracaoGeral), ObjectAccess.Create ^ ObjectAccess.Delete, ObjectAccessModifier.Deny));
+            adminRole.AddPermission(new ObjectAccessPermission(typeof(ConfiguracaoUsuario), ObjectAccess.Create ^ ObjectAccess.Delete, ObjectAccessModifier.Deny));
             // Allow editing the application model to the Administrators role
             adminRole.AddPermission(new EditModelPermission(ModelAccessModifier.Allow));
             // Save the Administrators role to the database
