@@ -53,10 +53,12 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
                 xtraReport.FilterString = new BinaryOperator("Oid", lavagemSelecionada.Oid).ToString();
                 xtraReport.CreateDocument();
 
-                var info = Directory.CreateDirectory(ConfiguracaoGeral.DIRETORIO_PARA_TEMPORARIOS);
                 ConfiguracaoGeral cfg = ConfiguracaoGeral.RetornaConfiguracaoGeral(View.ObjectSpace);
+                string caminhoAbsolutoHospedagem = !String.IsNullOrEmpty(cfg.CaminhoAbsolutoHospedagem) ? 
+                    cfg.CaminhoAbsolutoHospedagem + "\\" + ConfiguracaoGeral.DIRETORIO_PARA_TEMPORARIOS  : ConfiguracaoGeral.DIRETORIO_PARA_TEMPORARIOS;
+                var info = Directory.CreateDirectory(caminhoAbsolutoHospedagem);
 
-                string reportPath = ConfiguracaoGeral.DIRETORIO_PARA_TEMPORARIOS + "\\lv" + lavagemSelecionada.Oid.ToString()
+                string reportPath = caminhoAbsolutoHospedagem + "\\lv" + lavagemSelecionada.Oid.ToString()
                     + "-" + cfg.DataHoraAtual.Ticks + ".pdf";
 
                 reportPath = reportPath.Replace(" ", "-");
