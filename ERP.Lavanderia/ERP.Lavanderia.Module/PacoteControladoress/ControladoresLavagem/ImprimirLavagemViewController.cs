@@ -58,13 +58,17 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
                     cfg.CaminhoAbsolutoHospedagem + "\\" + ConfiguracaoGeral.DIRETORIO_PARA_TEMPORARIOS  : ConfiguracaoGeral.DIRETORIO_PARA_TEMPORARIOS;
                 var info = Directory.CreateDirectory(caminhoAbsolutoHospedagem);
 
-                string reportPath = caminhoAbsolutoHospedagem + "\\lv" + lavagemSelecionada.Oid.ToString()
+                string reportName = "lv" + lavagemSelecionada.Oid.ToString()
                     + "-" + cfg.DataHoraAtual.Ticks + ".pdf";
 
-                reportPath = reportPath.Replace(" ", "-");
+                string reportAbsolutePath = caminhoAbsolutoHospedagem + "\\" + reportName;
 
-                xtraReport.ExportToPdf(reportPath);
-                StartProcess(reportPath);
+                string urlPDF = cfg.UrlERP + "/" + ConfiguracaoGeral.DIRETORIO_PARA_TEMPORARIOS + "/" + reportName;
+
+                reportName = reportName.Replace(" ", "-");
+
+                xtraReport.ExportToPdf(reportAbsolutePath);
+                StartProcess(urlPDF);
 
                 /*** Essa porra so funciona pra Windows ***/
                 //ReportPrintTool pt = new ReportPrintTool(xtraReport);
@@ -79,13 +83,9 @@ namespace ERP.Lavanderia.Module.PacoteControladoress.ControladoresLavagem
         public void StartProcess(string path)
         {
             Process process = new Process();
-            try
-            {
-                process.StartInfo.FileName = path;
-                process.Start();
-                process.WaitForInputIdle();
-            }
-            catch { }
+            process.StartInfo.FileName = path;
+            process.Start();
+            //process.WaitForInputIdle();
         }
 
     }
