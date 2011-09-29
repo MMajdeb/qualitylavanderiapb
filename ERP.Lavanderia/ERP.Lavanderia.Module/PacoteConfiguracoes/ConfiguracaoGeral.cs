@@ -38,6 +38,7 @@ namespace ERP.Lavanderia.Module.PacoteConfiguracoes
 
         private int diferencaFusoHorario;
         private string caminhoAbsolutoHospedagem;
+        private string urlERP;
 
         public ConfiguracaoGeral(Session session) : base(session) { }
 
@@ -55,6 +56,8 @@ namespace ERP.Lavanderia.Module.PacoteConfiguracoes
         public string SenhaSmtp { get { return senhaSmtp; } set { SetPropertyValue("SenhaSmtp", ref senhaSmtp, value); } }
 
         public string CaminhoAbsolutoHospedagem { get { return caminhoAbsolutoHospedagem; } set { SetPropertyValue("CaminhoAbsolutoHospedagem", ref caminhoAbsolutoHospedagem, value); } }
+
+        public string UrlERP { get { return urlERP; } set { SetPropertyValue("UrlERP", ref urlERP, value); } }
 
         /// <summary>
         /// Define se irá utilizar conexão via SSL para envio de e-mail
