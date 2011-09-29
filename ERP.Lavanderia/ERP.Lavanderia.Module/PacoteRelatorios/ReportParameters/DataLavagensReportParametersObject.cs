@@ -39,7 +39,7 @@ namespace ERP.Lavanderia.Module.PacoteRelatorios.ReportParameters
             DateTime dataInicio = new DateTime(data.Year, data.Month, data.Day, 0, 0, 0);
             DateTime dataFim = new DateTime(data.Year, data.Month, data.Day, 23, 59, 59);
 
-            return new BetweenOperator("DataHoraDeRecebimento", dataInicio, dataFim);
+            return new BetweenOperator("Lavagem.DataHoraDeRecebimento", dataInicio, dataFim);
         }
 
         public override SortingCollection GetSorting()
