@@ -193,21 +193,15 @@
     <Compile Include="PacoteConfiguracoes\ConfiguracaoEmpresa.cs" />
     <Compile Include="PacoteConfiguracoes\ConfiguracaoGeral.cs" />
     <Compile Include="PacoteConfiguracoes\ConfiguracaoUsuario.cs" />
-    <Compile Include="PacoteControladoress\ControladoresEmpresa\SelecaoEmpresaController.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="PacoteControladoress\ControladoresEmpresa\SelecaoEmpresaController.cs" />
     <Compile Include="PacoteControladoress\ControladoresEmpresa\SelecaoEmpresaController.Designer.cs">
       <DependentUpon>SelecaoEmpresaController.cs</DependentUpon>
     </Compile>
-    <Compile Include="PacoteControladoress\ControladoresLavagem\ImprimirLavagemViewController.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="PacoteControladoress\ControladoresLavagem\ImprimirLavagemViewController.cs" />
     <Compile Include="PacoteControladoress\ControladoresLavagem\ImprimirLavagemViewController.Designer.cs">
       <DependentUpon>ImprimirLavagemViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="PacoteControladoress\ControladoresLavagem\LavagensDoDiaViewController.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="PacoteControladoress\ControladoresLavagem\LavagensDoDiaViewController.cs" />
     <Compile Include="PacoteControladoress\ControladoresLavagem\LavagensDoDiaViewController.Designer.cs">
       <DependentUpon>LavagensDoDiaViewController.cs</DependentUpon>
     </Compile>
@@ -218,9 +212,7 @@
     <Compile Include="PacoteEndereco\Endereco.cs" />
     <Compile Include="PacoteEndereco\Estado.cs" />
     <Compile Include="PacoteEndereco\Pais.cs" />
-    <Compile Include="Module.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Module.cs" />
     <Compile Include="Module.Designer.cs">
       <DependentUpon>Module.cs</DependentUpon>
     </Compile>
@@ -241,9 +233,7 @@
     <Compile Include="PacoteRoupa\Tamanho.cs" />
     <Compile Include="PacoteRoupa\Tecido.cs" />
     <Compile Include="PacoteRoupa\Tipo.cs" />
-    <Compile Include="PacoteSeguranca\Autenticacao.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="PacoteSeguranca\Autenticacao.cs" />
     <Compile Include="PacoteSeguranca\Papel.cs" />
     <Compile Include="PacoteSeguranca\ParametrosLogon.cs" />
     <Compile Include="PacoteSeguranca\Usuario.cs" />

@@ -247,7 +247,6 @@
     </Compile>
     <Compile Include="DefaultVertical.aspx.cs">
       <DependentUpon>DefaultVertical.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DefaultVertical.aspx.designer.cs">
       <DependentUpon>DefaultVertical.aspx</DependentUpon>
@@ -267,16 +266,12 @@
     <Compile Include="NestedFrameControl.ascx.designer.cs">
       <DependentUpon>NestedFrameControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationCode\WebApplication.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ApplicationCode\WebApplication.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Dialog.aspx.cs">
       <DependentUpon>Dialog.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
@@ -284,7 +279,6 @@
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NestedFrameControl.ascx.cs">
       <DependentUpon>NestedFrameControl.ascx</DependentUpon>
